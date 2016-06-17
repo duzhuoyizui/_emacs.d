@@ -7,11 +7,11 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-
-(package-initialize)
-(when (not package-archive-contents)
-  (package-refresh-contents))
+             '("popkit" . "https://elpa.popkit.org/packages/"))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
 
 (defvar myPackages
   '(better-defaults
@@ -24,6 +24,7 @@
     window-numbering
     expand-region
     markdown-mode
+    vue-mode
     js3-mode
     web-mode
     flycheck
@@ -184,12 +185,23 @@ Uses `current-date-time-format' for the formatting the date/time."
       (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 
 ;;------------------------------------------------------------------------------
+;; YAML
+;;------------------------------------------------------------------------------
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+(add-hook 'yaml-mode-hook
+          '(lambda ()
+             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+;;------------------------------------------------------------------------------
 ;; web-mode(html, js, jsx, css)
 ;;------------------------------------------------------------------------------
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (setq web-mode-enable-current-element-highlight t)
 
 (require 'emmet-mode)
