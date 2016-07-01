@@ -4,11 +4,11 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("popkit" . "https://elpa.popkit.org/packages/"))
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+       '("melpa" . "http://melpa.org/packages/") t)
+
 (package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 (defvar myPackages
   '(better-defaults
@@ -18,6 +18,7 @@
     window-numbering
     expand-region
     markdown-mode
+    yaml-mode
     vue-mode
     js3-mode
     web-mode
@@ -28,8 +29,8 @@
     emmet-mode))
 
 (mapc #'(lambda (package)
-	  (unless (package-installed-p package)
-	    (package-install package)))
+    (unless (package-installed-p package)
+      (package-install package)))
       myPackages)
 
 ;;------------------------------------------------------------------------------
