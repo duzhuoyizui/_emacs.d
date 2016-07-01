@@ -12,8 +12,7 @@
 
 (defvar myPackages
   '(better-defaults
-    auto-complete
-    auto-yasnippet
+    company
     highlight-symbol
     fill-column-indicator
     window-numbering
@@ -25,7 +24,7 @@
     flycheck
     go-mode
     helm
-    color-theme-sanityinc-solarized
+    jedi
     emmet-mode))
 
 (mapc #'(lambda (package)
@@ -109,8 +108,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; (set-face-background 'hl-line "snow")
 
 (load-theme 'whiteboard t)
-(require 'color-theme-sanityinc-solarized)
-(color-theme-sanityinc-solarized--define-theme light)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -145,19 +142,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;------------------------------------------------------------------------------
 ;; auto-complate && yasnippet && helm
 ;;------------------------------------------------------------------------------
-(require 'auto-complete)
-(global-auto-complete-mode t)
-
-(setq ac-auto-show-menu t)
-(setq ac-use-menu-map t)
-
-(define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map "\C-p" 'ac-previous)
-(setq ac-menu-height 8)
-(add-to-list 'ac-modes 'js3-mode)
-
-(require 'yasnippet)
-(yas-global-mode 1)
+(add-hook 'after-init-hook 'global-company-mode)
 
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -166,6 +151,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c h o") 'helm-occur)
+
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -188,7 +174,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;------------------------------------------------------------------------------
 ;; Python
 ;;------------------------------------------------------------------------------
-
+(eval-after-load "company"
+  '(add-to-list 'company-backends 'company-anaconda))
+(add-hook 'python-mode-hook 'anaconda-mode)
 
 ;;------------------------------------------------------------------------------
 ;; Markdown
