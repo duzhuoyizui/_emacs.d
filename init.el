@@ -25,8 +25,7 @@
     flycheck
     go-mode
     helm
-    helm-projectile
-    indent-guide
+    color-theme-sanityinc-solarized
     emmet-mode))
 
 (mapc #'(lambda (package)
@@ -88,6 +87,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
+
 ;;------------------------------------------------------------------------------
 ;; 外观
 ;;------------------------------------------------------------------------------
@@ -109,7 +109,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; (set-face-background 'hl-line "snow")
 
 (load-theme 'whiteboard t)
-
+(require 'color-theme-sanityinc-solarized)
+(color-theme-sanityinc-solarized--define-theme light)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -177,9 +178,6 @@ Uses `current-date-time-format' for the formatting the date/time."
       )
 
 (helm-mode 1)
-
-(require 'helm-projectile)
-(helm-projectile-on)
 
 ;;------------------------------------------------------------------------------
 ;; go
