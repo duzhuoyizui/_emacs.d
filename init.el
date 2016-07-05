@@ -13,6 +13,8 @@
 (defvar myPackages
   '(better-defaults
     company
+    anaconda-mode
+    company-anaconda
     highlight-symbol
     fill-column-indicator
     window-numbering
