@@ -12,9 +12,7 @@
 
 (defvar myPackages
   '(better-defaults
-    company
-    anaconda-mode
-    company-anaconda
+    auto-complete
     highlight-symbol
     fill-column-indicator
     window-numbering
@@ -145,7 +143,16 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;------------------------------------------------------------------------------
 ;; auto-complate && yasnippet && helm
 ;;------------------------------------------------------------------------------
-(add-hook 'after-init-hook 'global-company-mode)
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+(setq ac-auto-show-menu t)
+(setq ac-use-menu-map t)
+
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+(setq ac-menu-height 8)
+(add-to-list 'ac-modes 'js3-mode)
 
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -177,9 +184,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;------------------------------------------------------------------------------
 ;; Python
 ;;------------------------------------------------------------------------------
-(eval-after-load "company"
-  '(add-to-list 'company-backends 'company-anaconda))
-(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+
+(setq jedi:server-args
+      '("--sys-path" "/usr/local/lib/python3.5/site-packages/"))
 
 ;;------------------------------------------------------------------------------
 ;; Markdown
