@@ -36,6 +36,10 @@
 ;;------------------------------------------------------------------------------
 ;; 基本配置(独立于插件)
 ;;------------------------------------------------------------------------------
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+            '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq auto-save-default nil)
 (menu-bar-mode -1)
@@ -75,9 +79,15 @@ Uses `current-date-time-format' for the formatting the date/time."
   (insert "\n")
   )
 
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
 (global-set-key [(f3)] 'eshell)
 (global-set-key [(f4)] 'insert-current-date-time)
 (global-set-key [(f5)] 'compile)
+(global-set-key [(f6)] 'show-file-name) ; Or any other key you want
 
 (global-unset-key (kbd "C-z"))
 
@@ -148,10 +158,13 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (setq ac-auto-show-menu t)
 (setq ac-use-menu-map t)
+(setq ac-menu-height 8)
+(setq ac-use-quick-help nil)
 
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
-(setq ac-menu-height 8)
+(global-set-key "\M-/" 'auto-complete)
+
 (add-to-list 'ac-modes 'js3-mode)
 
 (require 'helm-config)
@@ -187,9 +200,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (setq jedi:use-shortcuts t)
-
 (setq jedi:server-args
       '("--sys-path" "/usr/local/lib/python3.5/site-packages/"))
+(setq jedi:tooltip-method '(pos-tip))
 
 ;;------------------------------------------------------------------------------
 ;; Markdown
