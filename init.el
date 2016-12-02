@@ -13,6 +13,7 @@
 (defvar myPackages
   '(better-defaults
     auto-complete
+    ace-jump-mode
     highlight-symbol
     fill-column-indicator
     window-numbering
@@ -58,15 +59,15 @@
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
-        "Format of date to insert with `insert-current-date-time' func
+  "Format of date to insert with `insert-current-date-time' func
 See help of `format-time-string' for possible replacements")
 
 (defvar current-time-format "%a %H:%M:%S"
-        "Format of date to insert with `insert-current-time' func.
+  "Format of date to insert with `insert-current-time' func.
 Note the weekly scope of the command's precision.")
 
 (defun insert-current-date-time ()
-        "insert the current date and time into current buffer.
+  "insert the current date and time into current buffer.
 Uses `current-date-time-format' for the formatting the date/time."
 	(interactive)
 	(insert (format-time-string current-date-time-format (current-time)))
@@ -97,6 +98,9 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
+(set-default-font "Monaco 14")
+
+(blink-cursor-mode -1)
 
 ;;------------------------------------------------------------------------------
 ;; 外观
@@ -188,6 +192,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (helm-mode 1)
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;;------------------------------------------------------------------------------
 ;; go
 ;;------------------------------------------------------------------------------
@@ -266,6 +273,9 @@ Uses `current-date-time-format' for the formatting the date/time."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
  '(js3-auto-indent-p t)
  '(js3-curly-indent-offset 2)
  '(js3-enter-indents-newline t)
@@ -273,8 +283,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  '(js3-lazy-commas t)
  '(js3-lazy-operators t)
  '(js3-paren-indent-offset 2)
- '(js3-square-indent-offset 2)
- )
+ '(js3-square-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
