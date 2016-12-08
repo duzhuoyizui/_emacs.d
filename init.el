@@ -1,10 +1,15 @@
 ;;------------------------------------------------------------------------------
 ;; 包管理工具初始化
 ;;------------------------------------------------------------------------------
+
 (require 'package)
 
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa.org/packages/") t)
+             '("popkit" . "http://elpa.popkit.org/packages/"))
 
 (package-initialize)
 (when (not package-archive-contents)
@@ -21,17 +26,18 @@
     markdown-mode
     yaml-mode
     vue-mode
-    js3-mode
+    js2-mode
     web-mode
     flycheck
     go-mode
     helm
+    bm
     jedi
     emmet-mode))
 
 (mapc #'(lambda (package)
-    (unless (package-installed-p package)
-      (package-install package)))
+          (unless (package-installed-p package)
+            (package-install package)))
       myPackages)
 
 ;;------------------------------------------------------------------------------
@@ -56,6 +62,7 @@
 (setq show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (show-paren-mode t)
+(save-place-mode 1)
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
@@ -69,9 +76,9 @@ Note the weekly scope of the command's precision.")
 (defun insert-current-date-time ()
   "insert the current date and time into current buffer.
 Uses `current-date-time-format' for the formatting the date/time."
-	(interactive)
-	(insert (format-time-string current-date-time-format (current-time)))
-	)
+  (interactive)
+  (insert (format-time-string current-date-time-format (current-time)))
+  )
 
 (defun insert-current-time ()
   "insert the current time (1-week scope) into the current buffer."
@@ -88,7 +95,11 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key [(f3)] 'eshell)
 (global-set-key [(f4)] 'insert-current-date-time)
 (global-set-key [(f5)] 'compile)
-(global-set-key [(f6)] 'show-file-name) ; Or any other key you want
+(global-set-key [(f6)] 'show-file-name)
+
+(global-set-key (kbd "<f12>") 'bm-toggle)
+(global-set-key (kbd "<f2>") 'bm-next)
+(global-set-key (kbd "<S-f2>") 'bm-previous)
 
 (global-unset-key (kbd "C-z"))
 
@@ -98,7 +109,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
-(set-default-font "Monaco 14")
+(set-frame-font "Monaco 14")
 
 (blink-cursor-mode -1)
 
@@ -107,7 +118,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;------------------------------------------------------------------------------
 (global-visual-line-mode 1)
 
-(setq linum-format "%3d|")
+(setq linum-format "%3d| ")
 ;;(global-linum-mode 1)
 (global-set-key (kbd "M-s l") 'global-linum-mode)
 
@@ -120,7 +131,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; color: http://raebear.net/comp/emacscolors.html
 ;; (global-hl-line-mode t)
-;; (set-face-background 'hl-line "snow")
+;; (set-face-background 'hl-line "gainsboro")
 
 (load-theme 'whiteboard t)
 
@@ -169,7 +180,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (define-key ac-menu-map "\C-p" 'ac-previous)
 (global-set-key "\M-/" 'auto-complete)
 
-(add-to-list 'ac-modes 'js3-mode)
+(add-to-list 'ac-modes 'js2-mode)
 
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -178,7 +189,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c h o") 'helm-occur)
-
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -194,6 +204,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(setq bm-highlight-style 'bm-highlight-only-line)
 
 ;;------------------------------------------------------------------------------
 ;; go
@@ -249,44 +261,22 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
 
 ;;------------------------------------------------------------------------------
-;; js3-mode
+;; js2-mode
 ;;------------------------------------------------------------------------------
-(autoload 'js3-mode "js3" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+
 
 ;;------------------------------------------------------------------------------
 ;; Flycheck
 ;;------------------------------------------------------------------------------
 (require 'flycheck)
+(setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
 (add-hook 'python-mode-hook (lambda ()
                               (flycheck-mode 1)
                               (setq flycheck-checker 'python-pylint
                                     flycheck-checker-error-threshold 900
                                     flycheck-pylintrc "~/.pylintrc")))
-
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
- '(js3-auto-indent-p t)
- '(js3-curly-indent-offset 2)
- '(js3-enter-indents-newline t)
- '(js3-expr-indent-offset 2)
- '(js3-lazy-commas t)
- '(js3-lazy-operators t)
- '(js3-paren-indent-offset 2)
- '(js3-square-indent-offset 2))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
