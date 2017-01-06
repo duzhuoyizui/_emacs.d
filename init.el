@@ -13,11 +13,12 @@
 
 (package-initialize)
 (when (not package-archive-contents)
-  (package-refresh-contents))
+    (package-refresh-contents))
 
 (defvar myPackages
   '(better-defaults
     auto-complete
+    helm
     ace-jump-mode
     highlight-symbol
     fill-column-indicator
@@ -29,8 +30,6 @@
     js2-mode
     web-mode
     flycheck
-    go-mode
-    helm
     bm
     jedi
     emmet-mode))
@@ -109,7 +108,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
-(set-frame-font "Monaco 14")
+(set-frame-font "Source Code Pro 15")
 
 (blink-cursor-mode -1)
 
@@ -133,7 +132,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; (global-hl-line-mode t)
 ;; (set-face-background 'hl-line "gainsboro")
 
-(load-theme 'whiteboard t)
+(load-theme 'leuven t)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -184,21 +183,20 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c h o") 'helm-occur)
 
-(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t
-      helm-buffers-fuzzy-matching           t
-      helm-recentf-fuzzy-match              t
-      helm-M-x-fuzzy-match                  t
-      )
+;; (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+;;       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+;;       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+;;       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+;;       helm-ff-file-name-history-use-recentf t
+;;       helm-buffers-fuzzy-matching           t
+;;       helm-recentf-fuzzy-match              t
+;;       helm-M-x-fuzzy-match                  t
+;;       )
 
 (helm-mode 1)
 
@@ -207,20 +205,17 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (setq bm-highlight-style 'bm-highlight-only-line)
 
-;;------------------------------------------------------------------------------
-;; go
-;;------------------------------------------------------------------------------
-(require 'go-mode-autoloads)
-
 
 ;;------------------------------------------------------------------------------
 ;; Python
 ;;------------------------------------------------------------------------------
 (add-hook 'python-mode-hook 'jedi:setup)
+(set-variable 'py-indent-offset 4)
+(set-variable 'python-indent-guess-indent-offset nil)
 (setq jedi:complete-on-dot t)
 (setq jedi:use-shortcuts t)
 (setq jedi:server-args
-      '("--sys-path" "/usr/local/lib/python3.5/site-packages/"))
+      '("--sys-path" "/usr/local/lib/python3.6/site-packages/"))
 (setq jedi:tooltip-method '(pos-tip))
 
 ;;------------------------------------------------------------------------------
@@ -280,3 +275,17 @@ Uses `current-date-time-format' for the formatting the date/time."
                               (setq flycheck-checker 'python-pylint
                                     flycheck-checker-error-threshold 900
                                     flycheck-pylintrc "~/.pylintrc")))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode window-numbering web-mode vue-mode markdown-mode js2-mode jedi highlight-symbol go-mode flycheck fill-column-indicator expand-region exec-path-from-shell emmet-mode bm better-defaults ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
