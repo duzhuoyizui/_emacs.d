@@ -32,12 +32,18 @@
     flycheck
     bm
     jedi
-    emmet-mode))
+    emmet-mode
+    exec-path-from-shell
+    )
+  )
 
 (mapc #'(lambda (package)
           (unless (package-installed-p package)
             (package-install package)))
       myPackages)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;;------------------------------------------------------------------------------
 ;; 基本配置(独立于插件)
@@ -108,7 +114,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
-(set-frame-font "Source Code Pro 15")
+(set-frame-font "Monaco 14")
 
 (blink-cursor-mode -1)
 
@@ -244,7 +250,18 @@ Uses `current-date-time-format' for the formatting the date/time."
 (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+
 (setq web-mode-enable-current-element-highlight t)
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)  ; HTML
+  (setq web-mode-css-indent-offset 2)  ; CSS
+  (setq web-mode-code-indent-offset 2) ; script/code
+  (setq web-mode-script-padding 1)     ; html 内嵌 script 开头缩进
+  )
+(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 (require 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
@@ -256,25 +273,25 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
 
 ;;------------------------------------------------------------------------------
-;; js2-mode
-;;------------------------------------------------------------------------------
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js-mode-hook 'js2-minor-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
-
-
-;;------------------------------------------------------------------------------
 ;; Flycheck
 ;;------------------------------------------------------------------------------
 (require 'flycheck)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 (add-hook 'after-init-hook #'global-flycheck-mode)
-(add-hook 'python-mode-hook (lambda ()
-                              (flycheck-mode 1)
-                              (setq flycheck-checker 'python-pylint
-                                    flycheck-checker-error-threshold 900
-                                    flycheck-pylintrc "~/.pylintrc")))
+;; (add-hook 'python-mode-hook (lambda ()
+;;                               (flycheck-mode 1)
+;;                               (setq flycheck-checker 'python-pylint
+;;                                     flycheck-checker-error-threshold 900
+;;                                     flycheck-pylintrc "~/.pylintrc")))
+
+(setq-default flycheck-disabled-checkers
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint)))
+
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+;; customize flycheck temp file prefix
+;; (setq-default flycheck-temp-prefix ".flycheck")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
