@@ -34,6 +34,7 @@
     jedi
     emmet-mode
     exec-path-from-shell
+    helm-projectile
     )
   )
 
@@ -209,6 +210,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+;; helm-projectile
+(projectile-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
+
 (setq bm-highlight-style 'bm-highlight-only-line)
 
 
@@ -222,7 +229,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (setq jedi:use-shortcuts t)
 (setq jedi:server-args
       '("--sys-path" "/usr/local/lib/python3.6/site-packages/"))
-(setq jedi:tooltip-method '(pos-tip))
+(setq jedi:tooltip-method nil)
 
 ;;------------------------------------------------------------------------------
 ;; Markdown
