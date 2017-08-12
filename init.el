@@ -13,7 +13,7 @@
 
 (package-initialize)
 (when (not package-archive-contents)
-    (package-refresh-contents))
+  (package-refresh-contents))
 
 (defvar myPackages
   '(better-defaults
@@ -35,6 +35,7 @@
     emmet-mode
     exec-path-from-shell
     helm-projectile
+    neotree
     )
   )
 
@@ -69,6 +70,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (show-paren-mode t)
 (save-place-mode 1)
+;;(electric-pair-mode 1)  ; 括号自动补全
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
@@ -115,9 +117,13 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
-(set-frame-font "Monaco 14")
 
 (blink-cursor-mode -1)
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(set-default-font "Monaco 15")
 
 ;;------------------------------------------------------------------------------
 ;; 外观
@@ -129,7 +135,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "M-s l") 'global-linum-mode)
 
 (require 'fill-column-indicator)
-(setq fci-rule-color "#eee")
+(setq fci-rule-color "#F0F0F0")
 (setq fci-rule-column 80)
 (define-globalized-minor-mode
   global-fci-mode fci-mode (lambda () (fci-mode 1)))
@@ -306,7 +312,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode window-numbering web-mode vue-mode markdown-mode js2-mode jedi highlight-symbol go-mode flycheck fill-column-indicator expand-region exec-path-from-shell emmet-mode bm better-defaults ace-jump-mode))))
+    (neotree shell-here yaml-mode window-numbering web-mode vue-mode markdown-mode js2-mode jedi highlight-symbol go-mode flycheck fill-column-indicator expand-region exec-path-from-shell emmet-mode bm better-defaults ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
