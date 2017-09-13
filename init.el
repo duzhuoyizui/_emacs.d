@@ -19,23 +19,18 @@
   '(better-defaults
     auto-complete
     helm
-    ace-jump-mode
+    helm-projectile
     highlight-symbol
-    fill-column-indicator
     window-numbering
     expand-region
     markdown-mode
     yaml-mode
-    vue-mode
     js2-mode
     web-mode
     flycheck
-    bm
     jedi
     emmet-mode
-    exec-path-from-shell
-    helm-projectile
-    neotree
+    bm
     )
   )
 
@@ -43,9 +38,6 @@
           (unless (package-installed-p package)
             (package-install package)))
       myPackages)
-
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
 
 ;;------------------------------------------------------------------------------
 ;; 基本配置(独立于插件)
@@ -66,11 +58,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (global-auto-revert-mode t)
-(setq show-trailing-whitespace t)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (show-paren-mode t)
 (save-place-mode 1)
 ;;(electric-pair-mode 1)  ; 括号自动补全
+
+(setq show-trailing-whitespace t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
@@ -106,8 +99,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key [(f6)] 'show-file-name)
 
 (global-set-key (kbd "<f12>") 'bm-toggle)
-(global-set-key (kbd "<f2>") 'bm-next)
-(global-set-key (kbd "<S-f2>") 'bm-previous)
+(global-set-key (kbd "<f11>") 'bm-next)
+(global-set-key (kbd "<S-f11>") 'bm-previous)
 
 (global-unset-key (kbd "C-z"))
 
@@ -117,33 +110,11 @@ Uses `current-date-time-format' for the formatting the date/time."
   (align-regexp begin end "\\(\\s-*\\)=" 1 1 ))
 (global-set-key (kbd "C-c a =") 'align-to-equals)
 
-
-(blink-cursor-mode -1)
-
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-(set-default-font "Monaco 15")
-
 ;;------------------------------------------------------------------------------
 ;; 外观
 ;;------------------------------------------------------------------------------
 (global-visual-line-mode 1)
-
-(setq linum-format "%3d| ")
-;;(global-linum-mode 1)
 (global-set-key (kbd "M-s l") 'global-linum-mode)
-
-(require 'fill-column-indicator)
-(setq fci-rule-color "#F0F0F0")
-(setq fci-rule-column 80)
-(define-globalized-minor-mode
-  global-fci-mode fci-mode (lambda () (fci-mode 1)))
-;;(global-fci-mode 1)
-
-;; color: http://raebear.net/comp/emacscolors.html
-;; (global-hl-line-mode t)
-;; (set-face-background 'hl-line "gainsboro")
 
 (load-theme 'leuven t)
 
@@ -210,19 +181,13 @@ Uses `current-date-time-format' for the formatting the date/time."
       helm-recentf-fuzzy-match              t
       helm-M-x-fuzzy-match                  t
       )
-
 (helm-mode 1)
-
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; helm-projectile
 (projectile-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
-
-(setq bm-highlight-style 'bm-highlight-only-line)
 
 
 ;;------------------------------------------------------------------------------
@@ -291,20 +256,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 (require 'flycheck)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 (add-hook 'after-init-hook #'global-flycheck-mode)
-;; (add-hook 'python-mode-hook (lambda ()
-;;                               (flycheck-mode 1)
-;;                               (setq flycheck-checker 'python-pylint
-;;                                     flycheck-checker-error-threshold 900
-;;                                     flycheck-pylintrc "~/.pylintrc")))
 
 (setq-default flycheck-disabled-checkers
               (append flycheck-disabled-checkers
                       '(javascript-jshint)))
 
 (flycheck-add-mode 'javascript-eslint 'web-mode)
-;; customize flycheck temp file prefix
-;; (setq-default flycheck-temp-prefix ".flycheck")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -312,7 +269,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (neotree shell-here yaml-mode window-numbering web-mode vue-mode markdown-mode js2-mode jedi highlight-symbol go-mode flycheck fill-column-indicator expand-region exec-path-from-shell emmet-mode bm better-defaults ace-jump-mode))))
+    (bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
