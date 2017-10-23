@@ -116,7 +116,20 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-visual-line-mode 1)
 (global-set-key (kbd "M-s l") 'global-linum-mode)
 
-(load-theme 'leuven t)
+(setq sml/no-confirm-load-theme t)
+(setq sml/theme 'dark)
+(sml/setup)
+
+;; then in your init you can load all of the themes
+;; without enabling theme (or just load one)
+(load-theme 'ample t t)
+;;(load-theme 'ample-flat t t)
+;(load-theme 'ample-light t t)
+;; choose one to enable
+(enable-theme 'ample)
+;;(enable-theme 'ample-flat)
+;;(enable-theme 'ample-light)
+
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -267,9 +280,38 @@ Uses `current-date-time-format' for the formatting the date/time."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-safe-themes
+   (quote
+    ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
+ '(fci-rule-color "#2e2e2e")
+ '(global-linum-mode nil)
  '(package-selected-packages
    (quote
-    (bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults))))
+    (solarized-theme ample-theme ample-zen-theme smart-mode-line bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults)))
+ '(vc-annotate-background "#3b3b3b")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dd5542")
+     (40 . "#CC5542")
+     (60 . "#fb8512")
+     (80 . "#baba36")
+     (100 . "#bdbc61")
+     (120 . "#7d7c61")
+     (140 . "#6abd50")
+     (160 . "#6aaf50")
+     (180 . "#6aa350")
+     (200 . "#6a9550")
+     (220 . "#6a8550")
+     (240 . "#6a7550")
+     (260 . "#9b55c3")
+     (280 . "#6CA0A3")
+     (300 . "#528fd1")
+     (320 . "#5180b3")
+     (340 . "#6380b3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
