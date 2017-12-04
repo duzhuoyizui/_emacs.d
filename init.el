@@ -117,19 +117,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "M-s l") 'global-linum-mode)
 
 (setq sml/no-confirm-load-theme t)
-(setq sml/theme 'dark)
+(setq sml/theme 'light)
 (sml/setup)
 
-;; then in your init you can load all of the themes
-;; without enabling theme (or just load one)
-(load-theme 'ample t t)
-;;(load-theme 'ample-flat t t)
-;(load-theme 'ample-light t t)
-;; choose one to enable
-(enable-theme 'ample)
-;;(enable-theme 'ample-flat)
-;;(enable-theme 'ample-light)
-
+(load-theme 'leuven)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
