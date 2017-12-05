@@ -116,9 +116,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-visual-line-mode 1)
 (global-set-key (kbd "M-s l") 'global-linum-mode)
 
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'light)
-(sml/setup)
+;; (setq sml/no-confirm-load-theme t)
+;; (setq sml/theme 'light)
+;; (sml/setup)
 
 (load-theme 'leuven)
 
