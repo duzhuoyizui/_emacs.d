@@ -31,6 +31,10 @@
     jedi
     emmet-mode
     bm
+    go-mode
+    go-guru
+    go-rename
+    go-autocomplete
     )
   )
 
@@ -193,7 +197,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
 
-
 ;;------------------------------------------------------------------------------
 ;; Python
 ;;------------------------------------------------------------------------------
@@ -205,6 +208,27 @@ Uses `current-date-time-format' for the formatting the date/time."
 (setq jedi:server-args
       '("--sys-path" "/usr/local/lib/python3.6/site-packages/"))
 (setq jedi:tooltip-method nil)
+
+;;------------------------------------------------------------------------------
+;; golang
+;;------------------------------------------------------------------------------
+(require 'go-mode)
+
+(require 'go-guru)
+
+(require 'go-rename)
+
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+(defun go-mode-setup ()
+  (setq gofmt-command "goimports")
+  (setq compile-command "go build -v && go test -v && go vet")
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (local-set-key (kbd "M-.") 'godef-jump))
+(add-hook 'go-mode-hook 'go-mode-setup)
 
 ;;------------------------------------------------------------------------------
 ;; Markdown
@@ -280,7 +304,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  '(global-linum-mode nil)
  '(package-selected-packages
    (quote
-    (solarized-theme ample-theme ample-zen-theme smart-mode-line bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults)))
+    (go-rename go-guru go-autocomplete solarized-theme ample-theme ample-zen-theme smart-mode-line bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults)))
  '(vc-annotate-background "#3b3b3b")
  '(vc-annotate-color-map
    (quote
