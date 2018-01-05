@@ -19,7 +19,6 @@
   '(better-defaults
     auto-complete
     helm
-    helm-projectile
     highlight-symbol
     window-numbering
     expand-region
@@ -31,7 +30,7 @@
     jedi
     emmet-mode
     bm
-    sml-modeline
+    smart-mode-line
     go-mode
     go-guru
     go-rename
@@ -106,7 +105,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f12>") 'bm-toggle)
 (global-set-key (kbd "<f11>") 'bm-next)
 (global-set-key (kbd "<S-f11>") 'bm-previous)
-
 (global-unset-key (kbd "C-z"))
 
 (defun align-to-equals (begin end)
@@ -174,11 +172,14 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (add-to-list 'ac-modes 'js2-mode)
 
+(require 'helm)
 (require 'helm-config)
+
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
@@ -186,17 +187,27 @@ Uses `current-date-time-format' for the formatting the date/time."
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t
-      helm-buffers-fuzzy-matching           t
-      helm-recentf-fuzzy-match              t
-      helm-M-x-fuzzy-match                  t
-      )
-(helm-mode 1)
+      helm-echo-input-in-header-line t)
 
-;; helm-projectile
-(projectile-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
-(setq projectile-switch-project-action 'helm-projectile)
+(defun spacemacs//helm-hide-minibuffer-maybe ()
+  "Hide minibuffer in Helm session if we use the header line as input field."
+  (when (with-helm-buffer helm-echo-input-in-header-line)
+    (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+      (overlay-put ov 'window (selected-window))
+      (overlay-put ov 'face
+                   (let ((bg-color (face-background 'default nil)))
+                     `(:background ,bg-color :foreground ,bg-color)))
+      (setq-local cursor-type nil))))
+
+
+(add-hook 'helm-minibuffer-set-up-hook
+          'spacemacs//helm-hide-minibuffer-maybe)
+
+(setq helm-autoresize-max-height 0)
+(setq helm-autoresize-min-height 20)
+(helm-autoresize-mode 1)
+
+(helm-mode 1)
 
 ;;------------------------------------------------------------------------------
 ;; Python
@@ -305,7 +316,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  '(global-linum-mode nil)
  '(package-selected-packages
    (quote
-    (go-rename go-guru go-autocomplete solarized-theme ample-theme ample-zen-theme smart-mode-line bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults)))
+    (a go-rename go-guru go-autocomplete solarized-theme ample-theme ample-zen-theme smart-mode-line bm emmet-mode jedi flycheck web-mode js2-mode yaml-mode markdown-mode expand-region window-numbering highlight-symbol helm-projectile helm auto-complete better-defaults)))
  '(vc-annotate-background "#3b3b3b")
  '(vc-annotate-color-map
    (quote
