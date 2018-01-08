@@ -189,7 +189,9 @@ Uses `current-date-time-format' for the formatting the date/time."
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line t)
 
-(helm-autoresize-mode nil)
+(setq helm-autoresize-max-height 40)
+(setq helm-autoresize-min-height 40)
+(helm-autoresize-mode 1)
 
 (helm-mode 1)
 
