@@ -208,6 +208,7 @@ Uses `current-date-time-format' for the formatting the date/time."
       '("--sys-path" "/usr/local/lib/python3.6/site-packages/"))
 (setq jedi:tooltip-method nil)
 
+
 ;;------------------------------------------------------------------------------
 ;; golang
 ;;------------------------------------------------------------------------------
@@ -290,6 +291,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
+(setq flycheck-python-flake8-executable "flake8")
+
+;;------------------------------------------------------------------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -297,7 +302,7 @@ Uses `current-date-time-format' for the formatting the date/time."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (avy-flycheck yaml-mode window-numbering web-mode smart-mode-line markdown-mode js2-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
+    (flycheck-pyflakes avy-flycheck yaml-mode window-numbering web-mode smart-mode-line markdown-mode js2-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
