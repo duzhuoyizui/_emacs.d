@@ -171,7 +171,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (define-key ac-menu-map "\C-p" 'ac-previous)
 (global-set-key "\M-/" 'auto-complete)
 
-(add-to-list 'ac-modes 'js2-mode)
+(add-to-list 'ac-modes 'web-mode)
 
 (require 'helm)
 (require 'helm-config)
@@ -269,6 +269,9 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")))
+
 (require 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
@@ -277,6 +280,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "M-e") nil)
 (global-set-key (kbd "M-e p") 'emmet-prev-edit-point)
 (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
+
+;; less 额外处理
+(add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
+(setq css-indent-offset 2)
 
 ;;------------------------------------------------------------------------------
 ;; Flycheck
