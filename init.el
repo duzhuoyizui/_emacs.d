@@ -4,9 +4,8 @@
 
 (require 'package)
 
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -18,8 +17,11 @@
     auto-complete
     helm
     highlight-symbol
+    dockerfile-mode
+    rainbow-delimiters
     window-numbering
     expand-region
+    rjsx-mode
     markdown-mode
     yaml-mode
     js2-mode
@@ -125,6 +127,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 (sml/setup)
 
 (load-theme 'leuven)
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -298,18 +302,25 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
+;; (setq flycheck-javascript-eslint-executable "eslint")
 (setq flycheck-python-flake8-executable "flake8")
 
 ;;------------------------------------------------------------------------------
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
+ '(custom-safe-themes
+   (quote
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3eb93cd9a0da0f3e86b5d932ac0e3b5f0f50de7a0b805d4eb1f67782e9eb67a4" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" default)))
  '(package-selected-packages
    (quote
-    (flycheck-pyflakes avy-flycheck yaml-mode window-numbering web-mode smart-mode-line markdown-mode js2-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
+    (rainbow-delimiters dockerfile-mode rjsx-mode yaml-mode window-numbering web-mode smart-mode-line skewer-less scss-mode markdown-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
