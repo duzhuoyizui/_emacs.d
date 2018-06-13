@@ -30,6 +30,7 @@
     jedi
     emmet-mode
     bm
+    lua-mode
     smart-mode-line
     go-mode
     go-guru
@@ -219,6 +220,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (require 'go-mode)
 
 (require 'go-guru)
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
 (require 'go-rename)
 
@@ -320,7 +322,7 @@ Uses `current-date-time-format' for the formatting the date/time."
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3eb93cd9a0da0f3e86b5d932ac0e3b5f0f50de7a0b805d4eb1f67782e9eb67a4" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" default)))
  '(package-selected-packages
    (quote
-    (rainbow-delimiters dockerfile-mode rjsx-mode yaml-mode window-numbering web-mode smart-mode-line skewer-less scss-mode markdown-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
+    (lua-mode rainbow-delimiters dockerfile-mode rjsx-mode yaml-mode window-numbering web-mode smart-mode-line skewer-less scss-mode markdown-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
