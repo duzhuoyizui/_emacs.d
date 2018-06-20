@@ -12,30 +12,32 @@
   (package-refresh-contents))
 
 (defvar myPackages
-  '(exec-path-from-shell
-    better-defaults
+  '(
     auto-complete
+    better-defaults
+    bm
+    dockerfile-mode
+    emmet-mode
+    expand-region
+    flycheck
+    go-autocomplete
+    go-guru
+    go-mode
+    go-rename
     helm
     highlight-symbol
-    dockerfile-mode
-    rainbow-delimiters
-    window-numbering
-    expand-region
-    rjsx-mode
-    markdown-mode
-    yaml-mode
-    js2-mode
-    web-mode
-    flycheck
     jedi
-    emmet-mode
-    bm
+    js2-mode
+    keyfreq
     lua-mode
+    markdown-mode
+    rainbow-delimiters
+    rjsx-mode
     smart-mode-line
-    go-mode
-    go-guru
-    go-rename
-    go-autocomplete
+    web-mode
+    window-numbering
+    yaml-mode
+    exec-path-from-shell
     )
   )
 
@@ -130,6 +132,13 @@ Uses `current-date-time-format' for the formatting the date/time."
 (load-theme 'leuven)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;;------------------------------------------------------------------------------
+;; 统计
+;;------------------------------------------------------------------------------
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
 
 ;;------------------------------------------------------------------------------
 ;; 打开文件，缓冲区切换优化
@@ -322,7 +331,7 @@ Uses `current-date-time-format' for the formatting the date/time."
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3eb93cd9a0da0f3e86b5d932ac0e3b5f0f50de7a0b805d4eb1f67782e9eb67a4" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" default)))
  '(package-selected-packages
    (quote
-    (lua-mode rainbow-delimiters dockerfile-mode rjsx-mode yaml-mode window-numbering web-mode smart-mode-line skewer-less scss-mode markdown-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
+    (keyfreq lua-mode rainbow-delimiters dockerfile-mode rjsx-mode yaml-mode window-numbering web-mode smart-mode-line skewer-less scss-mode markdown-mode jedi highlight-symbol helm go-rename go-guru go-autocomplete flycheck expand-region exec-path-from-shell emmet-mode bm better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
