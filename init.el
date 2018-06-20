@@ -134,7 +134,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;------------------------------------------------------------------------------
-;; 统计
+;; 统计 -> keyfreq-show
 ;;------------------------------------------------------------------------------
 (require 'keyfreq)
 (keyfreq-mode 1)
