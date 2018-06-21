@@ -8,6 +8,7 @@
 (defvar melpa-include-packages
   '(
     company
+    company-go
     counsel
     emmet-mode
     exec-path-from-shell
@@ -101,6 +102,7 @@
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
 (require-package 'company)
+(require-package 'company-go)
 (require-package 'counsel)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
