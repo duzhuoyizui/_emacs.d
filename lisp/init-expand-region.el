@@ -1,6 +1,8 @@
 ;; expand-region
 ;; https://github.com/magnars/expand-region.el
 
+(require 'expand-region)
+
 (global-set-key (kbd "M-m") 'er/expand-region)
 (global-set-key (kbd "M-s s") 'er/mark-symbol)
 (global-set-key (kbd "M-s p") 'er/mark-outside-pairs)
