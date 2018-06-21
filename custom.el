@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-go yaml-mode window-numbering web-mode smart-mode-line rjsx-mode rainbow-delimiters markdown-mode magit jedi highlight-symbol go-rename go-guru go-autocomplete git flycheck expand-region exec-path-from-shell emmet-mode counsel company))))
+    (yaml-mode window-numbering web-mode smart-mode-line rjsx-mode rainbow-delimiters markdown-mode js2-mode jedi highlight-symbol go-rename go-guru flycheck helm expand-region exec-path-from-shell emmet-mode company-go company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

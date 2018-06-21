@@ -12,15 +12,16 @@
   `(load (file-truename (format "~/.emacs.d/lisp/%s" ,pkg))))
 
 (let ((file-name-handler-alist nil))
+  (require-init 'init-elpa) ;; must to be top
+
   (require-init 'init-aaa)
   (require-init 'init-company)
-  (require-init 'init-elpa)
   (require-init 'init-env)
   (require-init 'init-expand-region)
   (require-init 'init-flycheck)
   (require-init 'init-go)
+  (require-init 'init-helm)
   (require-init 'init-highlight-symbol)
-  (require-init 'init-ivy)
   (require-init 'init-markdown)
   (require-init 'init-python)
   (require-init 'init-ui)

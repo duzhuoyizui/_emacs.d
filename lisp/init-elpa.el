@@ -17,6 +17,7 @@
     go-guru
     go-mode
     go-rename
+    helm
     highlight-symbol
     ivy
     jedi
@@ -103,7 +104,6 @@
 ;;------------------------------------------------------------------------------
 (require-package 'company)
 (require-package 'company-go)
-(require-package 'counsel)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
 (require-package 'expand-region)
@@ -111,15 +111,14 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
+(require-package 'helm)
 (require-package 'highlight-symbol)
-(require-package 'ivy)
 (require-package 'jedi)
 (require-package 'js2-mode)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
-(require-package 'swiper)
 (require-package 'web-mode)
 (require-package 'window-numbering)
 (require-package 'yaml-mode)
