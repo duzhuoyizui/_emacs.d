@@ -9,7 +9,6 @@
   '(
     company
     company-go
-    counsel
     emmet-mode
     exec-path-from-shell
     expand-region
@@ -19,14 +18,13 @@
     go-rename
     helm
     highlight-symbol
-    ivy
     jedi
     js2-mode
+    keyfreq
     markdown-mode
     rainbow-delimiters
     rjsx-mode
     smart-mode-line
-    swiper
     web-mode
     window-numbering
     yaml-mode
@@ -115,6 +113,7 @@
 (require-package 'highlight-symbol)
 (require-package 'jedi)
 (require-package 'js2-mode)
+(require-package 'keyfreq)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)

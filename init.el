@@ -22,6 +22,7 @@
   (require-init 'init-go)
   (require-init 'init-helm)
   (require-init 'init-highlight-symbol)
+  (require-init 'init-keyfreq)
   (require-init 'init-markdown)
   (require-init 'init-python)
   (require-init 'init-ui)
