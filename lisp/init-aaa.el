@@ -18,7 +18,7 @@
 (global-auto-revert-mode t)
 (show-paren-mode t)
 (save-place-mode 1)
-(electric-pair-mode 1)  ; 括号自动补全
+;;(electric-pair-mode 1)  ; 括号自动补全
 
 (setq show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
