@@ -1,8 +1,11 @@
+;; company 自动补全
 
 (require 'company)
 
+;; markdown-mode, eshell-mode ignore complete
+(setq company-global-modes '(not markdown-mode eshell-mode))
+
 (add-hook 'after-init-hook 'global-company-mode)
-(global-company-mode)
 
 (setq company-transformers '(company-sort-by-occurrence))
 (setq company-echo-delay 0)
