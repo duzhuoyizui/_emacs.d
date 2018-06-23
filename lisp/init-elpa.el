@@ -9,6 +9,7 @@
   '(
     company
     company-go
+    company-jedi
     emmet-mode
     exec-path-from-shell
     expand-region
@@ -18,7 +19,6 @@
     go-rename
     helm
     highlight-symbol
-    jedi
     js2-mode
     keyfreq
     markdown-mode
@@ -102,6 +102,7 @@
 ;;------------------------------------------------------------------------------
 (require-package 'company)
 (require-package 'company-go)
+(require-package 'company-jedi)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
 (require-package 'expand-region)
@@ -111,7 +112,6 @@
 (require-package 'go-rename)
 (require-package 'helm)
 (require-package 'highlight-symbol)
-(require-package 'jedi)
 (require-package 'js2-mode)
 (require-package 'keyfreq)
 (require-package 'markdown-mode)
