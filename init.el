@@ -15,7 +15,7 @@
   (require-init 'init-elpa) ;; must to be top
 
   (require-init 'init-aaa)
-  (require-init 'init-company)
+  (require-init 'init-complete)
   (require-init 'init-env)
   (require-init 'init-expand-region)
   (require-init 'init-flycheck)

@@ -1,7 +1,7 @@
 
 (require 'go-mode)
-
 (require 'go-guru)
+(require 'go-autocomplete)
 
 (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
@@ -13,10 +13,5 @@
   (local-set-key (kbd "M-.") 'godef-jump))
 (add-hook 'go-mode-hook 'go-mode-setup)
 
-(require 'company-go)
-(add-hook 'go-mode-hook 'company-mode)
-(add-hook 'go-mode-hook (lambda ()
-  (set (make-local-variable 'company-backends) '(company-go))
-  (company-mode)))
 
 (provide 'init-go)
