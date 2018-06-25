@@ -7,7 +7,9 @@
 
 (defvar melpa-include-packages
   '(
-    auto-complete
+    company
+    company-go
+    company-jedi
     emmet-mode
     exec-path-from-shell
     expand-region
@@ -15,7 +17,6 @@
     go-guru
     go-mode
     go-rename
-    go-autocomplete
     helm
     highlight-symbol
     js2-mode
@@ -26,7 +27,6 @@
     smart-mode-line
     web-mode
     window-numbering
-    jedi
     yaml-mode
     )
   "Packages to install from melpa-unstable.")
@@ -100,7 +100,9 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-(require-package 'auto-complete)
+(require-package 'company)
+(require-package 'company-go)
+(require-package 'company-jedi)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
 (require-package 'expand-region)
@@ -108,7 +110,6 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
-(require-package 'go-autocomplete)
 (require-package 'helm)
 (require-package 'highlight-symbol)
 (require-package 'js2-mode)
@@ -117,7 +118,6 @@
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
-(require-package 'jedi)
 (require-package 'web-mode)
 (require-package 'window-numbering)
 (require-package 'yaml-mode)

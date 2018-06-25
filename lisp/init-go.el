@@ -1,7 +1,6 @@
 
 (require 'go-mode)
 (require 'go-guru)
-(require 'go-autocomplete)
 
 (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
