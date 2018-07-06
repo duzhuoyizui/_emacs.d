@@ -1,7 +1,7 @@
 (require 'company)
 
 ;; markdown-mode, eshell-mode ignore complete
-(setq company-global-modes '(not markdown-mode eshell-mode))
+(setq company-global-modes '(not markdown-mode gfm-mode eshell-mode))
 
 (add-hook 'after-init-hook 'global-company-mode)
 
