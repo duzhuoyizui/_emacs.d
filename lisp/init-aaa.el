@@ -1,5 +1,8 @@
 ;; 独立于插件的配置
 
+(prefer-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
             '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))

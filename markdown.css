@@ -1,6 +1,6 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", "Helvetica", PingFang SC, PingFang TC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, "WenQuanYi Micro Hei", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 auto 50px;
   width: 80%;
 }
@@ -61,26 +61,23 @@ h5, h6 {
 pre, code {
   color: #555;
   font-family: Menlo, monospace;
-  font-size: 14px;
   border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   overflow: auto;
   background-color: #f8f8f8;
   background: #EFEFEF;
+  font-size: 96%;
 }
 
 pre {
-  padding: 10px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 13px;
+  padding: 8px;
 }
 
 code {
-  padding: 4px;
-  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+pre code {
+  padding: 0 0;
 }
 
 blockquote {
