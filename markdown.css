@@ -6,9 +6,12 @@ body {
 }
 
 p, pre, ul, ol {
-  margin-top: 16px;
+  margin: 16px 0;
   line-height: 22px;
-  margin-bottom: 16px;
+}
+
+ul > li > ul {
+  margin: 5px 0;
 }
 
 .container {
