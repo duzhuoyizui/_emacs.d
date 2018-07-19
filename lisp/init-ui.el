@@ -1,5 +1,6 @@
-(global-visual-line-mode 1)
-(global-set-key (kbd "M-s l") 'global-linum-mode)
+(global-set-key (kbd "M-s l") 'display-line-numbers-mode)
+
+(require 'smart-mode-line)
 
 (setq sml/no-confirm-load-theme t)
 (setq sml/theme 'light)
