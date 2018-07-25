@@ -1,5 +1,27 @@
 ;; 独立于插件的配置
 
+(setq use-file-dialog nil)
+(setq use-dialog-box nil)
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-echo-area-message t)
+
+;; Show a marker in the left fringe for lines not in the buffer
+(setq indicate-empty-lines t)
+
+;; no tool bar
+(if (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+;; no scroll bar
+(if (fboundp 'set-scroll-bar-mode)
+  (set-scroll-bar-mode nil))
+;; no menu bar
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
+
+;; no cursor blink
+(blink-cursor-mode 0)
+(column-number-mode t)
+
 (prefer-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 
@@ -9,12 +31,10 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq auto-save-default nil)
-(menu-bar-mode -1)
 (setq inhibit-startup-message t)
 (setq mouse-yank-at-point t)
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
-(column-number-mode t)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
