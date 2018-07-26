@@ -22,8 +22,9 @@
 (blink-cursor-mode 0)
 (column-number-mode t)
 
+(set-frame-font "Monaco 15")
+
 (prefer-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
 
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
