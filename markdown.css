@@ -28,11 +28,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   color: #375EAB;
+  margin: 20px 0;
 }
 
 h1 {
   font-size: 28px;
-  margin: 20px 0 20px;
   padding: 0;
   font-weight: bold;
 }
@@ -46,17 +46,14 @@ h2 {
 }
 
 h3 {
-  margin: 20px 0;
   font-size: 20px;
 }
 
 h4 {
-  margin: 20px 0;
   font-size: 18px;
 }
 
 h5, h6 {
-  margin: 20px 0;
   font-size: 16px;
   font-weight: bold;
 }
