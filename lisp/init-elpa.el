@@ -10,6 +10,7 @@
     company
     company-go
     company-jedi
+    dockerfile-mode
     emmet-mode
     exec-path-from-shell
     expand-region
@@ -103,6 +104,7 @@
 (require-package 'company)
 (require-package 'company-go)
 (require-package 'company-jedi)
+(require-package 'dockerfile-mode)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
 (require-package 'expand-region)

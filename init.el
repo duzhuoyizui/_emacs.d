@@ -16,6 +16,7 @@
 
   (require-init 'init-aaa)
   (require-init 'init-complete)
+  (require-init 'init-docker)
   (require-init 'init-env)
   (require-init 'init-expand-region)
   (require-init 'init-flycheck)
