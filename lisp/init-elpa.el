@@ -25,7 +25,6 @@
     markdown-mode
     rainbow-delimiters
     rjsx-mode
-    smart-mode-line
     web-mode
     window-numbering
     yaml-mode
