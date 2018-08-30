@@ -1,4 +1,3 @@
-
 (require 'go-mode)
 (require 'go-guru)
 
