@@ -14,7 +14,7 @@
 (setq jedi:complete-on-dot t)
 (setq jedi:use-shortcuts t)
 (setq jedi:server-args
-      '("--sys-path" "/usr/local/lib/python3.6/site-packages/"))
+      '("--sys-path" "/usr/local/lib/python3.7/site-packages/"))
 (setq jedi:tooltip-method nil)
 
 (provide 'init-python)

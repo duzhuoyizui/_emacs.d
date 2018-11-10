@@ -34,12 +34,27 @@
 (defvar melpa-stable-banned-packages nil
   "Banned packages from melpa-stable")
 
-(setq package-archives '(
-                         ("localelpa" . "~/.emacs.d/localelpa/")
-                         ("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
-                         ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")
-                         ))
+(setq package-archives
+      '(;; uncomment below line if you need use GNU ELPA
+        ;; ("gnu" . "https://elpa.gnu.org/packages/")
+        ("localelpa" . "~/.emacs.d/localelpa/")
+
+        ;; ;; {{ 163 repository:
+        ;; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+        ;; ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
+        ;; ;; }}
+
+        ;; {{ tsinghua repository (more stable than 163, recommended)
+        ;;See https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
+        ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ;;}}
+
+        ;; ("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ))
 
 ;;------------------------------------------------------------------------------
 ;; Internal implementation, newbies should NOT touch code below this line!
