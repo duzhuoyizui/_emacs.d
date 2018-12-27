@@ -19,6 +19,7 @@
     go-mode
     go-rename
     helm
+    helm-ls-git
     highlight-symbol
     js2-mode
     keyfreq
@@ -129,6 +130,7 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'helm)
+(require-package 'helm-ls-git)
 (require-package 'highlight-symbol)
 (require-package 'js2-mode)
 (require-package 'keyfreq)

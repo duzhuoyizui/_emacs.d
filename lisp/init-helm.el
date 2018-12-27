@@ -27,4 +27,7 @@
 
 (helm-mode 1)
 
+(require 'helm-ls-git)
+(global-set-key (kbd "C-c h g") 'helm-ls-git-ls)
+
 (provide 'init-helm)
