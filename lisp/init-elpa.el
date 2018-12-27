@@ -35,25 +35,27 @@
   "Banned packages from melpa-stable")
 
 (setq package-archives
-      '(;; uncomment below line if you need use GNU ELPA
-        ;; ("gnu" . "https://elpa.gnu.org/packages/")
-        ("localelpa" . "~/.emacs.d/localelpa/")
+      '(("localelpa" . "~/.emacs.d/localelpa/")
+        ;; uncomment below line if you need use GNU ELPA
+        ("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
 
-        ;; ;; {{ 163 repository:
+        ;; Use either 163 or tsinghua mirror repository when official melpa
+        ;; is too slow or shutdown.
+
+        ;; ;; {{ Option 1: 163 mirror repository:
+        ;; ;; ("gnu" . "https://mirrors.163.com/elpa/gnu/")
         ;; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
         ;; ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
         ;; ;; }}
 
-        ;; {{ tsinghua repository (more stable than 163, recommended)
-        ;;See https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
-        ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
-        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-        ;;}}
-
-        ;; ("melpa" . "https://melpa.org/packages/")
-        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ;; ;; {{ Option 2: tsinghua mirror repository
+        ;; ;; @see https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
+        ;; ;; ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ;; ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ;; ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+        ;; }}
         ))
 
 ;;------------------------------------------------------------------------------
