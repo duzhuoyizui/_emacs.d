@@ -1,51 +1,21 @@
-;; 独立于插件的配置
-
-(setq use-file-dialog nil)
-(setq use-dialog-box nil)
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-echo-area-message t)
-
-;; Show a marker in the left fringe for lines not in the buffer
-(setq indicate-empty-lines t)
-
-;; no tool bar
-(if (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-;; no scroll bar
-(if (fboundp 'set-scroll-bar-mode)
-  (set-scroll-bar-mode nil))
-;; no menu bar
-(if (fboundp 'menu-bar-mode)
-    (menu-bar-mode -1))
-
-;; no cursor blink
-(blink-cursor-mode 0)
-(column-number-mode t)
-
-(set-frame-font "Monaco 15")
-
-(prefer-coding-system 'utf-8)
-
-(setq frame-title-format
-      (list (format "%s %%S: %%j " (system-name))
-            '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-
+;;------------------------------------------------------------------------------
+;; 使用简化
+;;------------------------------------------------------------------------------
 (fset 'yes-or-no-p 'y-or-n-p)
+(global-auto-revert-mode t)
 (setq auto-save-default nil)
-(setq inhibit-startup-message t)
 (setq mouse-yank-at-point t)
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
-
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(global-auto-revert-mode t)
-(show-paren-mode t)
 (save-place-mode 1)
-;;(electric-pair-mode 1)  ; 括号自动补全
 
 (setq show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(show-paren-mode t)
+;; (electric-pair-mode 1) ; 括号自动补全
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
@@ -70,6 +40,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (insert "\n")
   )
 
+;; 显示文件全路径
 (defun show-file-name ()
   "Show the full path file name in the minibuffer."
   (interactive)
@@ -77,7 +48,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (global-set-key [(f3)] 'eshell)
 (global-set-key [(f4)] 'insert-current-date-time)
-(global-set-key [(f5)] 'compile)
 (global-set-key [(f6)] 'show-file-name)
 
 (provide 'init-aaa)
