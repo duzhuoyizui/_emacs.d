@@ -25,7 +25,6 @@
   (require-init 'init-highlight-symbol)
   (require-init 'init-ivy)
   (require-init 'init-keyfreq)
-  (require-init 'init-markdown)
   (require-init 'init-python)
   (require-init 'init-ui)
   (require-init 'init-web)

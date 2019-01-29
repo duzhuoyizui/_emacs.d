@@ -31,6 +31,7 @@
 (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
 
 ;; less 额外处理
+(require 'css-mode)
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
 (setq css-indent-offset 2)
 

@@ -22,7 +22,6 @@
     highlight-symbol
     ivy-mode
     js2-mode
-    keyfreq
     markdown-mode
     rainbow-delimiters
     rjsx-mode
@@ -134,7 +133,6 @@
 (require-package 'highlight-symbol)
 (require-package 'ivy)
 (require-package 'js2-mode)
-(require-package 'keyfreq)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
