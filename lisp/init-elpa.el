@@ -28,6 +28,7 @@
     rjsx-mode
     web-mode
     window-numbering
+    which-key
     yaml-mode
     )
   "Packages to install from melpa-unstable.")
@@ -140,6 +141,7 @@
 (require-package 'smart-mode-line)
 (require-package 'web-mode)
 (require-package 'window-numbering)
+(require-package 'which-key)
 (require-package 'yaml-mode)
 
 (provide 'init-elpa)

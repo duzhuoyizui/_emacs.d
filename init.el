@@ -29,6 +29,7 @@
   (require-init 'init-ui)
   (require-init 'init-web)
   (require-init 'init-window)
+  (require-init 'init-which-key)
   (require-init 'init-yaml)
   )
 

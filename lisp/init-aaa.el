@@ -15,7 +15,10 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (show-paren-mode t)
-;; (electric-pair-mode 1) ; 括号自动补全
+
+(electric-pair-mode 1)
+(electric-indent-mode 1)
+(electric-quote-mode 1)
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
