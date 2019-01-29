@@ -20,7 +20,6 @@
     go-mode
     go-rename
     highlight-symbol
-    ivy-mode
     js2-mode
     markdown-mode
     magit
@@ -132,7 +131,6 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'highlight-symbol)
-(require-package 'ivy)
 (require-package 'js2-mode)
 (require-package 'markdown-mode)
 (require-package 'magit)

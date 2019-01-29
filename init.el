@@ -23,7 +23,7 @@
   (require-init 'init-flycheck)
   (require-init 'init-go)
   (require-init 'init-highlight-symbol)
-  (require-init 'init-ivy)
+  (require-init 'init-helm)
   (require-init 'init-git)
   (require-init 'init-python)
   (require-init 'init-ui)
