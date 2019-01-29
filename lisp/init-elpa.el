@@ -19,9 +19,8 @@
     go-guru
     go-mode
     go-rename
-    helm
-    helm-ls-git
     highlight-symbol
+    ivy-mode
     js2-mode
     keyfreq
     markdown-mode
@@ -132,9 +131,8 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
-(require-package 'helm)
-(require-package 'helm-ls-git)
 (require-package 'highlight-symbol)
+(require-package 'ivy)
 (require-package 'js2-mode)
 (require-package 'keyfreq)
 (require-package 'markdown-mode)
@@ -142,8 +140,8 @@
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
 (require-package 'web-mode)
-(require-package 'window-numbering)
 (require-package 'which-key)
+(require-package 'window-numbering)
 (require-package 'yaml-mode)
 
 (provide 'init-elpa)
