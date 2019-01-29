@@ -24,6 +24,7 @@
   (require-init 'init-go)
   (require-init 'init-highlight-symbol)
   (require-init 'init-ivy)
+  (require-init 'init-git)
   (require-init 'init-python)
   (require-init 'init-ui)
   (require-init 'init-web)

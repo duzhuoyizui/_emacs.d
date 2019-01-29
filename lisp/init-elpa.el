@@ -23,6 +23,7 @@
     ivy-mode
     js2-mode
     markdown-mode
+    magit
     rainbow-delimiters
     rjsx-mode
     web-mode
@@ -134,6 +135,7 @@
 (require-package 'ivy)
 (require-package 'js2-mode)
 (require-package 'markdown-mode)
+(require-package 'magit)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
