@@ -24,7 +24,10 @@
   (require-init 'init-go)
   (require-init 'init-highlight-symbol)
   (require-init 'init-ivy)
+<<<<<<< HEAD
   (require-init 'init-git)
+=======
+>>>>>>> 8821655... remove keyfreq
   (require-init 'init-python)
   (require-init 'init-ui)
   (require-init 'init-web)
