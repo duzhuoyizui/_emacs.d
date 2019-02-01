@@ -18,7 +18,7 @@
 
 (electric-pair-mode 1)
 (electric-indent-mode 1)
-(electric-quote-mode 1)
+;;(electric-quote-mode 1)
 
 ;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
