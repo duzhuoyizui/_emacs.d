@@ -22,7 +22,7 @@
     highlight-symbol
     js2-mode
     markdown-mode
-    magit
+    ;;magit
     rainbow-delimiters
     rjsx-mode
     web-mode
@@ -36,19 +36,19 @@
   "Banned packages from melpa-stable")
 
 (setq package-archives
-      '(("localelpa" . "~/.emacs.d/localelpa/")
+      '(
         ;; uncomment below line if you need use GNU ELPA
-        ("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ;;("gnu" . "https://elpa.gnu.org/packages/")
+        ;; ("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
 
         ;; Use either 163 or tsinghua mirror repository when official melpa
         ;; is too slow or shutdown.
 
         ;; ;; {{ Option 1: 163 mirror repository:
-        ;; ;; ("gnu" . "https://mirrors.163.com/elpa/gnu/")
-        ;; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
-        ;; ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
+        ;; ("gnu" . "https://mirrors.163.com/elpa/gnu/")
+        ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+        ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
         ;; ;; }}
 
         ;; ;; {{ Option 2: tsinghua mirror repository
@@ -133,7 +133,7 @@
 (require-package 'highlight-symbol)
 (require-package 'js2-mode)
 (require-package 'markdown-mode)
-(require-package 'magit)
+;;(require-package 'magit)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
