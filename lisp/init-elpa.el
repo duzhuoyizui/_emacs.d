@@ -21,11 +21,9 @@
     go-rename
     highlight-symbol
     ;;helm
-    js2-mode
     markdown-mode
     ;;magit
     rainbow-delimiters
-    rjsx-mode
     web-mode
     which-key
     winum
@@ -132,10 +130,8 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'highlight-symbol)
-(require-package 'js2-mode)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
-(require-package 'rjsx-mode)
 (require-package 'web-mode)
 (require-package 'which-key)
 (require-package 'winum)
