@@ -20,7 +20,7 @@
     go-mode
     go-rename
     highlight-symbol
-    helm
+    ;;helm
     js2-mode
     markdown-mode
     ;;magit
@@ -136,7 +136,6 @@
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
-(require-package 'smart-mode-line)
 (require-package 'web-mode)
 (require-package 'which-key)
 (require-package 'winum)
