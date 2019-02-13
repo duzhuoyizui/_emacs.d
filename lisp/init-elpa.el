@@ -20,14 +20,15 @@
     go-mode
     go-rename
     highlight-symbol
+    helm
     js2-mode
     markdown-mode
     ;;magit
     rainbow-delimiters
     rjsx-mode
     web-mode
-    window-numbering
     which-key
+    winum
     yaml-mode
     )
   "Packages to install from melpa-unstable.")
@@ -133,13 +134,14 @@
 (require-package 'highlight-symbol)
 (require-package 'js2-mode)
 (require-package 'markdown-mode)
-;;(require-package 'magit)
 (require-package 'rainbow-delimiters)
 (require-package 'rjsx-mode)
 (require-package 'smart-mode-line)
 (require-package 'web-mode)
 (require-package 'which-key)
-(require-package 'window-numbering)
+(require-package 'winum)
 (require-package 'yaml-mode)
+;;(require-package 'helm)
+;;(require-package 'magit)
 
 (provide 'init-elpa)
