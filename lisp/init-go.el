@@ -11,5 +11,4 @@
   (local-set-key (kbd "M-.") 'godef-jump))
 (add-hook 'go-mode-hook 'go-mode-setup)
 
-
 (provide 'init-go)

@@ -24,7 +24,6 @@
   (require-init 'init-go)
   (require-init 'init-highlight-symbol)
   (require-init 'init-helm)
-  (require-init 'init-git) ;; 启动最慢
   (require-init 'init-python)
   (require-init 'init-ui)
   (require-init 'init-web)

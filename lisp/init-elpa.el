@@ -19,10 +19,9 @@
     go-guru
     go-mode
     go-rename
+    helm
     highlight-symbol
-    ;;helm
     markdown-mode
-    ;;magit
     rainbow-delimiters
     web-mode
     which-key
@@ -37,17 +36,17 @@
 (setq package-archives
       '(
         ;; uncomment below line if you need use GNU ELPA
-        ;;("gnu" . "https://elpa.gnu.org/packages/")
-        ;; ("melpa" . "https://melpa.org/packages/")
-        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
 
         ;; Use either 163 or tsinghua mirror repository when official melpa
         ;; is too slow or shutdown.
 
         ;; ;; {{ Option 1: 163 mirror repository:
         ;; ("gnu" . "https://mirrors.163.com/elpa/gnu/")
-        ("melpa" . "https://mirrors.163.com/elpa/melpa/")
-        ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
+        ;; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+        ;; ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
         ;; ;; }}
 
         ;; ;; {{ Option 2: tsinghua mirror repository
@@ -129,6 +128,7 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
+(require-package 'helm)
 (require-package 'highlight-symbol)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
@@ -136,7 +136,5 @@
 (require-package 'which-key)
 (require-package 'winum)
 (require-package 'yaml-mode)
-;;(require-package 'helm)
-;;(require-package 'magit)
 
 (provide 'init-elpa)
