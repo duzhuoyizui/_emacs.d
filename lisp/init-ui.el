@@ -28,9 +28,10 @@
 
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "Fira code"
-                    :height 130
+                    :family "Source code pro"
+                    :height 145
                     :weight 'normal
                     :width 'normal)
+(set-face-bold 'bold nil)
 
 (provide 'init-ui)
