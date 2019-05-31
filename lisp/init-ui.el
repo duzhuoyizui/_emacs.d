@@ -35,13 +35,7 @@
                     :height 150
                     :weight 'normal
                     :width 'normal)
-
-;; (set-face-bold 'bold nil)
-;; (mapc
-;;  (lambda (face)
-;;    (set-face-attribute face nil :weight 'normal :underline nil))
-;;  (face-list))
-
+;; disable bold
 (defadvice set-face-attribute
     (before no-bold (face frame &rest args) activate)
   (setq args
