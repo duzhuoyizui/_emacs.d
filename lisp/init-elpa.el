@@ -20,7 +20,7 @@
     go-mode
     go-rename
     highlight-symbol
-    ivy
+    counsel
     markdown-mode
     rainbow-delimiters
     powerline
@@ -130,7 +130,7 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'highlight-symbol)
-(require-package 'ivy)
+(require-package 'counsel)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'web-mode)
