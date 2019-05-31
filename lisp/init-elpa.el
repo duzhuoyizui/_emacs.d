@@ -23,6 +23,7 @@
     ivy
     markdown-mode
     rainbow-delimiters
+    powerline
     web-mode
     which-key
     winum
@@ -136,5 +137,6 @@
 (require-package 'which-key)
 (require-package 'winum)
 (require-package 'yaml-mode)
+(require-package 'powerline)
 
 (provide 'init-elpa)

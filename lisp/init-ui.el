@@ -26,6 +26,9 @@
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+(require 'powerline)
+(powerline-default-theme)
+
 ;; Set default font
 (set-face-attribute 'default nil
                     :family "Source code pro"
