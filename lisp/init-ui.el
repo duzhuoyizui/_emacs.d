@@ -36,10 +36,16 @@
                     :weight 'normal
                     :width 'normal)
 
-(set-face-bold 'bold nil)
-(mapc
- (lambda (face)
-   (set-face-attribute face nil :weight 'normal :underline nil))
- (face-list))
+;; (set-face-bold 'bold nil)
+;; (mapc
+;;  (lambda (face)
+;;    (set-face-attribute face nil :weight 'normal :underline nil))
+;;  (face-list))
+
+(defadvice set-face-attribute
+    (before no-bold (face frame &rest args) activate)
+  (setq args
+        (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
+                args)))
 
 (provide 'init-ui)
