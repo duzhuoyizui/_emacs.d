@@ -31,10 +31,15 @@
 
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "Source code pro"
-                    :height 145
+                    :family "WenQuanYi Zen Hei Mono"
+                    :height 150
                     :weight 'normal
                     :width 'normal)
+
 (set-face-bold 'bold nil)
+(mapc
+ (lambda (face)
+   (set-face-attribute face nil :weight 'normal :underline nil))
+ (face-list))
 
 (provide 'init-ui)
