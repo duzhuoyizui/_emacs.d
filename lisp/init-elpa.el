@@ -19,8 +19,8 @@
     go-guru
     go-mode
     go-rename
-    helm
     highlight-symbol
+    ivy
     markdown-mode
     rainbow-delimiters
     web-mode
@@ -128,8 +128,8 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
-(require-package 'helm)
 (require-package 'highlight-symbol)
+(require-package 'ivy)
 (require-package 'markdown-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'web-mode)
