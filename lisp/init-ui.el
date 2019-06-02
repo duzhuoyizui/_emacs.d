@@ -4,6 +4,7 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (blink-cursor-mode 0)
+(setq visible-bell 1)
 
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
