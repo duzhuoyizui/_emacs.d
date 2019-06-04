@@ -4,7 +4,9 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (blink-cursor-mode 0)
+
 (setq visible-bell 1)
+(setq ring-bell-function 'ignore)
 
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
@@ -33,7 +35,7 @@
 ;; Set default font
 (set-face-attribute 'default nil
                     :family "WenQuanYi Zen Hei Mono"
-                    :height 150
+                    :height 160
                     :weight 'normal
                     :width 'normal)
 ;; disable bold

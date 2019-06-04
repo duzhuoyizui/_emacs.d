@@ -4,6 +4,7 @@
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d-%d) ")
 (setq enable-recursive-minibuffers t)
+(setq ivy-use-selectable-prompt t)
 
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
@@ -13,6 +14,6 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
-(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+(global-set-key (kbd "M-y") 'counsel-mark-ring)
 
 (provide 'init-ivy)
