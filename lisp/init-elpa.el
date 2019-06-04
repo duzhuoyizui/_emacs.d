@@ -11,6 +11,8 @@
     company
     company-go
     company-jedi
+    counsel
+    counsel-projectile
     dockerfile-mode
     emmet-mode
     exec-path-from-shell
@@ -20,10 +22,10 @@
     go-mode
     go-rename
     highlight-symbol
-    counsel
     markdown-mode
-    rainbow-delimiters
     powerline
+    projectile
+    rainbow-delimiters
     web-mode
     which-key
     winum
@@ -121,6 +123,8 @@
 (require-package 'company)
 (require-package 'company-go)
 (require-package 'company-jedi)
+(require-package 'counsel)
+(require-package 'counsel-projectile)
 (require-package 'dockerfile-mode)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
@@ -130,13 +134,13 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'highlight-symbol)
-(require-package 'counsel)
 (require-package 'markdown-mode)
+(require-package 'powerline)
+(require-package 'projectile)
 (require-package 'rainbow-delimiters)
 (require-package 'web-mode)
 (require-package 'which-key)
 (require-package 'winum)
 (require-package 'yaml-mode)
-(require-package 'powerline)
 
 (provide 'init-elpa)
