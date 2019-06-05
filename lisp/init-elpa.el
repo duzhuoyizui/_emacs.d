@@ -22,6 +22,7 @@
     go-mode
     go-rename
     highlight-symbol
+    magit
     markdown-mode
     powerline
     projectile
@@ -134,6 +135,7 @@
 (require-package 'go-mode)
 (require-package 'go-rename)
 (require-package 'highlight-symbol)
+(require-package 'magit)
 (require-package 'markdown-mode)
 (require-package 'powerline)
 (require-package 'projectile)
