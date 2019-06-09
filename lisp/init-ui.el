@@ -5,6 +5,11 @@
 (setq use-dialog-box nil)
 (blink-cursor-mode 0)
 
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
 
