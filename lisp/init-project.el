@@ -27,4 +27,8 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+(require 'avy)
+(global-set-key (kbd "<f9>") 'avy-goto-char)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+
 (provide 'init-project)

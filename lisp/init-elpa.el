@@ -7,7 +7,7 @@
 
 (defvar melpa-include-packages
   '(
-    ace-jump-mode
+    avy
     company
     company-go
     company-jedi
@@ -120,7 +120,7 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-(require-package 'ace-jump-mode)
+(require-package 'avy)
 (require-package 'company)
 (require-package 'company-go)
 (require-package 'company-jedi)
