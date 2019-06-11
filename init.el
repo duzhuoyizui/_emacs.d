@@ -22,7 +22,6 @@
   (require-init 'init-elpa) ;; must to be top
 
   (require-init 'init-aaa)
-  (require-init 'init-ace)
   (require-init 'init-complete)
   (require-init 'init-docker)
   (require-init 'init-env)
