@@ -8,6 +8,7 @@
 (defvar melpa-include-packages
   '(
     avy
+    ace-window
     company
     company-go
     company-jedi
@@ -120,6 +121,7 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
+(require-package 'ace-window)
 (require-package 'avy)
 (require-package 'company)
 (require-package 'company-go)
