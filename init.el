@@ -5,6 +5,13 @@
   (when (version< emacs-version minver)
     (error "This config requires Emacs v%s or higher" minver)))
 
+(defvar best-gc-cons-threshold
+  4000000
+  "Best default gc threshold value.  Should NOT be too big!")
+
+;; don't GC during startup to save time
+(setq gc-cons-threshold most-positive-fixnum)
+
 ;;------------------------------------------------------------------------------
 ;; 基本配置(独立于插件)
 ;;------------------------------------------------------------------------------
@@ -15,7 +22,6 @@
   (require-init 'init-elpa) ;; must to be top
 
   (require-init 'init-aaa)
-  (require-init 'init-ace)
   (require-init 'init-complete)
   (require-init 'init-docker)
   (require-init 'init-env)
@@ -23,7 +29,7 @@
   (require-init 'init-flycheck)
   (require-init 'init-go)
   (require-init 'init-highlight-symbol)
-  (require-init 'init-helm)
+  (require-init 'init-project)
   (require-init 'init-python)
   (require-init 'init-ui)
   (require-init 'init-web)

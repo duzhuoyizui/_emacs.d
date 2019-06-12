@@ -7,10 +7,13 @@
 
 (defvar melpa-include-packages
   '(
-    ace-jump-mode
+    avy
+    ace-window
     company
     company-go
     company-jedi
+    counsel
+    counsel-projectile
     dockerfile-mode
     emmet-mode
     exec-path-from-shell
@@ -19,9 +22,11 @@
     go-guru
     go-mode
     go-rename
-    helm
     highlight-symbol
+    magit
     markdown-mode
+    powerline
+    projectile
     rainbow-delimiters
     web-mode
     which-key
@@ -36,9 +41,9 @@
 (setq package-archives
       '(
         ;; uncomment below line if you need use GNU ELPA
-        ("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ;; ("gnu" . "https://elpa.gnu.org/packages/")
+        ;; ("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
 
         ;; Use either 163 or tsinghua mirror repository when official melpa
         ;; is too slow or shutdown.
@@ -51,9 +56,9 @@
 
         ;; ;; {{ Option 2: tsinghua mirror repository
         ;; ;; @see https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
-        ;; ;; ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ;;("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
         ;; ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ;; ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+        ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
         ;; }}
         ))
 
@@ -116,10 +121,13 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-(require-package 'ace-jump-mode)
+(require-package 'ace-window)
+(require-package 'avy)
 (require-package 'company)
 (require-package 'company-go)
 (require-package 'company-jedi)
+(require-package 'counsel)
+(require-package 'counsel-projectile)
 (require-package 'dockerfile-mode)
 (require-package 'emmet-mode)
 (require-package 'exec-path-from-shell)
@@ -128,9 +136,11 @@
 (require-package 'go-guru)
 (require-package 'go-mode)
 (require-package 'go-rename)
-(require-package 'helm)
 (require-package 'highlight-symbol)
+(require-package 'magit)
 (require-package 'markdown-mode)
+(require-package 'powerline)
+(require-package 'projectile)
 (require-package 'rainbow-delimiters)
 (require-package 'web-mode)
 (require-package 'which-key)

@@ -5,6 +5,14 @@
 (setq use-dialog-box nil)
 (blink-cursor-mode 0)
 
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
+(setq visible-bell 1)
+(setq ring-bell-function 'ignore)
+
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
 
@@ -26,12 +34,20 @@
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+(require 'powerline)
+(powerline-default-theme)
+
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "Source code pro"
-                    :height 145
+                    :family "WenQuanYi Zen Hei Mono"
+                    :height 150
                     :weight 'normal
                     :width 'normal)
-(set-face-bold 'bold nil)
+;; disable bold
+(defadvice set-face-attribute
+    (before no-bold (face frame &rest args) activate)
+  (setq args
+        (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
+                args)))
 
 (provide 'init-ui)
