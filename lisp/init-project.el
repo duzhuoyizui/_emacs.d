@@ -3,8 +3,6 @@
 
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d-%d) ")
-(setq enable-recursive-minibuffers t)
-(setq ivy-use-selectable-prompt t)
 
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
@@ -26,9 +24,10 @@
 
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+(setq magit-completing-read-function 'ivy-completing-read)
 
 (require 'avy)
 (global-set-key (kbd "<f9>") 'avy-goto-char)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-s j") 'avy-goto-line)
 
 (provide 'init-project)
