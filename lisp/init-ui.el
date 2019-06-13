@@ -40,7 +40,7 @@
 ;; Set default font
 (set-face-attribute 'default nil
                     :family "WenQuanYi Zen Hei Mono"
-                    :height 150
+                    :height 160
                     :weight 'normal
                     :width 'normal)
 ;; disable bold
@@ -49,5 +49,10 @@
   (setq args
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
+
+(require 'beacon)
+(beacon-mode 1)
+(setq beacon-push-mark 35)
+(setq beacon-color "#666600")
 
 (provide 'init-ui)

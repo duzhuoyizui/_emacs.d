@@ -9,6 +9,7 @@
   '(
     avy
     ace-window
+    beacon
     company
     company-go
     company-jedi
@@ -123,6 +124,7 @@
 ;;------------------------------------------------------------------------------
 (require-package 'ace-window)
 (require-package 'avy)
+(require-package 'beacon)
 (require-package 'company)
 (require-package 'company-go)
 (require-package 'company-jedi)
