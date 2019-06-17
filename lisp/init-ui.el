@@ -38,11 +38,21 @@
 (powerline-default-theme)
 
 ;; Set default font
-(set-face-attribute 'default nil
-                    :family "Fira code"
-                    :height 170
-                    :weight 'normal
-                    :width 'normal)
+(cond
+ ((string-equal system-type "gnu/linux")
+  (set-face-attribute 'default nil
+                      :family "WenQuanYi Zen Hei Mono"
+                      :height 140
+                      :weight 'normal
+                      :width 'normal))
+ ((string-equal system-type "darwin")
+  (set-face-attribute 'default nil
+                      :family "Fira code"
+                      :height 170
+                      :weight 'normal
+                      :width 'normal))
+)
+
 ;; disable bold
 (defadvice set-face-attribute
     (before no-bold (face frame &rest args) activate)
