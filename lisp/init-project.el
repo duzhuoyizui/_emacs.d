@@ -12,6 +12,8 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
 (require 'projectile)

@@ -39,8 +39,8 @@
 
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "WenQuanYi Zen Hei Mono"
-                    :height 160
+                    :family "M+ 1m"
+                    :height 170
                     :weight 'normal
                     :width 'normal)
 ;; disable bold
