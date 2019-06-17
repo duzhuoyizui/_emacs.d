@@ -39,7 +39,7 @@
 
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "M+ 1m"
+                    :family "Fira code"
                     :height 170
                     :weight 'normal
                     :width 'normal)
