@@ -7,8 +7,8 @@
 
 (defvar melpa-include-packages
   '(
+    use-package                         ; be top
     avy
-    ace-window
     beacon
     company
     company-go
@@ -58,8 +58,8 @@
         ;; ;; {{ Option 2: tsinghua mirror repository
         ;; ;; @see https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
         ;;("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ;; ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ;; ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
         ;; }}
         ))
 
@@ -122,7 +122,7 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-(require-package 'ace-window)
+(require-package 'use-package)          ; be top
 (require-package 'avy)
 (require-package 'beacon)
 (require-package 'company)
