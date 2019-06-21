@@ -47,7 +47,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Fira code"
+                      :family "WenQuanYi Zen Hei Mono"
                       :height 170
                       :weight 'normal
                       :width 'normal))
