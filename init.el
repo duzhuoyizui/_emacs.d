@@ -1,8 +1,8 @@
 ;; -*- coding: utf-8 -*-
 (package-initialize)
 
-;; Produce backtraces when errors occur
-(setq debug-on-error t)
+;; Produce backtraces when errors occur => default close
+;; (setq debug-on-error t)
 
 (setq user-full-name "JerryZhang"
       user-mail-address "m@zhangjiee.com")
