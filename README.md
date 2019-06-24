@@ -1,3 +1,3 @@
-# Emacs 26.1 on macOS
+# Emacs 26 on macOS/Ubuntu
 
-document: <http://wiki.zhangjiee.com/programming/code-env-emacs.html>
+Document: <http://wiki.zhangjiee.com/programming/code-env-emacs.html>
