@@ -1,4 +1,8 @@
-(require 'ace-window)
-(ace-window-display-mode)
-(global-set-key (kbd "M-o") 'ace-window)
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "M-o") 'ace-window)
+  (ace-window-display-mode)
+  )
+
 (provide 'init-window)

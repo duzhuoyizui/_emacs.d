@@ -1,10 +1,18 @@
 ;; -*- coding: utf-8 -*-
 (package-initialize)
 
-(let ((minver "25.1"))
-  (when (version< emacs-version minver)
-    (error "This config requires Emacs v%s or higher" minver)))
+;; Produce backtraces when errors occur
+(setq debug-on-error t)
 
+(setq user-full-name "JerryZhang"
+      user-mail-address "m@zhangjiee.com")
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-benchmarking)
+
+;;----------------------------------------------------------------------------
+;; Adjust garbage collection thresholds during startup, and thereafter
+;;----------------------------------------------------------------------------
 (defvar best-gc-cons-threshold
   4000000
   "Best default gc threshold value.  Should NOT be too big!")
@@ -12,31 +20,33 @@
 ;; don't GC during startup to save time
 (setq gc-cons-threshold most-positive-fixnum)
 
-;;------------------------------------------------------------------------------
-;; 基本配置(独立于插件)
-;;------------------------------------------------------------------------------
-(defmacro require-init (pkg)
-  `(load (file-truename (format "~/.emacs.d/lisp/%s" ,pkg))))
+;;----------------------------------------------------------------------------
+;; Base config
+;;----------------------------------------------------------------------------
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(require 'init-package)                    ; install required package, must be top
+(require 'init-env)                        ; set system path
 
-(let ((file-name-handler-alist nil))
-  (require-init 'init-elpa) ;; must to be top
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+(require 'init-common)
+(require 'init-ui)
+(require 'init-complete)
+(require 'init-docker)
+(require 'init-expand-region)
+(require 'init-flycheck)
+(require 'init-go)
+(require 'init-highlight-symbol)
+(require 'init-project)
+(require 'init-python)
+(require 'init-web)
+(require 'init-which-key)
+(require 'init-window)
+(require 'init-yaml)
 
-  (require-init 'init-aaa)
-  (require-init 'init-complete)
-  (require-init 'init-docker)
-  (require-init 'init-env)
-  (require-init 'init-expand-region)
-  (require-init 'init-flycheck)
-  (require-init 'init-go)
-  (require-init 'init-highlight-symbol)
-  (require-init 'init-project)
-  (require-init 'init-python)
-  (require-init 'init-ui)
-  (require-init 'init-web)
-  (require-init 'init-which-key)
-  (require-init 'init-window)
-  (require-init 'init-yaml)
-  )
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+;;----------------------------------------------------------------------------
+;; Variables configured via the interactive 'customize' interface
+;;----------------------------------------------------------------------------
+(when (file-exists-p custom-file)
+  (load custom-file))

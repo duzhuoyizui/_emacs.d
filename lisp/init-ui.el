@@ -32,10 +32,18 @@
 
 (load-theme 'leuven)
 
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  (rainbow-delimiters-mode 1)
+  )
 
-(require 'powerline)
-(powerline-default-theme)
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme)
+  )
 
 ;; Set default font
 (cond
@@ -60,9 +68,12 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-(require 'beacon)
-(beacon-mode 1)
-(setq beacon-push-mark 35)
-(setq beacon-color "#666600")
+(use-package beacon
+  :ensure t
+  :config
+  (setq beacon-push-mark 35)
+  (setq beacon-color "#666600")
+  (beacon-mode t)
+  )
 
 (provide 'init-ui)

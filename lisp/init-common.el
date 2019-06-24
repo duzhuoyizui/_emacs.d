@@ -1,8 +1,14 @@
-;;------------------------------------------------------------------------------
-;; 使用简化
-;;------------------------------------------------------------------------------
+;;----------------------------------------------------------------------------
+;; Common
+;;----------------------------------------------------------------------------
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
+
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
 (setq auto-save-default nil)
 (setq mouse-yank-at-point t)
 (setq make-backup-files nil)
@@ -20,7 +26,6 @@
 (electric-indent-mode 1)
 ;;(electric-quote-mode 1)
 
-;; 插入当前时间
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
   "Format of date to insert with `insert-current-date-time' func
 See help of `format-time-string' for possible replacements")
@@ -43,7 +48,6 @@ Uses `current-date-time-format' for the formatting the date/time."
   (insert "\n")
   )
 
-;; 显示文件全路径
 (defun show-file-name ()
   "Show the full path file name in the minibuffer."
   (interactive)
@@ -53,4 +57,4 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key [(f4)] 'insert-current-date-time)
 (global-set-key [(f6)] 'show-file-name)
 
-(provide 'init-aaa)
+(provide 'init-common)
