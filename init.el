@@ -31,7 +31,6 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-common)
-(require 'init-ui)
 (require 'init-complete)
 (require 'init-docker)
 (require 'init-expand-region)
@@ -40,10 +39,12 @@
 (require 'init-highlight-symbol)
 (require 'init-project)
 (require 'init-python)
+(require 'init-ui)
 (require 'init-web)
 (require 'init-which-key)
 (require 'init-window)
 (require 'init-yaml)
+(require 'init-markdown)
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
