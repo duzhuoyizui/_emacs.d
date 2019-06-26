@@ -68,12 +68,12 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-(use-package beacon
-  :ensure t
-  :config
-  (setq beacon-push-mark 35)
-  (setq beacon-color "#666600")
-  (beacon-mode t)
-  )
+;; (use-package beacon
+;;   :ensure t
+;;   :config
+;;   (setq beacon-push-mark 35)
+;;   (setq beacon-color "#666600")
+;;   (beacon-mode t)
+;;   )
 
 (provide 'init-ui)
