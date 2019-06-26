@@ -50,7 +50,7 @@
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
                       :family "WenQuanYi Zen Hei Mono"
-                      :height 140
+                      :height 135
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
