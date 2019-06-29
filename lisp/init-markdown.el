@@ -8,7 +8,7 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
-  (setq markdown-command "multimarkdown")
+  (setq markdown-command "markdown")
   (setq markdown-css-paths `(,(expand-file-name "~/.emacs.d/markdown.css")))
   )
 
