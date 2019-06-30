@@ -13,12 +13,12 @@
 ;;----------------------------------------------------------------------------
 ;; Adjust garbage collection thresholds during startup, and thereafter
 ;;----------------------------------------------------------------------------
-(defvar best-gc-cons-threshold
-  4000000
-  "Best default gc threshold value.  Should NOT be too big!")
+;; (defvar best-gc-cons-threshold
+;;   4000000
+;;   "Best default gc threshold value.  Should NOT be too big!")
 
 ;; don't GC during startup to save time
-(setq gc-cons-threshold most-positive-fixnum)
+;; (setq gc-cons-threshold most-positive-fixnum)
 
 ;;----------------------------------------------------------------------------
 ;; Base config

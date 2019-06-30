@@ -1,5 +1,10 @@
-;; company-jedi
-;; Github: https://github.com/syohex/emacs-company-jedi
+;; python
+;; jedi + company-jedi
+;;
+;; How get all python standard library path ?
+;; >>> import sys
+;; >>> sys.path
+
 
 (use-package python
   :init
@@ -26,6 +31,9 @@
             "--sys-path" "/usr/lib/python3.6"
             ;; "--sys-path" expand-file-name "~/.local/lib/python3.6/site-packages"
             "--sys-path" "/home/jerryzhang/.local/lib/python3.6/site-packages"
+            ;; macOS
+            "--sys-path" "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7"
+            "--sys-path" "/usr/local/lib/python3.7/site-packages"
             ))
     )
 )
