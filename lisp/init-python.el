@@ -26,15 +26,14 @@
     (setq jedi:tooltip-method nil)
 
     (setq jedi:server-args
-          '(
-            ;; Ubuntu 18.04
-            "--sys-path" "/usr/lib/python3.6"
-            ;; "--sys-path" expand-file-name "~/.local/lib/python3.6/site-packages"
-            "--sys-path" "/home/jerryzhang/.local/lib/python3.6/site-packages"
-            ;; macOS
-            "--sys-path" "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7"
-            "--sys-path" "/usr/local/lib/python3.7/site-packages"
-            ))
+          (list
+           ;; Ubuntu 18.04
+           "--sys-path" "/usr/lib/python3.6"
+           "--sys-path" (expand-file-name "~/.local/lib/python3.6/site-packages")
+           ;; macOS
+           "--sys-path" "/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7"
+           "--sys-path" "/usr/local/lib/python3.7/site-packages"
+           ))
     )
 )
 
