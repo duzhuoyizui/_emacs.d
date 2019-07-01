@@ -27,7 +27,7 @@
 
     (setq jedi:server-args
           (list
-           ;; Ubuntu 18.04
+           ;; Ubuntu 18.10
            "--sys-path" "/usr/lib/python3.6"
            "--sys-path" (expand-file-name "~/.local/lib/python3.6/site-packages")
            ;; macOS
