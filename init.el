@@ -37,6 +37,8 @@
 (require 'init-flycheck)
 (require 'init-go)
 (require 'init-highlight-symbol)
+(require 'init-markdown)
+(require 'init-nginx)
 (require 'init-project)
 (require 'init-python)
 (require 'init-ui)
@@ -44,7 +46,6 @@
 (require 'init-which-key)
 (require 'init-window)
 (require 'init-yaml)
-(require 'init-markdown)
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
