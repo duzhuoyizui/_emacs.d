@@ -47,7 +47,7 @@
 (use-package avy
   :ensure t
   :defer t
-  :bind (("<f9>" . avy-goto-char)
+  :bind (("<f9>" . avy-goto-word-1)
          ("M-s j" . avy-goto-line))
   :config
   (setq avy-background t))
