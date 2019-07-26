@@ -68,6 +68,15 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
+  (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+  )
+
 ;; (use-package beacon
 ;;   :ensure t
 ;;   :config
