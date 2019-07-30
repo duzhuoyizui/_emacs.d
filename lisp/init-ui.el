@@ -87,4 +87,10 @@
 ;;   (beacon-mode t)
 ;;   )
 
+(use-package wttrin
+  :ensure t
+  :config
+  (setq wttrin-default-cities '("Hangzhou" "Hefei"))
+  (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))
+  )
 (provide 'init-ui)
