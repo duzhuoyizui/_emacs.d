@@ -32,6 +32,12 @@
 
 (load-theme 'leuven)
 
+;; (use-package zenburn-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'zenburn t)
+;;   )
+
 (use-package rainbow-delimiters
   :ensure t
   :config
@@ -93,4 +99,5 @@
   (setq wttrin-default-cities '("Hangzhou" "Hefei"))
   (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))
   )
+
 (provide 'init-ui)
