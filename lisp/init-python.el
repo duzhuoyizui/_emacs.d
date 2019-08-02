@@ -7,6 +7,8 @@
 
 
 (use-package python
+  :ensure t
+  :defer 5
   :init
   (set-variable 'py-indent-offset 4)
   (set-variable 'python-indent-guess-indent-offset nil)

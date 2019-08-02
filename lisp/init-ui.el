@@ -76,6 +76,7 @@
 
 (use-package multiple-cursors
   :ensure t
+  :defer t
   :config
   (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
   (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
@@ -95,6 +96,7 @@
 
 (use-package wttrin
   :ensure t
+  :defer t
   :config
   (setq wttrin-default-cities '("Hangzhou" "Hefei"))
   (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))

@@ -1,5 +1,6 @@
 (use-package flycheck
   :ensure t
+  :defer 5
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 

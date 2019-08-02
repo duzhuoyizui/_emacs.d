@@ -10,7 +10,6 @@
 
 (use-package swiper
   :ensure t
-  :defer t
   :config
   (global-set-key "\C-s" 'swiper))
 
@@ -46,7 +45,6 @@
 
 (use-package avy
   :ensure t
-  :defer t
   :bind (("M-s ;" . avy-goto-word-1)
          ("M-s j" . avy-goto-line))
   :config
