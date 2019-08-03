@@ -76,7 +76,7 @@
 
 (use-package multiple-cursors
   :ensure t
-  :defer t
+  :defer 2
   :config
   (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
   (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
@@ -94,12 +94,12 @@
 ;;   (beacon-mode t)
 ;;   )
 
-(use-package wttrin
-  :ensure t
-  :defer t
-  :config
-  (setq wttrin-default-cities '("Hangzhou" "Hefei"))
-  (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))
-  )
+;; (use-package wttrin
+;;   :ensure t
+;;   :defer t
+;;   :config
+;;   (setq wttrin-default-cities '("Hangzhou" "Hefei"))
+;;   (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))
+;;   )
 
 (provide 'init-ui)
