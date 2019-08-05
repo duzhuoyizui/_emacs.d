@@ -23,19 +23,6 @@
   ;;       '(("jsx" . "\\.js[x]?\\'")))
   )
 
-(use-package emmet-mode
-  :ensure t
-  :defer 5
-  :init
-  (add-hook 'web-mode-hook 'emmet-mode)
-  (add-hook 'css-mode-hook 'emmet-mode)
-  (add-hook 'html-mode-hook 'emmet-mode)
-  :config
-  (global-set-key (kbd "M-e") nil)
-  (global-set-key (kbd "M-e p") 'emmet-prev-edit-point)
-  (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
-  )
-
 ;; for LESS
 (use-package css-mode
   :ensure t
@@ -48,7 +35,7 @@
 
 (use-package rjsx-mode
   :ensure t
-  :defer 5
+  :defer 2
   :init
   (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
   (add-hook 'rjsx-mode-hook
@@ -56,5 +43,24 @@
               (setq indent-tabs-mode nil) ;;Use space instead of tab
               (setq js-indent-level 2) ;;space width is 2 (default is 4)
               (setq js2-strict-missing-semi-warning nil))) ;;disable the semicolon warning
+  (with-eval-after-load 'rjsx-mode
+    (define-key rjsx-mode-map "<" nil)
+    (define-key rjsx-mode-map (kbd "C-d") nil)
+    (define-key rjsx-mode-map ">" nil))
   )
+
+(use-package emmet-mode
+  :ensure t
+  :defer 2
+  :init
+  (add-hook 'web-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook 'emmet-mode)
+  (add-hook 'html-mode-hook 'emmet-mode)
+  (add-hook 'rjsx-mode-hook 'emmet-mode)
+  :config
+  ;; (global-set-key (kbd "M-e") nil)
+  ;; (global-set-key (kbd "M-e p") 'emmet-prev-edit-point)
+  ;; (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
+  )
+
 (provide 'init-web)
