@@ -2,7 +2,7 @@
 
 (use-package web-mode
   :ensure t
-  :defer 5
+  :defer 2
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
@@ -26,7 +26,7 @@
 ;; for LESS
 (use-package css-mode
   :ensure t
-  :defer 5
+  :defer 2
   :init
   (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
   :config
