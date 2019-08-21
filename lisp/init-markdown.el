@@ -2,7 +2,7 @@
 
 (use-package markdown-mode
   :ensure t
-  :defer 5
+  :defer 2
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
