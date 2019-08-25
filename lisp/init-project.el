@@ -50,4 +50,16 @@
   :config
   (setq avy-background t))
 
+(use-package git-gutter+
+  :ensure t
+  :defer 5
+  :init
+  (global-set-key (kbd "C-x g") 'git-gutter+-mode)
+  :config (progn
+            (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
+            (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
+            (define-key git-gutter+-mode-map (kbd "C-x v =") 'git-gutter+-show-hunk)
+            (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks))
+  :diminish (git-gutter+-mode . "gg"))
+
 (provide 'init-project)
