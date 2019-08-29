@@ -6,6 +6,8 @@
   :hook
   (python-mode . lsp)
   ;; (rjsx-mode . lsp) ;; shit, too slow !!
+  (go-mode . lsp)
+
   :commands lsp
   :config
 
@@ -16,6 +18,13 @@
 
   (use-package lsp-ui
     :ensure t
+    :bind
+    (:map lsp-mode-map
+          ("C-c m"   . lsp-ui-imenu)
+          ("M-." . lsp-ui-peek-find-definitions)
+          ("C-c i"   . lsp-ui-peek-find-implementation)
+          )
+
     :config
     (setq lsp-ui-doc-enable nil
           lsp-ui-sideline-show-diagnostics nil

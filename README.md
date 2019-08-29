@@ -16,3 +16,13 @@ Document: <http://wiki.zhangjiee.com/programming/code-env-emacs.html>
 	npm install -g vscode-css-languageserver-bin
 
 似乎不太需要，CSS 本来就很简单。
+
+## JS
+
+	npm i -g typescript-language-server; npm i -g typescript
+
+太卡了，不能用。
+
+## Go
+
+    go get golang.org/x/tools/gopls

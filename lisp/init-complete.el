@@ -16,13 +16,13 @@
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
 
   ;; for go
-  (use-package company-go
-    :ensure t
-    :config
-    (add-hook 'go-mode-hook (lambda ()
-                            (set (make-local-variable 'company-backends) '(company-go))
-                            (company-mode)))
-    )
+  ;; (use-package company-go
+  ;;   :ensure t
+  ;;   :config
+  ;;   (add-hook 'go-mode-hook (lambda ()
+  ;;                           (set (make-local-variable 'company-backends) '(company-go))
+  ;;                           (company-mode)))
+  ;;   )
   )
 
 (use-package yasnippet
