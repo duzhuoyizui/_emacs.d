@@ -52,7 +52,7 @@
 
 (use-package git-gutter+
   :ensure t
-  :defer 5
+  :defer
   :init
   (global-set-key (kbd "C-x g") 'git-gutter+-mode)
   :config (progn
