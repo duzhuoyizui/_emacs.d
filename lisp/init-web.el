@@ -43,10 +43,12 @@
               (setq indent-tabs-mode nil) ;;Use space instead of tab
               (setq js-indent-level 2) ;;space width is 2 (default is 4)
               (setq js2-strict-missing-semi-warning nil))) ;;disable the semicolon warning
-  ;; (with-eval-after-load 'rjsx-mode
-  ;;   (define-key rjsx-mode-map "<" nil)
-  ;;   (define-key rjsx-mode-map (kbd "C-d") nil)
-  ;;   (define-key rjsx-mode-map ">" nil))
+  (with-eval-after-load 'rjsx-mode
+    ;; (define-key rjsx-mode-map "<" nil)
+    ;; (define-key rjsx-mode-map (kbd "C-d") nil)
+    ;; (define-key rjsx-mode-map ">" nil)
+    (define-key rjsx-mode-map (kbd "M-.") nil)
+    )
   )
 
 (use-package emmet-mode

@@ -10,3 +10,9 @@ Document: <http://wiki.zhangjiee.com/programming/code-env-emacs.html>
 存在问题：
 
 - 无法使用 flycheck 无法选择 `flake8`，[issue](https://github.com/emacs-lsp/lsp-mode/issues/746)
+
+## CSS/LessCSS/SASS/SCSS
+
+	npm install -g vscode-css-languageserver-bin
+
+似乎不太需要，CSS 本来就很简单。
