@@ -40,6 +40,7 @@
 (require 'init-lsp)
 (require 'init-markdown)
 (require 'init-nginx)
+(require 'init-org)
 (require 'init-project)
 (require 'init-python)
 (require 'init-ui)
