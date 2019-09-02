@@ -32,6 +32,11 @@
           lsp-ui-sideline-show-code-actions nil
           lsp-ui-sideline-show-hover nil
           )
+
+    ;; You may remap xref-find-{definitions,references} (bound to `M-.` `M-?` by default):
+    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     )
 
