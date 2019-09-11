@@ -5,7 +5,6 @@
   (define-key global-map "\C-cl" 'org-store-link)
   (define-key global-map "\C-ca" 'org-agenda)
   (setq org-log-done t)
-
   ;; GTD setting
   (setq org-todo-keywords
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
@@ -33,12 +32,15 @@
 
 ;; blog
 (require 'ox-publish)
+(setq org-html-validation-link nil)
+
 (setq org-publish-project-alist
       '(
         ;; notes component
         ("site-orgs"
          :base-directory "~/site/org"
          :base-extension "org"
+         :html-link-home "index.html"
          :publishing-directory "~/site-html/"
          :recursive t
          :publishing-function org-html-publish-to-html
