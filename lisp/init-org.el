@@ -46,6 +46,9 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 5
          :auto-preamble t
+         :auto-sitemap t
+         :sitemap-filename "sitemap.org"
+         :sitemap-title "Sitemap"
          )
         ;; static component
         ("site-static"
