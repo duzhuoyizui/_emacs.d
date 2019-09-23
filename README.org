@@ -1,0 +1,37 @@
+* Emacs 26 on macOS
+
+
+My Wiki: http://www.zhangjiee.com/wiki/programming/code-env/emacs.html
+
+** Python
+
+#+BEGIN_SRC
+pip install 'python-language-server[all]'
+#+END_SRC
+
+存在问题：
+
+- 无法使用 flycheck 无法选择 `flake8`，[[https://github.com/emacs-lsp/lsp-mode/issues/746][issue]]
+
+** CSS/LessCSS/SASS/SCSS
+
+#+BEGIN_SRC
+npm install -g vscode-css-languageserver-bin
+#+END_SRC
+
+似乎不太需要，CSS 本来就很简单。
+
+** JS
+
+#+BEGIN_SRC
+npm i -g typescript-language-server; npm i -g typescript
+#+END_SRC
+
+
+/太卡了，不能用。/
+
+** Go
+
+#+BEGIN_SRC
+go get golang.org/x/tools/gopls
+#+END_SRC
