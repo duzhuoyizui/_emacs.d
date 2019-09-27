@@ -18,6 +18,7 @@
 
   (use-package lsp-ui
     :ensure t
+    :commands lsp-ui-mode
     :bind
     (:map lsp-mode-map
           ("C-c m"   . lsp-ui-imenu)
@@ -45,6 +46,5 @@
     :commands company-lsp
     )
   )
-
 
 (provide 'init-lsp)

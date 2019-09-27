@@ -32,6 +32,7 @@ npm i -g typescript-language-server; npm i -g typescript
 
 ** Go
 
-#+BEGIN_SRC
-go get golang.org/x/tools/gopls
+#+BEGIN_SRC shell
+GO111MODULE=on go get golang.org/x/tools/gopls@latest
+go get -u -v github.com/rogpeppe/godef
 #+END_SRC
