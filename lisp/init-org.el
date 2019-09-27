@@ -1,3 +1,8 @@
+(use-package htmlize
+  :ensure t
+  :defer 2
+  )
+
 (use-package org
   :ensure t
   :defer 2
