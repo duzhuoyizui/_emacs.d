@@ -1,6 +1,6 @@
 (use-package go-mode
   :ensure t
-  :defer 2
+  :defer 0.5
   :config
   (defun go-mode-setup ()
     (setq gofmt-command "goimports")
@@ -9,7 +9,6 @@
     (add-hook 'before-save-hook 'gofmt-before-save)
     (local-set-key (kbd "M-.") 'godef-jump))
   (add-hook 'go-mode-hook 'go-mode-setup)
-
   (use-package go-guru
     :ensure t
     :config

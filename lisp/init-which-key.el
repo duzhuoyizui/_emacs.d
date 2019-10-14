@@ -1,6 +1,6 @@
 (use-package which-key
   :ensure t
-  :init
+  :defer 1
   :config
   ;; Allow C-h to trigger which-key before it is done automatically
   (setq which-key-show-early-on-C-h t)

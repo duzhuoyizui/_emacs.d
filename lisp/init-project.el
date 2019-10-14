@@ -26,6 +26,7 @@
 
 (use-package projectile
   :ensure t
+  :defer 0.2
   :config
   (setq projectile-enable-caching t)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -34,6 +35,7 @@
 
 (use-package counsel-projectile
   :ensure t
+  :defer 0.2
   :config
   (counsel-projectile-mode 1)
   )
@@ -45,6 +47,7 @@
 
 (use-package avy
   :ensure t
+  :defer 0.2
   :bind (("M-s ;" . avy-goto-word-1)
          ("M-s j" . avy-goto-line))
   :config
@@ -52,7 +55,7 @@
 
 (use-package git-gutter+
   :ensure t
-  :defer
+  :defer t
   :init
   (global-set-key (kbd "C-x g") 'git-gutter+-mode)
   :config (progn

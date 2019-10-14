@@ -1,6 +1,6 @@
 (use-package yaml-mode
   :ensure t
-  :defer 5
+  :defer t
   :init
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   :config

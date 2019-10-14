@@ -1,11 +1,3 @@
-;; python
-;; jedi + company-jedi
-;;
-;; How get all python standard library path ?
-;; >>> import sys
-;; >>> sys.path
-
-
 (use-package python
   :ensure t
   :init
@@ -35,6 +27,5 @@
   ;;          ))
   ;;   )
 )
-
 
 (provide 'init-python)

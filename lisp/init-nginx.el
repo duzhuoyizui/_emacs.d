@@ -1,6 +1,6 @@
 (use-package nginx-mode
   :ensure t
-  :defer 5
+  :defer t
   )
 
 (provide 'init-nginx)

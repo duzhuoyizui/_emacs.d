@@ -1,6 +1,6 @@
 (use-package flycheck
   :ensure t
-  :defer
+  :defer 0.2
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-disabled-checkers
@@ -17,7 +17,7 @@
   (setq flycheck-python-flake8-executable "flake8")
   (global-flycheck-mode)
 
-  :config
+  ;;:config
   ;;(flycheck-add-mode 'javascript-eslint 'web-mode)
   )
 

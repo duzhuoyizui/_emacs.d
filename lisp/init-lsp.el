@@ -3,6 +3,7 @@
 
 (use-package lsp-mode
   :ensure t
+  :defer 0.2
   :hook
   (python-mode . lsp)
   ;; (rjsx-mode . lsp) ;; shit, too slow !!
@@ -39,11 +40,6 @@
     (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-    )
-
-  (use-package company-lsp
-    :ensure t
-    :commands company-lsp
     )
   )
 

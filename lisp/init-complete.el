@@ -1,6 +1,6 @@
 (use-package company
   :ensure t
-  :defer 2
+  :defer 0.5
   :init (global-company-mode)
   :config
   ;; markdown-mode, eshell-mode ignore complete
@@ -23,10 +23,16 @@
   ;;                           (set (make-local-variable 'company-backends) '(company-go))
   ;;                           (company-mode)))
   ;;   )
+
+  (use-package company-lsp
+    :ensure t
+    :commands company-lsp
+    )
   )
 
 (use-package yasnippet
   :ensure t
+  :defer t
   :config
   (use-package  yasnippet-snippets
     :ensure t
