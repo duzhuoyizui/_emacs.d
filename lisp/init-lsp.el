@@ -16,6 +16,7 @@
 
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq lsp-prefer-flymake nil)
+  (setq lsp-enable-snippet nil)
 
   (use-package lsp-ui
     :ensure t

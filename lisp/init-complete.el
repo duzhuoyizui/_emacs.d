@@ -30,14 +30,14 @@
     )
   )
 
-(use-package yasnippet
-  :ensure t
-  :defer t
-  :config
-  (use-package  yasnippet-snippets
-    :ensure t
-    )
-  (yas-global-mode 1)
-  )
+;; (use-package yasnippet
+;;   :ensure t
+;;   :defer 0.2
+;;   :config
+;;   (use-package  yasnippet-snippets
+;;     :ensure t
+;;     )
+;;   (yas-global-mode 1)
+;;   )
 
 (provide 'init-complete)
