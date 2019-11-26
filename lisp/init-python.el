@@ -1,5 +1,6 @@
 (use-package python
   :ensure t
+  :defer t
   :init
   (set-variable 'py-indent-offset 4)
   (set-variable 'python-indent-guess-indent-offset nil)

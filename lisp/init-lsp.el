@@ -6,7 +6,7 @@
   :hook
   (emacs-lisp-mode . lsp)
   (python-mode . lsp)
-  (rjsx-mode . lsp)
+  ;; (rjsx-mode . lsp) ; so slow
   (go-mode . lsp)
 
   :commands lsp

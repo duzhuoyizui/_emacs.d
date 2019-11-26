@@ -1,6 +1,6 @@
 (use-package go-mode
   :ensure t
-  :defer 0.5
+  :defer t
   :config
   (defun go-mode-setup ()
     (setq gofmt-command "goimports")

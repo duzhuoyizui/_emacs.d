@@ -2,6 +2,7 @@
 
 (use-package web-mode
   :ensure t
+  :defer t
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
@@ -25,7 +26,7 @@
 ;; for LESS
 (use-package css-mode
   :ensure t
-  :defer 0.5
+  :defer t
   :init
   (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
   :config
@@ -34,7 +35,7 @@
 
 (use-package rjsx-mode
   :ensure t
-  :defer 0.5
+  :defer t
   :init
   (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
   (add-hook 'rjsx-mode-hook
