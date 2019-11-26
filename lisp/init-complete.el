@@ -1,6 +1,6 @@
 (use-package company
   :ensure t
-  :defer 0.5
+  :defer 0.2
   :init (global-company-mode)
   :config
   ;; markdown-mode, eshell-mode ignore complete
@@ -15,29 +15,10 @@
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
 
-  ;; for go
-  ;; (use-package company-go
-  ;;   :ensure t
-  ;;   :config
-  ;;   (add-hook 'go-mode-hook (lambda ()
-  ;;                           (set (make-local-variable 'company-backends) '(company-go))
-  ;;                           (company-mode)))
-  ;;   )
-
   (use-package company-lsp
     :ensure t
     :commands company-lsp
     )
   )
-
-;; (use-package yasnippet
-;;   :ensure t
-;;   :defer 0.2
-;;   :config
-;;   (use-package  yasnippet-snippets
-;;     :ensure t
-;;     )
-;;   (yas-global-mode 1)
-;;   )
 
 (provide 'init-complete)

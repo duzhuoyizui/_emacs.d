@@ -1,14 +1,12 @@
 (use-package htmlize
   :ensure t
-  :defer 0.5
+  :defer t
   )
 
 (use-package org
   :ensure t
-  :defer 0.5
+  :defer t
   :config
-  (define-key global-map "\C-cl" 'org-store-link)
-  (define-key global-map "\C-ca" 'org-agenda)
 
   (setq org-log-done t)
   ;; GTD setting
@@ -40,7 +38,7 @@
 
 ;; blog
 (use-package ox-publish
-  :defer 1
+  :defer t
   :config
   (setq org-html-validation-link nil)
 

@@ -3,43 +3,37 @@
 
 (use-package lsp-mode
   :ensure t
-  :defer 0.2
   :hook
+  (emacs-lisp-mode . lsp)
   (python-mode . lsp)
-  ;; (rjsx-mode . lsp) ;; shit, too slow !!
+  (rjsx-mode . lsp)
   (go-mode . lsp)
 
   :commands lsp
   :config
-
-  (global-set-key (kbd "M-.") 'lsp-goto-type-definition)
-
   ;; prefer using lsp-ui (flycheck) over flymake.
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-enable-snippet nil)
+  (setq
+   lsp-prefer-flymake nil
+   lsp-enable-snippet nil
+   lsp-print-performance nil
+   lsp-log-io nil
+   )
 
   (use-package lsp-ui
     :ensure t
     :commands lsp-ui-mode
     :bind
     (:map lsp-mode-map
-          ("C-c m"   . lsp-ui-imenu)
           ("M-." . lsp-ui-peek-find-definitions)
-          ("C-c i"   . lsp-ui-peek-find-implementation)
+          ("M-?" . lsp-ui-peek-find-references)
+          ("C-c f" . lsp-format-buffer)
           )
-
     :config
     (setq lsp-ui-doc-enable nil
           lsp-ui-sideline-show-diagnostics nil
           lsp-ui-sideline-show-symbol nil
           lsp-ui-sideline-show-code-actions nil
-          lsp-ui-sideline-show-hover nil
-          )
-
-    ;; You may remap xref-find-{definitions,references} (bound to `M-.` `M-?` by default):
-    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
-
+          lsp-ui-sideline-show-hover nil)
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     )
   )

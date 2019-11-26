@@ -32,12 +32,6 @@
 
 (load-theme 'leuven)
 
-;; (use-package zenburn-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'zenburn t)
-;;   )
-
 (use-package rainbow-delimiters
   :ensure t
   :defer 1
@@ -77,7 +71,6 @@
 
 (use-package multiple-cursors
   :ensure t
-  :defer 1
   :config
   (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
   (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
@@ -85,48 +78,6 @@
   (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
   (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
   (global-set-key (kbd "C-c e") 'mc/edit-ends-of-lines)
-  )
-
-;; (use-package beacon
-;;   :ensure t
-;;   :config
-;;   (setq beacon-push-mark 35)
-;;   (setq beacon-color "#666600")
-;;   (beacon-mode t)
-;;   )
-
-;; (use-package wttrin
-;;   :ensure t
-;;   :defer t
-;;   :config
-;;   (setq wttrin-default-cities '("Hangzhou" "Hefei"))
-;;   (setq wttrin-default-accept-language '("Accept-Language" . "zh-TW"))
-;;   )
-
-;; M-x all-the-icons-install-fonts to some dir
-(use-package all-the-icons
-  :ensure t
-  :defer 0.5
-  :config
-  (setq inhibit-compacting-font-caches t)
-  ;; debug: open this and mark it `eval-buffer`
-  ;; (all-the-icons-insert-icons-for 'alltheicon)   ;; Prints all the icons for `alltheicon' font set
-  ;; (all-the-icons-insert-icons-for 'octicon 10)   ;; Prints all the icons for the `octicon' family
-  ;; (all-the-icons-insert-icons-for 'faicon 1 0.5) ;; Prints all the icons for the `faicon' family
-  )
-
-(use-package all-the-icons-ivy
-  :ensure t
-  :after (all-the-icons ivy)
-  :custom (all-the-icons-ivy-buffer-commands '(ivy-switch-buffer-other-window ivy-switch-buffer))
-  :config
-  (setq all-the-icons-ivy-buffer-commands '())
-  (all-the-icons-ivy-setup))
-
-(use-package all-the-icons-dired
-  :ensure t
-  :config
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
   )
 
 (provide 'init-ui)

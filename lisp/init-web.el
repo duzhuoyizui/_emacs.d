@@ -2,7 +2,6 @@
 
 (use-package web-mode
   :ensure t
-  :defer 0.5
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
@@ -49,20 +48,6 @@
     ;; (define-key rjsx-mode-map ">" nil)
     (define-key rjsx-mode-map (kbd "M-.") nil)
     )
-  )
-
-(use-package emmet-mode
-  :ensure t
-  :defer 2
-  :init
-  (add-hook 'web-mode-hook 'emmet-mode)
-  (add-hook 'css-mode-hook 'emmet-mode)
-  (add-hook 'html-mode-hook 'emmet-mode)
-  (add-hook 'rjsx-mode-hook 'emmet-mode)
-  :config
-  ;; (global-set-key (kbd "M-e") nil)
-  ;; (global-set-key (kbd "M-e p") 'emmet-prev-edit-point)
-  ;; (global-set-key (kbd "M-e n") 'emmet-next-edit-point)
   )
 
 (provide 'init-web)

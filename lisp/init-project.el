@@ -26,24 +26,17 @@
 
 (use-package projectile
   :ensure t
-  :defer 0.2
   :config
   (setq projectile-enable-caching t)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
+  :init
+  (use-package counsel-projectile
+    :ensure t
+    :config
+    (counsel-projectile-mode 1)
+    )
   )
-
-(use-package counsel-projectile
-  :ensure t
-  :defer 0.2
-  :config
-  (counsel-projectile-mode 1)
-  )
-
-;; (use-package magit
-;;   :ensure t
-;;   :defer t
-;;   :bind (("C-x g" . magit-status)))
 
 (use-package avy
   :ensure t
@@ -52,7 +45,8 @@
          ("M-s j" . avy-goto-line)
          ("M-s k" . avy-copy-line))
   :config
-  (setq avy-background t))
+  (setq avy-background t)
+  )
 
 (use-package git-gutter+
   :ensure t
