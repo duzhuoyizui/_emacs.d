@@ -40,7 +40,6 @@
 
 (use-package avy
   :ensure t
-  :defer 0.2
   :bind (("M-s i" . avy-goto-word-1)
          ("M-s j" . avy-goto-line)
          ("M-s k" . avy-copy-line))

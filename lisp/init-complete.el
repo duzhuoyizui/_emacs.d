@@ -1,6 +1,5 @@
 (use-package company
   :ensure t
-  :defer 0.2
   :init (global-company-mode)
   :config
   ;; markdown-mode, eshell-mode ignore complete

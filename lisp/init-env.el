@@ -3,7 +3,7 @@
 
 (use-package exec-path-from-shell
   :ensure t
-  :defer 1
+  :defer t
   :config
   (when (and window-system
              (memq window-system '(mac ns)))

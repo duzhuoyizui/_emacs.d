@@ -2,7 +2,6 @@
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
   :ensure t
-  :defer 0.2
   :config
   (global-set-key (kbd "M-m") 'er/expand-region)
   (global-set-key (kbd "M-s s") 'er/mark-symbol)

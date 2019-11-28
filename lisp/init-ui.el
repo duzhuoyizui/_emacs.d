@@ -34,7 +34,6 @@
 
 (use-package rainbow-delimiters
   :ensure t
-  :defer 1
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   (rainbow-delimiters-mode 1)
@@ -71,6 +70,7 @@
 
 (use-package multiple-cursors
   :ensure t
+  :defer t
   :config
   (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
   (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
