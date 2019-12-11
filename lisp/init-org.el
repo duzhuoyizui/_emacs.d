@@ -40,6 +40,13 @@
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     (org-bullets-mode 1)
     )
+
+  (use-package ox-reveal
+    :ensure t
+    :config
+    (global-set-key [(f12)] 'org-reveal-export-to-html-and-browse)
+    (reveal-mode 1)
+    )
   )
 
 ;; blog
