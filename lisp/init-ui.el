@@ -45,6 +45,15 @@
   (powerline-default-theme)
   )
 
+(use-package beacon
+  :ensure t
+  :config
+  (setq beacon-blink-delay '0.2)
+  (setq beacon-blink-when-focused 't)
+  (setq beacon-dont-blink-commands 'nil)
+  (setq beacon-color "#40a9ff")
+  (beacon-mode 1)
+  )
 ;; Set default font
 (cond
  ((string-equal system-type "gnu/linux")
