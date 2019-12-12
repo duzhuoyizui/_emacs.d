@@ -1,4 +1,3 @@
-;; 关闭启动消息
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 (setq use-file-dialog nil)
@@ -16,13 +15,11 @@
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
 
-;; NO tool bar
+;; NO tool, scroll, menu bar
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
-;; no scroll bar
 (if (fboundp 'set-scroll-bar-mode)
     (set-scroll-bar-mode nil))
-;; no menu bar
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
 
@@ -54,6 +51,16 @@
   (setq beacon-color "#40a9ff")
   (beacon-mode 1)
   )
+
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'ivy-mode)
+  (diminish 'flycheck-mode)
+  (diminish 'company-mode)
+  (diminish 'eldoc-mode)
+  )
+
 ;; Set default font
 (cond
  ((string-equal system-type "gnu/linux")
