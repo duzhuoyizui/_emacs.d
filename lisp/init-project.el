@@ -28,6 +28,8 @@
   :ensure t
   :config
   (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'native) ; 默认是 alien 但是会使 .projectile 文件变无效（不知道是不是 bug）
+  (setq projectile-require-project-root nil) ; 强制需要 .projectile 文件
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
   :init
