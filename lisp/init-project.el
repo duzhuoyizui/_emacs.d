@@ -1,11 +1,19 @@
 (use-package ivy
   :ensure t
   :config
-  (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
   (setq enable-recursive-minibuffers t)
   (global-set-key (kbd "C-c C-r") 'ivy-resume)
+  (ivy-mode 1)
+  )
+
+(use-package ivy-rich
+  :ensure t
+  :config
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  (setq ivy-rich-path-style 'abbrev)
+  (ivy-rich-mode 1)
   )
 
 (use-package swiper
