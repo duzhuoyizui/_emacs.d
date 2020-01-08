@@ -31,22 +31,16 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-common)
-(require 'init-complete)
 (require 'init-docker)
-(require 'init-expand-region)
 (require 'init-flycheck)
 (require 'init-go)
-(require 'init-highlight-symbol)
 (require 'init-lsp)
 (require 'init-markdown)
 (require 'init-nginx)
 (require 'init-org)
-(require 'init-project)
 (require 'init-python)
 (require 'init-ui)
 (require 'init-web)
-(require 'init-which-key)
-(require 'init-window)
 (require 'init-yaml)
 
 ;;----------------------------------------------------------------------------

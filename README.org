@@ -27,7 +27,6 @@ npm install -g vscode-css-languageserver-bin
 npm i -g typescript-language-server; npm i -g typescript
 #+END_SRC
 
-
 /太卡了，不能用。/
 
 ** Go

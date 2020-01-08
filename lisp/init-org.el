@@ -9,6 +9,8 @@
   :config
 
   (setq org-log-done t)
+  (setq org-startup-with-inline-images t)
+
   ;; GTD setting
   (setq org-todo-keywords
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
@@ -34,6 +36,7 @@
      (go . t)
      )
    )
+
   (use-package org-bullets
     :ensure t
     :config
@@ -41,13 +44,13 @@
     (org-bullets-mode 1)
     )
 
-  (use-package ox-reveal
-    :ensure t
-    :config
-    (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
-    (global-set-key [(f12)] 'org-reveal-export-to-html-and-browse)
-    (reveal-mode 1)
-    )
+  ;; (use-package ox-reveal
+  ;;   :ensure t
+  ;;   :config
+  ;;   (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+  ;;   (global-set-key [(f12)] 'org-reveal-export-to-html-and-browse)
+  ;;   (reveal-mode 1)
+  ;;   )
   )
 
 ;; blog

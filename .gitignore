@@ -20,3 +20,4 @@ transient
 games
 .mc-lists.el
 .lsp-session-v1
+.projectile

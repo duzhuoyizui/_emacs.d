@@ -1,33 +1,34 @@
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
-(setq use-file-dialog nil)
-(setq use-dialog-box nil)
-(blink-cursor-mode 0)
-
+;;----------------------------------------------------------------------------
+;; UI: 编辑器显示
+;;----------------------------------------------------------------------------
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
-
-(setq visible-bell 1)
+(setq inhibit-startup-echo-area-message t)
+(setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
-
-;; Show a marker in the left fringe for lines not in the buffer
-(setq indicate-empty-lines t)
-
-;; NO tool, scroll, menu bar
-(if (fboundp 'tool-bar-mode)
-    (tool-bar-mode -1))
-(if (fboundp 'set-scroll-bar-mode)
-    (set-scroll-bar-mode nil))
-(if (fboundp 'menu-bar-mode)
-    (menu-bar-mode -1))
-
+(setq use-dialog-box nil)
+(setq use-file-dialog nil)
+(setq visible-bell 1)
+(setq blink-cursor-mode 0)
+(setq indicate-empty-lines t) ;; Show a marker in the left fringe for lines not in the buffer
+(setq show-trailing-whitespace t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (column-number-mode t) ; show column number
-
 (global-set-key (kbd "M-s l") 'display-line-numbers-mode)
 
 (load-theme 'leuven)
+
+;; better-defaults include feature:
+;;   turned off  toolbar, menu bar, and scroll bar
+;;   uniquify library
+;;   show-paren-mode 1
+;;   save-place-mode 1
+;;   indent-tabls-mode nil
+(use-package better-defaults
+  :ensure t
+  )
 
 (use-package rainbow-delimiters
   :ensure t
@@ -76,7 +77,6 @@
                       :weight 'normal
                       :width 'normal))
  )
-
 ;; disable bold
 (defadvice set-face-attribute
     (before no-bold (face frame &rest args) activate)
@@ -84,16 +84,5 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-(use-package multiple-cursors
-  :ensure t
-  :defer t
-  :config
-  (global-set-key (kbd "C-c C-e") 'mc/edit-lines)
-  (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
-  (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
-  (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
-  (global-set-key (kbd "C-c e") 'mc/edit-ends-of-lines)
-  )
 
 (provide 'init-ui)
