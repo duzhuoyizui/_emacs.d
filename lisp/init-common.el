@@ -86,10 +86,12 @@ Uses `current-date-time-format' for the formatting the date/time."
   (global-set-key (kbd "<f7>") 'ivy-resume)
   (ivy-mode 1)
   )
+
 (use-package swiper
   :ensure t
   :config
-  (global-set-key "\C-s" 'swiper))
+  (global-set-key (kbd "C-s") 'swiper-isearch)
+  )
 
 (use-package counsel
   :ensure t
@@ -101,6 +103,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (global-set-key (kbd "C-c k") 'counsel-ag)
   (global-set-key (kbd "M-y") 'counsel-yank-pop)
   )
+
 
 (use-package projectile
   :ensure t

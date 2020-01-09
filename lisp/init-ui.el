@@ -18,17 +18,18 @@
 (column-number-mode t) ; show column number
 (global-set-key (kbd "M-s l") 'display-line-numbers-mode)
 
-(load-theme 'leuven)
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+(if (fboundp 'set-scroll-bar-mode)
+    (set-scroll-bar-mode nil))
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
 
-;; better-defaults include feature:
-;;   turned off  toolbar, menu bar, and scroll bar
-;;   uniquify library
-;;   show-paren-mode 1
-;;   save-place-mode 1
-;;   indent-tabls-mode nil
-(use-package better-defaults
-  :ensure t
-  )
+(setq-default indent-tabs-mode nil)
+(show-paren-mode t)
+(save-place-mode 1)
+
+(load-theme 'leuven)
 
 (use-package rainbow-delimiters
   :ensure t
