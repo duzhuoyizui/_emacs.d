@@ -11,9 +11,9 @@
 (setq use-dialog-box nil)
 (setq use-file-dialog nil)
 (setq visible-bell 1)
-(setq blink-cursor-mode 0)
 (setq indicate-empty-lines t) ;; Show a marker in the left fringe for lines not in the buffer
 (setq show-trailing-whitespace t)
+(blink-cursor-mode 0)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (column-number-mode t) ; show column number
 (global-set-key (kbd "M-s l") 'display-line-numbers-mode)
