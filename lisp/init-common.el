@@ -90,7 +90,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (use-package swiper
   :ensure t
   :config
-  (global-set-key (kbd "C-s") 'swiper-isearch)
+  (global-set-key (kbd "C-s") 'swiper)
   )
 
 (use-package counsel
