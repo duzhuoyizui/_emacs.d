@@ -44,17 +44,6 @@
   (powerline-default-theme)
   )
 
-(use-package dashboard
-  :ensure t
-  :config
-  (setq dashboard-items '((recents  . 10)
-                          (projects . 10)))
-  (setq dashboard-banner-logo-title "Smells Like Teen Spirit")
-  (setq dashboard-set-footer nil)
-  ;; (setq dashboard-footer "Any problem  in computer science can be solved by anther layer of indirection")
-  (dashboard-setup-startup-hook)
-  )
-
 (use-package beacon
   :ensure t
   :config
