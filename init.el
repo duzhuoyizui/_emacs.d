@@ -31,6 +31,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-common)
+(require 'init-db)
 (require 'init-docker)
 (require 'init-flycheck)
 (require 'init-go)
