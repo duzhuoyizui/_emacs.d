@@ -51,6 +51,11 @@
   ;;   (global-set-key [(f12)] 'org-reveal-export-to-html-and-browse)
   ;;   (reveal-mode 1)
   ;;   )
+  (use-package toc-org
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook 'toc-org-mode)
+    )
   )
 
 ;; blog
