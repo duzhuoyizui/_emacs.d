@@ -1,6 +1,38 @@
-*自动同步自我的 Wiki：https://www.zhangjiee.com/wiki/programming/code-env/emacs.html 不保证最新*
+* Table Of Content :TOC:
+- [[#开始之前][开始之前]]
+- [[#基础][基础]]
+  - [[#安装-emacs][安装 Emacs]]
+  - [[#键位约定][键位约定]]
+- [[#插件推荐][插件推荐]]
+- [[#日常使用][日常使用]]
+  - [[#日常编辑][日常编辑]]
+  - [[#项目管理][项目管理]]
+  - [[#多窗口][多窗口]]
+  - [[#ide][IDE]]
+  - [[#版本管理][版本管理]]
+  - [[#org-mode][org-mode]]
+- [[#faq][FAQ]]
+  - [[#emacs-启动速度太慢怎么办][Emacs 启动速度太慢怎么办？]]
+  - [[#org-mode-使用][org-mode 使用]]
+  - [[#使用-gui-版本还是-terminal-][使用 GUI 版本还是 Terminal ?]]
+  - [[#包安装问题][包安装问题]]
+  - [[#如何去掉空白字符][如何去掉空白字符]]
+  - [[#如何显示所有安装的-package][如何显示所有安装的 package]]
+  - [[#如何更新所有的依赖包][如何更新所有的依赖包？]]
+  - [[#如何记忆-emacs-快捷键][如何记忆 Emacs 快捷键？]]
+  - [[#如何软重启-emacs][如何软重启 Emacs？]]
+  - [[#我可不可以用-emacs-完成-xxx-能做的事情][我可不可以用 Emacs 完成 XXX 能做的事情？]]
+  - [[#是否要使用-evil-][是否要使用 Evil ？]]
+  - [[#行逆序排序][行逆序排序]]
+- [[#resource][Resource]]
+  - [[#blogsitetutorial][Blog/Site/Tutorial]]
+  - [[#article][Article]]
+  - [[#configure-reference][Configure reference]]
+  - [[#org-mode-theme][Org-mode theme]]
 
 * 开始之前
+
+/自动同步自我的 Wiki：https://www.zhangjiee.com/wiki/programming/code-env/emacs.html 当前文档不保证最新/
 
 我在大学（2009 年左右）的时候接触 Linux（Ubuntu），选择编辑器时感觉 Vim 入门很难，只是因为好奇就选择了 Emacs。
 大学期间和我的第一份工作主要的开发环境是 Windows，Emacs 虽然在私下里花了很多精力折腾，但正式使用 Emacs 作为开发环境是 2014 年以后，
