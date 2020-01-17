@@ -34,7 +34,6 @@
 (require 'init-db)
 (require 'init-docker)
 (require 'init-flycheck)
-(require 'init-go)
 (require 'init-lsp)
 (require 'init-markdown)
 (require 'init-nginx)

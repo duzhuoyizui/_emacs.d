@@ -7,7 +7,7 @@
   (emacs-lisp-mode . lsp)
   (python-mode . lsp)
   ;; (rjsx-mode . lsp) ; so slow
-  (go-mode . lsp)
+  (go-mode . lsp-deferred)
 
   :commands lsp
   :config
@@ -18,6 +18,16 @@
    lsp-print-performance nil
    lsp-log-io nil
    )
+
+  (use-package go-mode
+    :ensure t
+    :defer t
+    :config
+    (defun lsp-go-install-save-hooks ()
+      (add-hook 'before-save-hook #'lsp-format-buffer t t)
+      (add-hook 'before-save-hook #'lsp-organize-imports t t))
+    (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+    )
 
   (use-package lsp-ui
     :ensure t
