@@ -11,6 +11,7 @@
         ;; GNU ELPA
         ("gnu" . "http://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
         ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
 
         ;; tsinghua mirror repository
@@ -19,15 +20,20 @@
         ;; ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
         ))
 
-(package-initialize)
-
 (unless package-archive-contents
   (package-refresh-contents))
 
 (setq load-prefer-newer t)
 
+(setq package-load-list '(all))
+
+(unless (package-installed-p 'org)
+  (package-install 'org))
+
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+
+(package-initialize)
 
 (require 'use-package)
 (setq use-package-verbose t)
