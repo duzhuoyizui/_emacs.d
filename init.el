@@ -34,6 +34,7 @@
 (require 'init-db)
 (require 'init-docker)
 (require 'init-flycheck)
+(require 'init-hydra)
 (require 'init-lsp)
 (require 'init-markdown)
 (require 'init-nginx)
