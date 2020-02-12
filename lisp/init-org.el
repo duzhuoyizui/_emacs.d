@@ -91,7 +91,6 @@
           ;; publish component
           ("site" :components ("site-orgs" "site-static"))
           ))
-
   )
 
 (provide 'init-org)

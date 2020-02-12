@@ -74,7 +74,7 @@
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
                       :family "Microsoft YaHei Mono"
-                      :height 170
+                      :height 160
                       :weight 'normal
                       :width 'normal))
  )
@@ -84,6 +84,5 @@
   (setq args
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
-
 
 (provide 'init-ui)
