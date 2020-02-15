@@ -30,7 +30,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (interactive)
   (message (buffer-file-name)))
 
-(global-set-key [(f3)] 'eshell)
+;; (global-set-key [(f3)] 'eshell)
 (global-set-key [(f4)] 'insert-current-date-time)
 (global-set-key [(f6)] 'show-file-name)
 
@@ -101,6 +101,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (setq projectile-indexing-method 'native) ; 默认是 alien 但是会使 .projectile 文件变无效（不知道是不是 bug）
   (setq projectile-require-project-root nil) ; 强制需要 .projectile 文件
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "<f3>") 'projectile-run-eshell)
   (projectile-mode +1)
   :init
   (use-package counsel-projectile
