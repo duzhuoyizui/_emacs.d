@@ -16,7 +16,7 @@
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
 
   (use-package org-inlinetask)
-
+  (use-package org-tempo)
   (use-package ob-go
     :ensure t
     )
