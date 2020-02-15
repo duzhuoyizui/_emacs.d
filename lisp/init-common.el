@@ -133,6 +133,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   :ensure t
   :config
   (global-set-key (kbd "M-o") 'ace-window)
+  (global-set-key (kbd "M-s t") 'ace-swap-window)
   (ace-window-display-mode)
   )
 
