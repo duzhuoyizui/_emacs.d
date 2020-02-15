@@ -91,6 +91,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-c k") 'counsel-ag)
   (global-set-key (kbd "M-y") 'counsel-yank-pop)
+  (global-set-key (kbd "<f12>") 'counsel-semantic-or-imenu)
   )
 
 (use-package projectile
