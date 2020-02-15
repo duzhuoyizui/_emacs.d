@@ -28,11 +28,9 @@
   - [[#blogsitetutorial][Blog/Site/Tutorial]]
   - [[#article][Article]]
   - [[#configure-reference][Configure reference]]
-  - [[#org-mode-theme][Org-mode theme]]
+  - [[#org-mode-theme][org-mode theme]]
 
 * 开始之前
-
-/自动同步自我的 Wiki：https://www.zhangjiee.com/wiki/programming/code-env/emacs.html 当前文档不保证最新/
 
 我在大学（2009 年左右）的时候接触 Linux（Ubuntu），选择编辑器时感觉 Vim 入门很难，只是因为好奇就选择了 Emacs。
 大学期间和我的第一份工作主要的开发环境是 Windows，Emacs 虽然在私下里花了很多精力折腾，但正式使用 Emacs 作为开发环境是 2014 年以后，
@@ -141,32 +139,33 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 
 ** 日常编辑
 
-|-----------+---------------------------------------------|
-| 快捷键    | 功能                                        |
-|-----------+---------------------------------------------|
-| ~C-c j~   | 当前 git 中搜索                             |
-| ~C-c k~   | 当前目录下搜索（使用 ag）                   |
-| ~C-n/p~   | campany popup 模式下选择上一个/下一个       |
-| ~C-s~     | 全文搜索                                    |
-| ~C-x g~   | 打开 git-gutter+                            |
-| ~C-x n/p~ | 上一个/下一个 git 改动                      |
-| ~C-x r~   | revert 当前改动                             |
-| ~F3~      | 打开 Eshell                                 |
-| ~F4~      | 插入当前时间                                |
-| ~F6~      | 显示当前文件路径                            |
-| ~F7~      | #ERROR                                      |
-| ~M--~     | 高亮当前单词， ~M-p/n~ 跳转到上一个和下一个 |
-| ~M-m~     | 不断扩大区域的选中                          |
-| ~M-s ;~   | 跳转到单词                                  |
-| ~M-s P~   | 选中括号内的内容                            |
-| ~M-s f~   | 选中当前函数                                |
-| ~M-s i~   | 跳转到指定符开始的单词                      |
-| ~M-s j~   | 快速跳转到行                                |
-| ~M-s k~   | 复制指定行到当前行                          |
-| ~M-s l~   | 打开/关闭行号                               |
-| ~M-s s~   | 选中当前单词                                |
-| ~M-y~     | kill-ring                                   |
-|-----------+---------------------------------------------|
+|-----------+-------------------------------------------------------|
+| 快捷键    | 功能                                                  |
+|-----------+-------------------------------------------------------|
+| ~C-c j~   | 当前 git 中搜索                                       |
+| ~C-c k~   | 当前目录下搜索（使用 ag）                             |
+| ~C-n/p~   | campany popup 模式下选择上一个/下一个                 |
+| ~C-s~     | 全文搜索                                              |
+| ~C-x g~   | 打开 git-gutter+                                      |
+| ~C-x n/p~ | 上一个/下一个 git 改动                                |
+| ~C-x r~   | revert 当前改动                                       |
+| ~F3~      | 打开 Eshell                                           |
+| ~F4~      | 插入当前时间                                          |
+| ~F6~      | 显示当前文件路径                                      |
+| ~F7~      | 执行前一条命令                                        |
+| ~F12~     | semantic-or-imenu，显示当前文件的全局变量、类，方法等 |
+| ~M--~     | 高亮当前单词， ~M-p/n~ 跳转到上一个和下一个           |
+| ~M-m~     | 不断扩大区域的选中                                    |
+| ~M-s ;~   | 跳转到单词                                            |
+| ~M-s P~   | 选中括号内的内容                                      |
+| ~M-s f~   | 选中当前函数                                          |
+| ~M-s i~   | 跳转到指定符开始的单词                                |
+| ~M-s j~   | 快速跳转到行                                          |
+| ~M-s k~   | 复制指定行到当前行                                    |
+| ~M-s l~   | 打开/关闭行号                                         |
+| ~M-s s~   | 选中当前单词                                          |
+| ~M-y~     | kill-ring                                             |
+|-----------+-------------------------------------------------------|
 #+TBLFM: $2=ivy-resume= 上一个执行指令
 
 *** 多鼠标操作
@@ -212,6 +211,10 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 | ~C-x 2~          | 水平分屏                          |
 | ~C-x 3~          | 垂直分屏                          |
 | ~M-o 1/2/3/4...~ | 切换窗口                          |
+| ~M-s t~          | 交换窗口 =ace-swap-window=        |
+| ~<f2> -/=~       | 水平缩减/扩展当前窗口             |
+| ~<f2> _/+~       | 垂直缩减/扩展当前窗口             |
+| ~<f2> g/l~       | 字体变大或者缩小（GUI 有效）      |
 |------------------+-----------------------------------|
 
 ** IDE
@@ -226,9 +229,10 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 目前已经默认支持 Python 和 Go 了，虽然还是有许许多多的 Bug，但比起 2018 年我试的时候已经成熟太多了。有社区的驱动，发展很快。
 
 ** 版本管理
-:PROPERTIES:
-:CUSTOM_ID: manual-vc
-:END:
+   :PROPERTIES:
+   :CUSTOM_ID: manual-vc
+   :END:
+
 在不使用任何插件的情况下（内置的 VC），svn 和 git 都支持：
 
 |-----------+--------------------|
@@ -241,18 +245,32 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 |-----------+--------------------|
 
 ** org-mode
+   :PROPERTIES:
+   :CUSTOM_ID: manual-org-mode
+   :END:
 
 [[https://orgmode.org/][org-mode]] 是 Emacs 最强力的插件，没有之一。可以用来做 GTD，博客/Wiki工具，写书，写论文等。
 
-|-----------+----------------------------------------|
-| 快捷键    | 功能                                   |
-| ~C-c C-e~ | Export or Publish                      |
-| ~C-c C-l~ | 插入链接等                             |
-| ~C-c '~   | 在另外一个窗口编辑：代码，表格，公式等 |
-|-----------+----------------------------------------|
+|-------------+--------------------------------------------------------------|
+| 快捷键      | 功能                                                         |
+| =C-c C-e=   | Export or Publish                                            |
+| =C-c C-l=   | 插入链接等                                                   |
+| =C-c '=     | 在另外一个窗口编辑：代码，表格，公式等                       |
+| =C-c C-x p= | 插入标题 =PROPERTIES=                                        |
+| =C-c C-o=   | 打开当前链接 ~org-open-at-point~                             |
+| =C-c C-,=   | 插入结构化模板（类似代码，引用等），orgmode 9.2 版本之后支持 |
+|-------------+--------------------------------------------------------------|
 
 - [[file:../../../blog/2019/build-site-with-org-mode.org][使用 org-mode 搭建网站]]
 - [[file:../../../blog/2019/emacs-slice.org][Emacs 基于 org-reveal 做幻灯片]]
+
+/2020-02-15 10:15:16/
+
+orgmode 9.2 之后不再直接支持 =<s [Tab]= 的快捷方式插入代码块，而提供了统一的 =org-insert-structure-template= 函数，快捷键为 =C-c c-,= 。
+如果想要提供以前的简洁方式，需要引入 =org-tempo= ，比如 =(require 'org-tempo)= 我使用的是 =(use-package org-tempo)= 。具体见：
+
+- [[https://emacs.stackexchange.com/questions/46988/why-do-easy-templates-e-g-s-tab-in-org-9-2-not-work][Why do easy templates, .e.g, “< s TAB” in org 9.2 not work?]]
+- [[https://orgmode.org/manual/Structure-Templates.html][org-mode 16.2 Structure Templates]]
 
 * FAQ
 ** Emacs 启动速度太慢怎么办？
@@ -290,9 +308,11 @@ pandoc -f markdown -t org -o test.org test.md
 
 ** 使用 GUI 版本还是 Terminal ?
 
-这个分歧很大，使用 GUI 可以让你很完备的使用 Emacs，不用担心快捷键冲突，具有更好的编辑效果，但是经常会有编码问题，如果使用终端的话，只要设置终端的编码就可以了；而且汉字的字体设置也很繁琐（我使用中英文等宽的 ~WenQuanYi Zen Hei Mono~ 解决了这个问题）。
+这个分歧很大，使用 GUI 可以让你很完备的使用 Emacs，不用担心快捷键冲突，具有更好的编辑效果，但是经常会有编码问题，如果使用终端的话，
+只要设置终端的编码就可以了；而且汉字的字体设置也很繁琐（我使用中英文等宽的 ~WenQuanYi Zen Hei Mono~ 解决了这个问题）。
 
-使用终端的问题是快捷键很大概率冲突，因为 Emacs 几乎占了所有的快捷键。比如我会使用 ~M + 1/2/3/..~ 切换 Emacs 中的窗口，而这个往往是很多终端切换页签的快捷键（Ubuntu 和 Windows 下的 Xshell 都是如此）。要自己重新设置快捷键。
+使用终端的问题是快捷键很大概率冲突，因为 Emacs 几乎占了所有的快捷键。比如我会使用 ~M + 1/2/3/..~ 切换 Emacs 中的窗口，
+而这个往往是很多终端切换页签的快捷键（Ubuntu 和 Windows 下的 Xshell 都是如此）。要自己重新设置快捷键。
 
 不管是使用 GUI 还是 Terminal，全凭个人喜好。我之前一直用终端，最近（2019-06-04）切换到了 GUI。
 
@@ -300,23 +320,28 @@ pandoc -f markdown -t org -o test.org test.md
 
 在尝试了两周的 GUI 之后，最终还是切换到了 Terminal。主要原因是：
 
-+ 大部分编码等宽字体都不是中英文等宽的，比如我最喜爱的 ~Source Code Pro~， 你看到的终端等宽大多是因为终端帮你设置了字体的高度和宽度。 ~Ubuntu mono~ 和 ~M +1~ 是中英文等宽的，但不是等高的，编辑的时候跳跃让人很不爽。文泉驿是一个绝对的等宽和等高字体，但是 Mac 下的字体实在太丑了～
++ 大部分编码等宽字体都不是中英文等宽的，比如我最喜爱的 ~Source Code Pro~ ，你看到的终端等宽大多是因为终端帮你设置了字体的高度和宽度。
+  ~Ubuntu mono~ 和 ~M +1~ 是中英文等宽的，但不是等高的，编辑的时候跳跃让人很不爽。文泉驿是一个绝对的等宽和等高字体，
+  但是 Mac 下的字体实在太丑了～
 + 以前我最大的快捷键冲突是切换页签的 ~M - 1/2/3/...~ ，最近发现了 [[https://github.com/abo-abo/ace-window][ace-window]] ，使用 ~M - o 1/2/3~ 切换页签，解决了这个问题。
-+ 最后一个问题是工作流，因为工作性质的原因，不管是做服务器开发还是前端开发，都是需要实时的跟终端交互，GUI 和 终端切换，没有终端自身两个页签切换来的流畅。
++ 最后一个问题是工作流，因为工作性质的原因，不管是做服务器开发还是前端开发，都是需要实时的跟终端交互，GUI 和 终端切换，
+  没有终端自身两个页签切换来的流畅。
 
 对 GUI 最大的怀念是可以无缝的跟系统的剪切板融合，比如在别的地方 ~Ctrl + c~ 复制的内容，可以在 Emacs 中 ~M-y~ 粘贴过来，反之亦然。
 
 /2019-06-24 10:29:43/
 
-Ubuntu 下文泉驿是 OK 的，还不错，MacOS 有点丑。习惯了之后还有点离不开 GUI（快捷键真舒服啊），准备用终端写代码，GUI 写文档（文章），准备适应一段时间。
+Ubuntu 下文泉驿是 OK 的，还不错，MacOS 有点丑。习惯了之后还有点离不开 GUI（快捷键真舒服啊），准备用终端写代码，GUI 写文档（文章），
+准备适应一段时间。
 
 /2019-07-08 20:57:06/
 
-Ubuntu GUI 无法切换搜狗输入法，与默认的 Mark 快捷键冲突，解决办法是修改 locale， ~/etc/default/locale~ 中添加 ~LC_CTYPE=zh_CN.UTF-8~ ，然后重启即可（中文桌面情况下是没有这个问题的）。
+Ubuntu GUI 无法切换搜狗输入法，与默认的 Mark 快捷键冲突，解决办法是修改 locale， ~/etc/default/locale~ 中添加 ~LC_CTYPE=zh_CN.UTF-8~ ，
+然后重启即可（中文桌面情况下是没有这个问题的）。
 
 /2019-11-17 16:18:19/
 
-试了一下 [[https://github.com/whorusq/sublime-text-3/blob/master/fonts/Microsoft-Yahei-Mono.ttf][Microsoft YaHei Mono]]，发现效果要比文泉驿要好很多，中文还挺好看。决定终端和GUI都使用一段时间。
+试了一下 [[https://github.com/whorusq/sublime-text-3/blob/master/fonts/Microsoft-Yahei-Mono.ttf][Microsoft YaHei Mono]]，发现效果要比文泉驿要好很多，中文还挺好看。决定终端和 GUI 都使用一段时间。
 
 ** 包安装问题
 
@@ -424,7 +449,7 @@ Emacs 的快捷键非常多，但是除了基本的编辑操作快捷键之外�
 - [[https://github.com/hlissner/doom-emacs][hlissner/doom-emacs]]
 - [[https://protesilaos.com/dotemacs/][Emacs initialisation file (dotemacs)]]: wiki + 配置
 
-** Org-mode theme
+** org-mode theme
 
 - [[https://jessekelly881-imagine.surge.sh][Imagine]]: 范例 [[https://jessekelly.tk/][Jesse Kelly]]
 - [[https://jessekelly881-rethink.surge.sh][Rethink]]
@@ -435,4 +460,4 @@ Emacs 的快捷键非常多，但是除了基本的编辑操作快捷键之外�
 
 [fn:package-actived-list] https://stackoverflow.com/questions/13866848/how-to-save-a-list-of-all-the-installed-packages-in-emacs-24
 
-[fn:sorting-headings-in-an-org-file]
+[fn:sorting-headings-in-an-org-file] https://emacs.stackexchange.com/questions/30547/sort-list-by-checked-unchecked-state
