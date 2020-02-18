@@ -134,6 +134,11 @@ Uses `current-date-time-format' for the formatting the date/time."
 (use-package ace-window
   :ensure t
   :config
+  (set-face-attribute
+     'aw-mode-line-face nil
+     :inherit 'mode-line-buffer-id
+     :foreground "chartreuse")
+  (setq aw-keys '(?q ?w ?e ?r ?u ?i ?o ?p ?k))
   (global-set-key (kbd "M-o") 'ace-window)
   (global-set-key (kbd "M-s t") 'ace-swap-window)
   (ace-window-display-mode)
