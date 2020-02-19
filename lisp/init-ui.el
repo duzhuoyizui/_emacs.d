@@ -61,6 +61,7 @@
   (diminish 'flycheck-mode)
   (diminish 'company-mode)
   (diminish 'eldoc-mode)
+  (diminish 'projectile-mode)
   )
 
 ;; Set default font
