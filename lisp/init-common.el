@@ -80,6 +80,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   :ensure t
   :config
   (global-set-key (kbd "C-s") 'swiper)
+  (global-set-key (kbd "M-s .") 'swiper-isearch-thing-at-point)
   )
 
 (use-package counsel
