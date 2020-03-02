@@ -64,6 +64,10 @@
   :config
   (setq org-html-validation-link nil)
 
+  (setq org-html-postamble t
+        org-html-postamble-format
+        '(("en" "<p class=\"postamble\">First created: %d <br />Last updated: %C <br />Power by %c</p>")))
+
   (setq org-publish-project-alist
         '(
           ;; notes component
@@ -75,7 +79,6 @@
            :recursive t
            :publishing-function org-html-publish-to-html
            :headline-levels 5
-           :auto-preamble t
            :auto-sitemap t
            :sitemap-filename "sitemap.org"
            :sitemap-title "Sitemap"
