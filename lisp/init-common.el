@@ -139,18 +139,10 @@ Uses `current-date-time-format' for the formatting the date/time."
      'aw-mode-line-face nil
      :inherit 'mode-line-buffer-id
      :foreground "chartreuse")
-  (setq aw-keys '(?q ?w ?e ?r ?u ?i ?o ?p ?k))
+  (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   (global-set-key (kbd "M-o") 'ace-window)
   (global-set-key (kbd "M-s t") 'ace-swap-window)
   (ace-window-display-mode)
-  )
-
-(use-package which-key
-  :ensure t
-  :defer t
-  :config
-  (which-key-setup-minibuffer)
-  (which-key-mode)
   )
 
 (provide 'init-common)

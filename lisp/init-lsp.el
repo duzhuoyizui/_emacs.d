@@ -11,6 +11,8 @@
   (python-mode . lsp)
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode . lsp-deferred)
+  ;; integration which key
+  (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
   :config
 
@@ -72,6 +74,13 @@
 (use-package company-lsp
   :ensure t
   :commands company-lsp
+  )
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-setup-minibuffer)
+  (which-key-mode)
   )
 
 (provide 'init-lsp)
