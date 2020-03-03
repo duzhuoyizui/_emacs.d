@@ -22,9 +22,6 @@
 (setq load-prefer-newer t)
 (setq package-load-list '(all))
 
-;; (unless (package-installed-p 'org)
-;;   (package-install 'org))
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
