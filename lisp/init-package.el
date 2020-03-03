@@ -10,9 +10,9 @@
       '(
         ;; GNU ELPA
         ("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa" . "https://melpa.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")
         ("org" . "https://orgmode.org/elpa/")
-        ;; ("melpa-stable" . "http://stable.melpa.org/packages/")
 
         ;; tsinghua mirror repository
         ;; ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
