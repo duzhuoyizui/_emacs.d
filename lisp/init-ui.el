@@ -72,8 +72,8 @@
 (cond
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
-                      :family "WenQuanYi Zen Hei Mono"
-                      :height 135
+                      :family "Microsoft YaHei Mono"
+                      :height 140
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
