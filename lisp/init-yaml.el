@@ -1,4 +1,5 @@
 (use-package yaml-mode
+  :pin melpa
   :ensure t
   :defer t
   :init

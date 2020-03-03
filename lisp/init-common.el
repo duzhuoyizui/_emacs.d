@@ -35,6 +35,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key [(f6)] 'show-file-name)
 
 (use-package multiple-cursors
+  :pin melpa
   :ensure t
   :config
   (global-set-key (kbd "M-s >") 'mc/mark-next-like-this)
@@ -46,6 +47,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
+  :pin melpa
   :ensure t
   :config
   (global-set-key (kbd "M-m") 'er/expand-region)
@@ -59,6 +61,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package highlight-symbol
+  :pin melpa
   :ensure t
   :config
   (global-set-key (kbd "M--") 'highlight-symbol-at-point)
@@ -67,6 +70,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package ivy
+  :pin melpa
   :ensure t
   :config
   (setq ivy-use-virtual-buffers t)
@@ -77,6 +81,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package swiper
+  :pin melpa
   :ensure t
   :config
   (global-set-key (kbd "C-s") 'swiper)
@@ -84,6 +89,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package counsel
+  :pin melpa
   :ensure t
   :config
   (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -96,6 +102,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package projectile
+  :pin melpa
   :ensure t
   :config
   (setq projectile-enable-caching t)
@@ -104,8 +111,10 @@ Uses `current-date-time-format' for the formatting the date/time."
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "<f3>") 'projectile-run-eshell)
   (projectile-mode +1)
+
   :init
   (use-package counsel-projectile
+    :pin melpa
     :ensure t
     :config
     (counsel-projectile-mode 1)
@@ -113,6 +122,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package avy
+  :pin melpa
   :ensure t
   :bind (("M-s i" . avy-goto-word-1)
          ("M-s j" . avy-goto-line)
@@ -122,6 +132,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   )
 
 (use-package git-gutter+
+  :pin melpa
   :ensure t
   :defer t
   :init
@@ -133,6 +144,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   :diminish (git-gutter+-mode . "gg"))
 
 (use-package ace-window
+  :pin melpa
   :ensure t
   :config
   (set-face-attribute

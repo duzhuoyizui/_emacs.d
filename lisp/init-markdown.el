@@ -1,4 +1,5 @@
 (use-package markdown-mode
+  :pin melpa
   :ensure t
   :defer t
   :commands (markdown-mode gfm-mode)

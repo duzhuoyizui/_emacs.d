@@ -32,6 +32,7 @@
 (load-theme 'leuven)
 
 (use-package rainbow-delimiters
+  :pin melpa
   :ensure t
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -39,12 +40,14 @@
   )
 
 (use-package powerline
+  :pin melpa
   :ensure t
   :config
   (powerline-default-theme)
   )
 
 (use-package beacon
+  :pin melpa
   :ensure t
   :config
   (setq beacon-blink-delay '0.2)
@@ -55,6 +58,7 @@
   )
 
 (use-package diminish
+  :pin melpa
   :ensure t
   :config
   (diminish 'ivy-mode)
@@ -75,7 +79,7 @@
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
                       :family "Microsoft YaHei Mono"
-                      :height 175
+                      :height 170
                       :weight 'normal
                       :width 'normal))
  )

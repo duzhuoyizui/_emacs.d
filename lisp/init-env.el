@@ -3,6 +3,7 @@
 ;; https://github.com/purcell/exec-path-from-shell/issues/36
 
 (use-package exec-path-from-shell
+  :pin melpa
   :ensure t
   :defer t
   :config

@@ -1,4 +1,5 @@
 (use-package dockerfile-mode
+  :pin melpa
   :ensure t
   :defer t
   :config

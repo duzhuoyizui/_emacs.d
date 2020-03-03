@@ -1,4 +1,5 @@
 (use-package flycheck
+  :pin melpa
   :ensure t
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))

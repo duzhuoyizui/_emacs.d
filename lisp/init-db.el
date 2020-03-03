@@ -1,4 +1,5 @@
 (use-package sql-indent
+  :pin melpa
   :ensure t
   :defer t
   :config

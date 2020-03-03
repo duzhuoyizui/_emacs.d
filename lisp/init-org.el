@@ -1,10 +1,13 @@
 (use-package htmlize
+  :pin melpa
   :ensure t
   :defer t
   )
 
+; https://emacs.stackexchange.com/questions/17710/use-package-with-config-to-set-variables
 (use-package org
-  :ensure t
+  :pin org
+  :ensure org-plus-contrib
   :defer t
   :config
 
@@ -15,9 +18,11 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
 
-  (use-package org-inlinetask)
-  (use-package org-tempo)
+  (require 'org-inlinetask)
+  (require 'org-tempo)
+
   (use-package ob-go
+    :pin melpa
     :ensure t
     )
 
@@ -38,20 +43,15 @@
    )
 
   (use-package org-bullets
+    :pin melpa
     :ensure t
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     (org-bullets-mode 1)
     )
 
-  ;; (use-package ox-reveal
-  ;;   :ensure t
-  ;;   :config
-  ;;   (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
-  ;;   (global-set-key [(f12)] 'org-reveal-export-to-html-and-browse)
-  ;;   (reveal-mode 1)
-  ;;   )
   (use-package toc-org
+    :pin melpa
     :ensure t
     :config
     (add-hook 'org-mode-hook 'toc-org-mode)
@@ -60,6 +60,7 @@
 
 ;; blog
 (use-package ox-publish
+  :pin melpa
   :defer t
   :config
   (setq org-html-validation-link nil)

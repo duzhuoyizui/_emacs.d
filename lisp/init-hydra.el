@@ -1,4 +1,5 @@
 (use-package hydra
+  :pin melpa
   :ensure t
   :init
 

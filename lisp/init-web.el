@@ -1,6 +1,7 @@
 ;; web: html, js, jsx, css
 
 (use-package web-mode
+  :pin melpa
   :ensure t
   :defer t
   :init
@@ -25,6 +26,7 @@
 
 ;; for LESS
 (use-package css-mode
+  :pin melpa
   :ensure t
   :defer t
   :init
@@ -34,6 +36,7 @@
   )
 
 (use-package rjsx-mode
+  :pin melpa
   :ensure t
   :defer t
   :init
