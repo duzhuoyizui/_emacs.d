@@ -73,7 +73,7 @@
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
                       :family "Microsoft YaHei Mono"
-                      :height 140
+                      :height 150
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
