@@ -1,3 +1,6 @@
+;; (when (< emacs-major-version 27)
+;;   (package-initialize))
+
 (package-initialize)
 
 (require 'package)
@@ -19,8 +22,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(setq load-prefer-newer t)
-(setq package-load-list '(all))
+;; (setq load-prefer-newer t)
+;; (setq package-load-list '(all))
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
