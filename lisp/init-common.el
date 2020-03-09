@@ -38,11 +38,10 @@ Uses `current-date-time-format' for the formatting the date/time."
   :pin melpa
   :ensure t
   :config
+  (global-set-key (kbd "M-s ;") 'mc/mark-all-like-this-in-defun)
   (global-set-key (kbd "M-s >") 'mc/mark-next-like-this)
   (global-set-key (kbd "M-s <") 'mc/mark-previous-like-this)
   (global-set-key (kbd "M-s C-a") 'mc/mark-all-like-this)
-  (global-set-key (kbd "M-s a") 'mc/edit-beginnings-of-lines)
-  (global-set-key (kbd "M-s e") 'mc/edit-ends-of-lines)
   )
 
 ;; https://github.com/magnars/expand-region.el
