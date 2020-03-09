@@ -21,6 +21,7 @@
    lsp-enable-snippet nil
    lsp-print-performance nil
    lsp-log-io nil
+   lsp-enable-symbol-highlighting nil
    )
   )
 
