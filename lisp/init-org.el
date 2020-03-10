@@ -42,14 +42,12 @@
      )
    )
 
-  (use-package org-bullets
+  (use-package org-superstar
     :pin melpa
     :ensure t
     :config
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-    (org-bullets-mode 1)
+    (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
     )
-
   (use-package toc-org
     :pin melpa
     :ensure t
