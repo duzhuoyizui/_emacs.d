@@ -104,12 +104,23 @@ Uses `current-date-time-format' for the formatting the date/time."
   :pin melpa
   :ensure t
   :config
+  ;; 打开项目缓存, 否则大的项目每次构建会比较慢
+  ;; 你可以通过下面两个名称来清除缓存
+  ;; - projectile-purge-file-from-cache
+  ;; - projectile-purge-dir-from-cache
   (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'native) ; 默认是 alien 但是会使 .projectile 文件变无效（不知道是不是 bug）
-  (setq projectile-require-project-root nil) ; 强制需要 .projectile 文件
+  ;; projectile 有三种构建索引的方式: native, hybird, alien
+  ;;   native 使用 Emacs lisp 实现, hybird/alien 使用外部命令类似 find, git 来实现
+  ;;   alien 优化了 hybird 的性能: 它不会对外部命令返回的结果做任何处理和排序, 以获得最好的性能
+  ;;   使用外部命令的话, 类似 .gitignore 会自动生效
+  ;; 注意: alien 会忽略 .projectile 文件
+  (setq projectile-indexing-method 'alien)
+  ;; 在每个目录下都可用(即使没有项目文件)
+  (setq projectile-require-project-root nil)
+  ;; 对结果进行排序(active buffer + recently opened)
+  (setq projectile-sort-order 'recentf-active)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
-
   :init
   (use-package counsel-projectile
     :pin melpa
