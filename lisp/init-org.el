@@ -46,6 +46,7 @@
     :pin melpa
     :ensure t
     :config
+    (setq org-superstar-configure-like-org-bullets t)
     (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
     )
   (use-package toc-org
