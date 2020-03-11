@@ -1,53 +1,6 @@
 ;;----------------------------------------------------------------------------
-;; Common: 提升编辑效率
+;; edit 提升编辑效率
 ;;----------------------------------------------------------------------------
-(setq user-full-name "JerryZhang"
-      user-mail-address "m@zhangjiee.com")
-
-;; default encode
-(set-charset-priority 'unicode)
-(setq locale-coding-system   'utf-8)
-(set-terminal-coding-system  'utf-8)
-(set-keyboard-coding-system  'utf-8)
-(set-selection-coding-system 'utf-8)
-(prefer-coding-system        'utf-8)
-(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
-
-;; customize
-(setq confirm-kill-emacs  'y-or-n-p
-      auto-save-default    t
-      mouse-yank-at-point t
-      make-backup-files nil
-      indent-tabs-mode nil
-      create-lockfiles nil)
-
-(fset 'yes-or-no-p 'y-or-n-p)
-(global-auto-revert-mode t)
-
-(electric-pair-mode 1)
-(electric-indent-mode 1)
-;;(electric-quote-mode 1)
-
-(defvar current-date-time-format "%Y-%m-%d %H:%M:%S %a"
-  "Format of date to insert with `insert-current-date-time' func
-See help of `format-time-string' for possible replacements")
-
-(defun insert-current-date-time ()
-  "insert the current date and time into current buffer.
-Uses `current-date-time-format' for the formatting the date/time."
-  (interactive)
-  (insert (format-time-string current-date-time-format (current-time)))
-  )
-
-(defun show-file-name ()
-  "Show the full path file name in the minibuffer."
-  (interactive)
-  (message (buffer-file-name)))
-
-(global-set-key [(f3)] 'eshell)
-(global-set-key [(f4)] 'insert-current-date-time)
-(global-set-key [(f6)] 'show-file-name)
-
 (use-package multiple-cursors
   :pin melpa
   :ensure t
@@ -171,13 +124,38 @@ Uses `current-date-time-format' for the formatting the date/time."
   :ensure t
   :config
   (set-face-attribute
-     'aw-mode-line-face nil
-     :inherit 'mode-line-buffer-id
-     :foreground "chartreuse")
+   'aw-mode-line-face nil
+   :inherit 'mode-line-buffer-id
+   :foreground "chartreuse")
   (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   (global-set-key (kbd "M-o") 'ace-window)
   (global-set-key (kbd "M-s t") 'ace-swap-window)
   (ace-window-display-mode)
   )
 
-(provide 'init-common)
+(use-package hydra
+  :pin melpa
+  :ensure t
+  :init
+
+  (defhydra hydra-zoom (global-map "<f2>")
+    "zoom"
+    ("g" text-scale-increase "in")
+    ("l" text-scale-decrease "out")
+    ("=" enlarge-window-horizontally "enlarge-window-h")
+    ("+" enlarge-window "enlarge-window-v")
+    ("-" shrink-window-horizontally "shrink-window-h")
+    ("_" shrink-window "shrink-window-v" )
+    )
+  )
+
+(use-package which-key
+  :pin melpa-stable
+  :ensure t
+  :defer 0.5
+  :config
+  (which-key-setup-minibuffer)
+  (which-key-mode)
+  )
+
+(provide 'init-edit)

@@ -25,17 +25,6 @@
    )
   )
 
-(use-package go-mode
-  :pin melpa-stable
-  :ensure t
-  :defer t
-  :config
-  (defun lsp-go-install-save-hooks ()
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t))
-  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
-  )
-
 (use-package lsp-ui
   :pin melpa-stable
   :ensure t
@@ -82,13 +71,19 @@
   :commands company-lsp
   )
 
-(use-package which-key
+(require 'python)
+(set-variable 'py-indent-offset 4)
+(set-variable 'python-indent-guess-indent-offset nil)
+
+(use-package go-mode
   :pin melpa-stable
   :ensure t
-  :defer 0.5
+  :defer t
   :config
-  (which-key-setup-minibuffer)
-  (which-key-mode)
+  (defun lsp-go-install-save-hooks ()
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    (add-hook 'before-save-hook #'lsp-organize-imports t t))
+  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
   )
 
-(provide 'init-lsp)
+(provide 'init-lsp-lang)

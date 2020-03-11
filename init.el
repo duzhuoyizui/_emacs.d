@@ -1,55 +1,31 @@
-;; (when (< emacs-major-version 27)
-;;   (package-initialize))
-
 (package-initialize)
 
-(require 'package)
-(setq url-proxy-services
-      '(
-        ("http" . "127.0.0.1:1088")
-        ("https" . "127.0.0.1:1088")
-        ))
-
-(setq package-archives
-      '(
-        ("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")
-        ("org" . "https://orgmode.org/elpa/")
-        )
-      )
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq use-package-verbose t)
-(setq use-package-always-pin t)
-;; (setq debug-on-error t) ; Produce backtraces when errors occur => default close
+; Produce backtraces when errors occur => default close
+;; (setq debug-on-error t)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-;; (require 'init-benchmarking)
+
+(require 'init-base)
+(require 'init-global-key)
+
+(require 'init-package)
+(require 'init-ui)
+(require 'init-edit)
 
 (require 'init-env)
-(require 'init-common)
-(require 'init-db)
-(require 'init-docker)
 (require 'init-flycheck)
-(require 'init-hydra)
-(require 'init-lsp)
+(require 'init-lsp-lang)
 (require 'init-markdown)
 (require 'init-nginx)
-(require 'init-org)
-(require 'init-python)
-(require 'init-ui)
+(require 'init-db)
+(require 'init-docker)
 (require 'init-web)
 (require 'init-yaml)
+
+(require 'init-org)
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
