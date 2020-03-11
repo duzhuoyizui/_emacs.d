@@ -1,14 +1,28 @@
 ;;----------------------------------------------------------------------------
 ;; Common: 提升编辑效率
 ;;----------------------------------------------------------------------------
+(setq user-full-name "JerryZhang"
+      user-mail-address "m@zhangjiee.com")
+
+;; default encode
+(set-charset-priority 'unicode)
+(setq locale-coding-system   'utf-8)
+(set-terminal-coding-system  'utf-8)
+(set-keyboard-coding-system  'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system        'utf-8)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+
+;; customize
+(setq confirm-kill-emacs  'y-or-n-p
+      auto-save-default    t
+      mouse-yank-at-point t
+      make-backup-files nil
+      indent-tabs-mode nil
+      create-lockfiles nil)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
-
-(setq auto-save-default nil)
-(setq mouse-yank-at-point t)
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-(setq-default tab-width 4)
 
 (electric-pair-mode 1)
 (electric-indent-mode 1)

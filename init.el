@@ -22,22 +22,12 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; (setq load-prefer-newer t)
-;; (setq package-load-list '(all))
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
 (require 'use-package)
 (setq use-package-verbose t)
 (setq use-package-always-pin t)
-
-;;----------------------------------------------------------------------------
-;; Base config
-;;----------------------------------------------------------------------------
-(setq user-full-name "JerryZhang"
-      user-mail-address "m@zhangjiee.com")
-
 ;; (setq debug-on-error t) ; Produce backtraces when errors occur => default close
 
 ;;----------------------------------------------------------------------------

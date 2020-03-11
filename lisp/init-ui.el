@@ -5,14 +5,15 @@
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
-(setq inhibit-startup-echo-area-message t)
-(setq inhibit-startup-message t)
-(setq ring-bell-function 'ignore)
-(setq use-dialog-box nil)
-(setq use-file-dialog nil)
-(setq visible-bell 1)
-(setq indicate-empty-lines t) ;; Show a marker in the left fringe for lines not in the buffer
-(setq show-trailing-whitespace t)
+(setq inhibit-startup-echo-area-message t
+      inhibit-startup-message t
+      ring-bell-function 'ignore
+      use-dialog-box nil
+      use-file-dialog nil
+      visible-bell 1
+      indicate-empty-lines t
+      show-trailing-whitespace t)
+
 (blink-cursor-mode 0)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (column-number-mode t) ; show column number
