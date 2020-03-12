@@ -19,22 +19,6 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-;; old config
-;; (cond
-;;  ((string-equal system-type "gnu/linux")
-;;   (set-face-attribute 'default nil
-;;                       :family "Microsoft YaHei Mono"
-;;                       :height 150
-;;                       :weight 'normal
-;;                       :width 'normal))
-;;  ((string-equal system-type "darwin")
-;;   (set-face-attribute 'default nil
-;;                       :family "Microsoft YaHei Mono"
-;;                       :height 165
-;;                       :weight 'normal
-;;                       :width 'normal))
-;;  )
-
 (use-package doom-themes
   :pin melpa
   :ensure t
@@ -45,7 +29,6 @@
   (load-theme 'doom-one-light t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
-
 
 (use-package doom-modeline
   :pin melpa
