@@ -26,7 +26,19 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-one-light t)
+
+  ;; for dark mode
+  (global-set-key (kbd "M-s D")
+                (lambda () (interactive)
+                  (load-theme 'doom-one t)))
+
+  ;; for light mode
+  (global-set-key (kbd "M-s L")
+                (lambda () (interactive)
+                  (load-theme 'doom-one-ligh t)))
+
+  (load-theme 'doom-one t)
+
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
