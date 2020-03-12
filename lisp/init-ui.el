@@ -34,7 +34,22 @@
 ;;                       :width 'normal))
 ;;  )
 
-(load-theme 'leuven)
+(use-package doom-themes
+  :pin melpa
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-one-light t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
+
+
+(use-package doom-modeline
+  :pin melpa
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 (use-package rainbow-delimiters
   :pin melpa
@@ -42,13 +57,6 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   (rainbow-delimiters-mode 1)
-  )
-
-(use-package powerline
-  :pin melpa
-  :ensure t
-  :config
-  (powerline-default-theme)
   )
 
 (use-package beacon
@@ -60,17 +68,6 @@
   (setq beacon-dont-blink-commands 'nil)
   (setq beacon-color "#40a9ff")
   (beacon-mode 1)
-  )
-
-(use-package diminish
-  :pin melpa
-  :ensure t
-  :config
-  (diminish 'ivy-mode)
-  (diminish 'flycheck-mode)
-  (diminish 'company-mode)
-  (diminish 'eldoc-mode)
-  (diminish 'projectile-mode)
   )
 
 (provide 'init-ui)
