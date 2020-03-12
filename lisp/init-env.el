@@ -1,11 +1,10 @@
 ;; exec-path-from-shell 很慢，所以延迟加载
-;; 非终端，GUI 环境下要如果需要执行命令，比如 git 需要：=exec-path-from-shell-initialize=
 ;; https://github.com/purcell/exec-path-from-shell/issues/36
 
 (use-package exec-path-from-shell
   :pin melpa
   :ensure t
-  :defer t
+  :defer 1.0
   :config
   (when (and window-system
              (memq window-system '(mac ns)))
