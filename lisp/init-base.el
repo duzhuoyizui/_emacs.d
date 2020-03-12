@@ -53,4 +53,6 @@
 (show-paren-mode t)
 (save-place-mode 1)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (provide 'init-base)
