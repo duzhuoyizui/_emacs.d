@@ -2,57 +2,16 @@
 ;; UI 编辑器显示
 ;;----------------------------------------------------------------------------
 
-;; (require 'cnfonts)
+(require 'cnfonts)
 
-;; (setq cnfonts-personal-fontnames '(("JetBrains Mono")))
+(setq cnfonts-personal-fontnames '(("JetBrains Mono")))
 
-;; ;; (10   12.0 12.0)
-;; ;; (11.5 15.0 15.0)
-;; ;; (12.5 15.0 15.0)
-;; ;; (14   16.5 16.5)
-;; ;; (15   18.0 18.0)
-;; ;; (16   20.0 20.0)
-;; ;; (18   22.0 22.0)
-;; (set-face-attribute
-;;  'default nil
-;;  :font (font-spec :name "-*-JetBrains Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
-;;                   :weight 'normal
-;;                   :slant 'normal
-;;                   :size 15))
-;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
-;;   (set-fontset-font
-;;    (frame-parameter nil 'font)
-;;    charset
-;;    (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
-;;               :weight 'normal
-;;               :slant 'normal
-;;               :size 18.0)))
+(setq cnfonts-profiles '("default"))
+(setq cnfonts-use-system-type t)        ; different os different config dir
+(setq cnfonts-use-face-font-rescale t)
 
-;; ;; (setq cnfonts-use-face-font-rescale t)
+(cnfonts-enable)
 
-;; ;; disable bold
-;; (defadvice set-face-attribute
-;;     (before no-bold (face frame &rest args) activate)
-;;   (setq args
-;;         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
-;;                 args)))
-
-;; (cnfonts-enable)
-
-(cond
- ((string-equal system-type "gnu/linux")
-  (set-face-attribute 'default nil
-                      :family "Microsoft YaHei Mono"
-                      :height 150
-                      :weight 'normal
-                      :width 'normal))
- ((string-equal system-type "darwin")
-  (set-face-attribute 'default nil
-                      :family "Microsoft YaHei Mono"
-                      :height 165
-                      :weight 'normal
-                      :width 'normal))
- )
 ;; disable bold
 (defadvice set-face-attribute
     (before no-bold (face frame &rest args) activate)
@@ -60,6 +19,21 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
+;; old config
+;; (cond
+;;  ((string-equal system-type "gnu/linux")
+;;   (set-face-attribute 'default nil
+;;                       :family "Microsoft YaHei Mono"
+;;                       :height 150
+;;                       :weight 'normal
+;;                       :width 'normal))
+;;  ((string-equal system-type "darwin")
+;;   (set-face-attribute 'default nil
+;;                       :family "Microsoft YaHei Mono"
+;;                       :height 165
+;;                       :weight 'normal
+;;                       :width 'normal))
+;;  )
 
 (load-theme 'leuven)
 
