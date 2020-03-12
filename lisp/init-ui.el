@@ -1,15 +1,16 @@
 ;;----------------------------------------------------------------------------
 ;; UI 编辑器显示
 ;;----------------------------------------------------------------------------
-(require 'cnfonts)
-
-(setq cnfonts-personal-fontnames '(("JetBrains Mono")))
-
-(setq cnfonts-profiles '("default"))
-(setq cnfonts-use-system-type t)        ; different os different config dir
-(setq cnfonts-use-face-font-rescale t)
-
-(cnfonts-enable)
+(use-package cnfonts
+  :pin melpa
+  :ensure t
+  :init
+  (setq cnfonts-personal-fontnames '(("JetBrains Mono")))
+  (setq cnfonts-profiles '("default"))
+  (setq cnfonts-use-system-type t)        ; different os different config dir
+  (setq cnfonts-use-face-font-rescale t)
+  (cnfonts-enable)
+  )
 
 ;; disable bold
 (defadvice set-face-attribute
