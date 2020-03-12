@@ -30,10 +30,16 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
+;; 需要安装 all-the-icons: =M-x all-the-icons-install-fonts=
 (use-package doom-modeline
   :pin melpa
   :ensure t
   :init (doom-modeline-mode 1))
+
+(use-package all-the-icons-ivy
+  :pin melpa
+  :ensure t
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
 
 (use-package rainbow-delimiters
   :pin melpa
