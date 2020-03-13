@@ -35,7 +35,7 @@
   ;; for light mode
   (global-set-key (kbd "M-s L")
                 (lambda () (interactive)
-                  (load-theme 'doom-one-ligh t)))
+                  (load-theme 'doom-one-light t)))
 
   (load-theme 'doom-one t)
 
