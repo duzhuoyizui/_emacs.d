@@ -37,7 +37,7 @@
                 (lambda () (interactive)
                   (load-theme 'doom-one-light t)))
 
-  (load-theme 'doom-one t)
+  (load-theme 'doom-one-light t)
 
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
