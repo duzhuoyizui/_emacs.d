@@ -22,6 +22,8 @@
       indent-tabs-mode     nil
       create-lockfiles     nil)
 
+(setq-default tab-width 2)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
 
@@ -49,7 +51,6 @@
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
 
-(setq-default indent-tabs-mode nil)
 (show-paren-mode t)
 (save-place-mode 1)
 
