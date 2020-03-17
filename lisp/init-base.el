@@ -22,7 +22,7 @@
       indent-tabs-mode     nil
       create-lockfiles     nil)
 
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
