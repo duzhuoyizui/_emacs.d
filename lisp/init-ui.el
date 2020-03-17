@@ -19,6 +19,21 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
+(use-package dashboard
+  :pin melpa
+  :ensure t
+  :config
+  (setq dashboard-banner-logo-title "Welcome to Emacs")
+  (setq dashboard-init-info "Stay Hungry, Stay Foolish")
+  (setq dashboard-center-content t)
+  (setq dashboard-set-init-info t)
+  (setq dashboard-set-footer t)
+  (setq dashboard-set-navigator t)
+  (setq dashboard-items '((recents . 8)
+                        (projects . 5)))
+  (dashboard-setup-startup-hook)
+  )
+
 (use-package doom-themes
   :pin melpa
   :ensure t
