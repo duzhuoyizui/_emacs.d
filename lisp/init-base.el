@@ -40,6 +40,12 @@
       indicate-empty-lines t
       show-trailing-whitespace t)
 
+ ;; highlight > 120 char line
+(require 'whitespace)
+(setq whitespace-line-column 120)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
 (blink-cursor-mode 0)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (column-number-mode t) ; show column number

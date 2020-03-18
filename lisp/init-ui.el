@@ -1,6 +1,8 @@
 ;;----------------------------------------------------------------------------
 ;; UI 编辑器显示
 ;;----------------------------------------------------------------------------
+(load-theme 'leuven)
+
 (use-package cnfonts
   :pin melpa
   :ensure t
@@ -33,29 +35,6 @@
                         (projects . 5)))
   (dashboard-setup-startup-hook)
   )
-
-(use-package doom-themes
-  :pin melpa
-  :ensure t
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold nil    ; if nil, bold is universally disabled
-        doom-themes-enable-italic nil) ; if nil, italics is universally disabled
-
-  ;; for dark mode
-  (global-set-key (kbd "M-s D")
-                (lambda () (interactive)
-                  (load-theme 'doom-one t)))
-
-  ;; for light mode
-  (global-set-key (kbd "M-s L")
-                (lambda () (interactive)
-                  (load-theme 'doom-one-light t)))
-
-  (load-theme 'doom-one-light t)
-
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
 
 ;; 需要安装 all-the-icons: =M-x all-the-icons-install-fonts=
 (use-package doom-modeline
