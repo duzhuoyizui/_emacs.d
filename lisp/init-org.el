@@ -4,7 +4,7 @@
   :defer t
   )
 
-; https://emacs.stackexchange.com/questions/17710/use-package-with-config-to-set-variables
+;; https://emacs.stackexchange.com/questions/17710/use-package-with-config-to-set-variables
 (use-package org
   :pin org
   :ensure org-plus-contrib
@@ -15,10 +15,11 @@
   (setq org-startup-with-inline-images t)
 
   ;; GTD setting
+  (require 'org-inlinetask)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
+  (setq org-agenda-files '("~/site/org"))
 
-  (require 'org-inlinetask)
   (require 'org-tempo)
 
   (use-package ob-go
@@ -49,6 +50,7 @@
     (setq org-superstar-configure-like-org-bullets t)
     (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
     )
+
   (use-package toc-org
     :pin melpa
     :ensure t
