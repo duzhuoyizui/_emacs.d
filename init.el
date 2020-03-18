@@ -25,6 +25,7 @@
 (require 'init-web)
 (require 'init-yaml)
 
+(require 'init-plantuml)
 (require 'init-org)
 
 ;;----------------------------------------------------------------------------
