@@ -26,7 +26,7 @@
   :ensure t
   :config
   (setq dashboard-banner-logo-title "Welcome to Emacs")
-  (setq dashboard-init-info "Stay Hungry, Stay Foolish")
+  (setq dashboard-init-info "the truth is what it is, not what you see")
   (setq dashboard-center-content t)
   (setq dashboard-set-init-info t)
   (setq dashboard-set-footer t)
