@@ -40,7 +40,12 @@
 (use-package doom-modeline
   :pin melpa
   :ensure t
-  :init (doom-modeline-mode 1))
+  :config
+  (set-face-foreground 'doom-modeline-buffer-modified "goldenrod")
+  (setq doom-modeline-project-detection 'ffip)
+  (setq doom-modeline-buffer-modification-icon nil)
+  (doom-modeline-mode 1)
+  )
 
 (use-package all-the-icons-ivy
   :pin melpa
