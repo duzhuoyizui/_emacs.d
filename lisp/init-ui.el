@@ -1,18 +1,20 @@
 ;;----------------------------------------------------------------------------
 ;; UI 编辑器显示
 ;;----------------------------------------------------------------------------
-(load-theme 'leuven)
-
-(use-package cnfonts
-  :pin melpa
-  :ensure t
-  :init
-  (setq cnfonts-personal-fontnames '(("JetBrains Mono")))
-  (setq cnfonts-profiles '("default"))
-  (setq cnfonts-use-system-type t)        ; different os different config dir
-  (setq cnfonts-use-face-font-rescale t)
-  (cnfonts-enable)
-  )
+(cond
+ ((string-equal system-type "gnu/linux")
+  (set-face-attribute 'default nil
+                      :family "Microsoft YaHei Mono"
+                      :height 150
+                      :weight 'normal
+                      :width 'normal))
+ ((string-equal system-type "darwin")
+  (set-face-attribute 'default nil
+                      :family "Microsoft YaHei Mono"
+                      :height 165
+                      :weight 'normal
+                      :width 'normal))
+ )
 
 ;; disable bold
 (defadvice set-face-attribute
@@ -20,6 +22,8 @@
   (setq args
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
+
+(load-theme 'leuven)
 
 (use-package dashboard
   :pin melpa
