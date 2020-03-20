@@ -45,20 +45,16 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "goldenrod")
+  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
   (setq doom-modeline-project-detection 'ffip)
   (setq doom-modeline-buffer-modification-icon nil)
   (doom-modeline-mode 1)
   )
 
-(use-package all-the-icons-ivy
-  :pin melpa
-  :ensure t
-  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
-
 (use-package rainbow-delimiters
   :pin melpa
   :ensure t
+  :defer 0.5
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   (rainbow-delimiters-mode 1)
@@ -67,6 +63,7 @@
 (use-package beacon
   :pin melpa
   :ensure t
+  :defer 0.5
   :config
   (setq beacon-blink-delay '0.2)
   (setq beacon-blink-when-focused 't)
