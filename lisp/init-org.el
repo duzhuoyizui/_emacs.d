@@ -18,7 +18,7 @@
   (require 'org-inlinetask)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "BLOCK(b)" "|" "DONE(d)" "CANCELD(d)")))
-  (setq org-agenda-files '("~/site/org"))
+  (setq org-agenda-files '("~/site/org/gtd"))
 
   (require 'org-tempo)
 
