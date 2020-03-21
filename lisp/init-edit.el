@@ -21,6 +21,7 @@
   (global-set-key (kbd "M-s p") 'er/mark-outside-pairs)
   (global-set-key (kbd "M-s P") 'er/mark-inside-pairs)
   (global-set-key (kbd "M-s q") 'er/mark-outside-quotes)
+  (global-set-key (kbd "M-s m") 'er/mark-comment)
   (global-set-key (kbd "M-s Q") 'er/mark-inside-quotes)
   (global-set-key (kbd "M-s f") 'er/mark-defun)
   )

@@ -18,10 +18,7 @@
     ))
   (setq flycheck-python-flake8-executable "flake8")
 
-  (setq flycheck-check-syntax-automatically '(mode-enabled save))
-
-  ;; 手动检查
-  (global-set-key (kbd "M-s m") 'flycheck-mode)
+  (global-flycheck-mode)
 
   ;;:config
   ;;(flycheck-add-mode 'javascript-eslint 'web-mode)
