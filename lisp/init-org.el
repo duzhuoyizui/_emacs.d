@@ -66,6 +66,10 @@
   :config
   (setq org-html-validation-link nil)
 
+  ;; nil: do not checking and always publish all file
+  ;; Non-nil(t): use timestamp checking, default set 't'
+  (setq org-publish-use-timestamps-flag t)
+
   (setq org-html-postamble t
         org-html-postamble-format
         '(("en" "<p class=\"postamble\">First created: %d <br />Last updated: %C <br />Power by %c</p>")))
