@@ -12,6 +12,7 @@
   - [[#多鼠标操作][多鼠标操作]]
   - [[#项目管理][项目管理]]
   - [[#多窗口][多窗口]]
+  - [[#ide][IDE]]
   - [[#版本管理][版本管理]]
   - [[#org-mode][Org Mode]]
 - [[#faq][FAQ]]
@@ -27,14 +28,17 @@
   - [[#我可不可以用-emacs-完成-xxx-能做的事情][我可不可以用 Emacs 完成 XXX 能做的事情？]]
   - [[#是否要使用-evil-][是否要使用 Evil ？]]
   - [[#行逆序排序][行逆序排序]]
+  - [[#eshell-git-diff-高亮][eshell git diff 高亮]]
 - [[#troubleshooting][Troubleshooting]]
   - [[#安装-lsp-mode-报错-spinner-173-is-unavailable][安装 lsp-mode 报错 spinner-1.7.3 is unavailable？]]
   - [[#lsp-go-suspicious-state-fromsyntax-checker-go-vet-][lsp go: Suspicious state fromsyntax checker go-vet ?]]
 - [[#resource][Resource]]
   - [[#blogsitetutorial][Blog/Site/Tutorial]]
+  - [[#media][Media]]
   - [[#article][Article]]
   - [[#configure-reference][Configure reference]]
   - [[#org-mode-theme][org-mode theme]]
+  - [[#知名的-emacs-用户有哪些][知名的 Emacs 用户有哪些？]]
 - [[#footnotes][Footnotes]]
 
 * 开始之前
@@ -43,7 +47,7 @@
 大学期间和我的第一份工作主要的开发环境是 Windows，Emacs 虽然在私下里花了很多精力折腾，但正式使用 Emacs 作为开发环境是 2014 年以后，
 之后工作环境主要聚焦在 Mac/CentOS/Ubuntu 上，直到现在，Emacs 都是我的主力编辑器：
 
-- 前端 :: JavasSript/HTML/CSS/LESS, React(jsx)
+- 前端 :: JavaSript/HTML/CSS/LESS, React(jsx)
 - 后端 :: C/C++, Python/Django, Go
 - 日常 :: Shell，YAML，JSON，...
 - 写文章 :: org-mode
@@ -58,19 +62,18 @@
 
 * 基础
 ** 安装 Emacs
-*** Ubuntu
+*** Ubuntu 18.04
 
-直接使用系统的包管理工具安装的 Emacs 版本都很低，推荐使用源码安装，当前最新的版本是 26.3。源码编译安装即可。下面是 Ubuntu 18.04 上安装流程：
+直接使用系统的包管理工具安装的 Emacs 版本都很低，推荐使用源码安装，当前最新的版本是 26.3。
 
 下载源码：[[http://mirrors.ustc.edu.cn/gnu/emacs/][http://mirrors.ustc.edu.cn/gnu/emacs/]]
 
 #+BEGIN_SRC shell
-apt install make
-apt install gcc
+apt install make gcc g++ autoconf
 apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses-dev
 ./autogen.sh
 ./configure
-make -j2
+make -j4
 sudo make install
 #+END_SRC
 
@@ -159,20 +162,20 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 |--------------------+--------------------------------------+----------------------------------------------------------------------|
 | 插件名称           | 插件介绍                             | 备注                                                                 |
 |--------------------+--------------------------------------+----------------------------------------------------------------------|
-| [[https://www.flycheck.org/en/latest/][Flycheck]]           | 强大的语法检查框架                   | 需要编程语言的 lint 工具配合，比如 eslint、golint。编码必备。        |
 | [[https://github.com/abo-abo/ace-window][ace-window]]         | 多窗口切换                           | 以前一直用 [[https://github.com/deb0ch/emacs-winum][emacs-winum]]                                               |
 | [[https://github.com/abo-abo/avy][avy]]                | 光标快速定位（按照字符、单词、行等） | 以前用的是 [[https://github.com/winterTTr/ace-jump-mode][ace-jump]]                                                  |
 | [[https://github.com/company-mode/company-mode][company-mode]]       | 模块化补全框架（支持各种语言）       | 相同的还有 auto-complete，但它没有 company 精准。编码必备。          |
-| [[https://github.com/emacsmirror/diminish][diminish]]           |                                      | 减少一些 mode 在 mode line 上的显示                                  |
+| [[https://github.com/seagle0128/doom-modeline][doom-modeline]]      | modeline 看起来漂亮一些              | 依赖 [[https://github.com/domtronn/all-the-icons.el][all-the-icons]] _GUI 才可用_                                      |
 | [[https://github.com/magnars/expand-region.el][expand-region]]      | 快速选中文本                         | 比如我常用 =M-s s= 选中一个单词，用 ~M-s p~ 选中括号内内容，然后复制 |
+| [[https://www.flycheck.org/en/latest/][Flycheck]]           | 强大的语法检查框架                   | 需要编程语言的 lint 工具配合，比如 eslint、golint。编码必备。        |
 | [[https://github.com/nonsequitur/git-gutter-plus][git-gutter+]]        | 提示当前 buffer 改动部分             | 用 ~+~ 和 ~=~ 等显示出来                                             |
 | [[https://github.com/nschum/highlight-symbol.el][highlight-symbol]]   | 高亮当前单词                         |                                                                      |
 | [[https://github.com/abo-abo/swiper][ivy]]                | 通用完成前端                         | 一般 ido+smex，ivy，[[https://github.com/emacs-helm/helm][helm]] 三者必须选一                                |
 | [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]           | [[https://langserver.org][LSP]] 的 Emacs 客户端                  | -目前不是特别成熟-                                                   |
 | [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]   | 多鼠标操作                           | [[http://emacsrocks.com/e13.html][Emacs Rocks! Episode 13: multiple-cursors]]                            |
 | [[https://orgmode.org][org-mode]]           | 最牛逼的插件，没有之一               |                                                                      |
-| [[https://github.com/milkypostman/powerline][powerline]]          | mode line 看起来更漂亮一些           | 同类的还有很多                                                       |
 | [[https://github.com/bbatsov/projectile][projectile]]         | 项目管理框架                         | 可以与 ivy 一起使用，[[https://github.com/ericdanan/counsel-projectile][counsel-projectile]]                              |
+| [[https://github.com/skuro/plantuml-mode][plantuml-mode]]      | [[https://plantuml.com/][PlantUML]] 的 Emacs mode               | 需要安装环境                                                         |
 | [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | 彩虹括号                             | 相同层级的括号相同颜色                                               |
 | [[https://github.com/felipeochoa/rjsx-mode][rjsx-mode]]          | JSX mode                             | 比 web-mode 好用很多，而且更新的快                                   |
 | [[https://github.com/jwiegley/use-package][use-package]]        | 包配置隔离                           | 可设置启动时机，加速 Emacs 启动                                      |
@@ -184,9 +187,12 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 - [[https://github.com/auto-complete/auto-complete][auto-complete]] 自动完成插件，后来用 company 替换了
 - [[https://github.com/technomancy/better-defaults][better-defaults]] 几行代码就可以达到相同的效果
 - [[https://github.com/emacs-dashboard/emacs-dashboard][dashboard]] 启动会显示最近使用过的文件，项目，标签等 华而不实啊
-- [[https://github.com/magit/magit][magit]] 评价非常高的 git package，但是我感觉太慢了，另外是习惯了命令行操作 git，常用的操作用 build-in 的功能足够了，见 [[#manual-vc][版本管理]]
-- [[https://github.com/joaotavora/yasnippet][yasnippet]] 代码片段，以前写 C++ 的时候常用，现在感觉不咋用了
+- [[https://github.com/emacsmirror/diminish][diminish]] 减少一些 mode 在 modeline 上的显示，doom-modeline 显示已经很精简了
 - [[https://github.com/emacs-helm/helm][helm]] 一个补全框架，用了四五年，后来用 ivy 替换掉了
+- [[https://github.com/magit/magit][magit]] 评价非常高的 git package，但是我感觉太慢了，另外是习惯了命令行操作 git，常用的操作用 build-in 的功能足够了，见 [[#manual-vc][版本管理]]
+- [[https://github.com/milkypostman/powerline][powerline]] 用了一段时间，后来用 doom-modeline 替换掉了
+- [[https://github.com/joaotavora/yasnippet][yasnippet]] 代码片段，以前写 C++ 的时候常用，现在感觉不咋用了
+- [[https://github.com/tumashu/cnfonts][cnfonts]] GUI 中英文混排等宽，等宽是可以了，但是不等高啊.. 中英文的输入跳跃太难受了
 
 * 日常使用
 
@@ -205,20 +211,24 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 | ~C-x g~   | 打开 git-gutter+                                      |
 | ~C-x n/p~ | 上一个/下一个 git 改动                                |
 | ~C-x r~   | revert 当前改动                                       |
+| ~F12~     | semantic-or-imenu，显示当前文件的全局变量、类，方法等 |
 | ~F3~      | 打开 Eshell                                           |
-| ~F4~      | 插入当前时间                                          |
+| ~F4~      | 插入当前时间，比如 <2020-03-12 22:07:58 四>           |
 | ~F6~      | 显示当前文件路径                                      |
 | ~F7~      | 执行前一条命令                                        |
-| ~F12~     | semantic-or-imenu，显示当前文件的全局变量、类，方法等 |
 | ~M--~     | 高亮当前单词， ~M-p/n~ 跳转到上一个和下一个           |
 | ~M-m~     | 不断扩大区域的选中                                    |
 | ~M-s ;~   | 跳转到单词                                            |
-| ~M-s P~   | 选中括号内的内容                                      |
+| ~M-s D~   | 切换到暗色主题                                        |
 | ~M-s f~   | 选中当前函数                                          |
 | ~M-s i~   | 跳转到指定符开始的单词                                |
 | ~M-s j~   | 快速跳转到行                                          |
 | ~M-s k~   | 复制指定行到当前行                                    |
 | ~M-s l~   | 打开/关闭行号                                         |
+| ~M-s L~   | 切换到亮色主题                                        |
+| ~M-s m~   | 选中注释                                              |
+| ~M-s p~   | 选中括号内的内容(包含括号)                            |
+| ~M-s P~   | 选中括号内的内容                                      |
 | ~M-s s~   | 选中当前单词                                          |
 | ~M-y~     | kill-ring                                             |
 |-----------+-------------------------------------------------------|
@@ -227,14 +237,13 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 
 选中要改动的单词，然后：
 
-|-----------+----------------------|
-| 快捷键    | 功能                 |
-| ~M-s >~   | 选择下一个相同的单词 |
-| ~M-s <~   | 选择上一个相同的单词 |
-| ~M-s C-a~ | 选择所有与单词相同的 |
-| ~M-s a~   | 选择行首             |
-| ~M-s e~   | 选择行位             |
-|-----------+----------------------|
+|-----------+------------------------|
+| 快捷键    | 功能                   |
+| ~M-s ;~   | 选择当前函数选中的单词 |
+| ~M-s >~   | 选择下一个相同的单词   |
+| ~M-s <~   | 选择上一个相同的单词   |
+| ~M-s C-a~ | 选择所有与单词相同的   |
+|-----------+------------------------|
 
 ** 项目管理
 
@@ -246,7 +255,7 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 | 快捷键      | 功能                                                                               |
 |-------------+------------------------------------------------------------------------------------|
 | ~C-c g~     | 在当前的 git 文件中打开文件，很好用                                                |
-| ~C-c p b~   | 切换 buffer，类似 ~C-x b~，只不过是针对当前项目的                                  |
+| ~C-c p b~   | 切换 buffer，类似 ~C-x b~ ，只不过是针对当前项目的                                 |
 | ~C-c p b~   | 在当前项目打开的 Buffer 中切换                                                     |
 | ~C-c p f~   | 在打开的项目中打开文件                                                             |
 | ~C-c p i~   | 清空 projectile 当前项目的缓存（有的时候文件被删掉了需要清理一下，不然会造成干扰） |
@@ -272,22 +281,36 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 | ~<f2> g/l~       | 字体变大或者缩小（GUI 有效）      |
 |------------------+-----------------------------------|
 
-《》** IDE
+** IDE
 
+#+begin_quote
 语言的开发环境配置一直很费时间，我记得以前刚配置 C/C++ 的开发环境时，折腾了一个月左右时间才找到一个相对比较
 满意的开发环境（折腾完之后使用起来可真爽啊）： ~xcscope + etags + c++-mode~ 。
 
-写 Python 的时候也折腾了长时间的缩进问题。 Go 就更不用说了···，Go 工具链很完整，
-但由于 Go 的版本升级很快，工具链根本跟不上， +gocode+ 已经迁移了三次地址了。
+写 Python 的时候也折腾了长时间的缩进问题。 Go 就更不用说了···，Go 工具链很完整，但由于 Go 的版本升级很快，工具链根本跟不上， +gocode+ 已经迁移了三次地址了。
 
 后来看到了 [[https://langserver.org/][LSP（Language Server Protocol）]] 项目，感觉这个项目才是终极解法：插件化，C/S 模式。
 目前已经默认支持 Python 和 Go 了，虽然还是有许许多多的 Bug，但比起 2018 年我试的时候已经成熟太多了。有社区的驱动，发展很快。
+#+end_quote
 
+*** Go
+
+按照 [[https://golang.org/doc/install][官方说明]] 安装 Go，LSP server 用的是 [[https://github.com/golang/tools/tree/master/gopls][gopls]]。
+
+guru: a tool for answering questions about Go source code.
+
+#+begin_src sh
+go get golang.org/x/tools/cmd/guru
+go get golang.org/x/tools/gopls@latest
+#+end_src
+
+*** TODO Python
 *** LSP 使用
 
-=lsp-workspace-folders-remove= 可以移出之前添加的 workspace，但是如果遇到大的目录变更，一个一个的移出很慢。
-目前似乎没有提供一次性 remove all 的方法。一个解决办法是删除 lsp 的存储文件（lsp 提供了 =lsp-session-file= 变量来定义文件路径，
-默认在 =.emacs.d/.lsp-session-*= 路径下，如果没找到也可以在 lsp 源代码中搜索 lsp-session-file）。
+1. =lsp-workspace-folders-remove= 可以移出之前添加的 workspace，但是如果遇到大的目录变更，一个一个的移出很慢。
+   目前似乎没有提供一次性 remove all 的方法。一个解决办法是删除 lsp 的存储文件（lsp 提供了 =lsp-session-file= 变量来定义文件路径，
+   默认在 =.emacs.d/.lsp-session-*= 路径下，如果没找到也可以在 lsp 源代码中搜索 lsp-session-file）。
+2. 当前 LSP 还不太稳定，遇到各种问题就可以重启是最有效的办法： =lsp-workspace-restart=
 
 ** 版本管理
    :PROPERTIES:
@@ -299,7 +322,7 @@ Emacs 有很多的 [[http://melpa.org][插件]]，[[https://github.com/emacs-tw/
 |-----------+--------------------|
 | 快捷键    | 功能               |
 |-----------+--------------------|
-| =C-x v == | 文件 diff          |
+| ~C-x v =~ | 文件 diff          |
 | =C-x v l= | 当前文件提交记录   |
 | =C-x v += | git pull，svn up   |
 | =C-x v P= | git push，svn push |
@@ -335,20 +358,30 @@ orgmode 是 emacs 自带的 package，但是一般自带的版本比较低。更
 | =C-c C-x p= | 插入标题 =PROPERTIES=                                        |
 | =C-c C-o=   | 打开当前链接 ~org-open-at-point~                             |
 | =C-c C-,=   | 插入结构化模板（类似代码，引用等），orgmode 9.2 版本之后支持 |
+| =C-c C-c=   | 标题上添加 Tag，可以用来分类或者打标签                       |
 |-------------+--------------------------------------------------------------|
 
 扩展：
 
 - [[file:../../../blog/2019/build-site-with-org-mode.org][使用 org-mode 搭建网站]]
 - [[file:../../../blog/2019/emacs-slice.org][Emacs 基于 org-reveal 做幻灯片]]
+- GTD 相关文章：
+  - [[https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html][Orgmode for GTD]]
+  - [[http://members.optusnet.com.au/~charles57/GTD/gtd_workflow.html][How I use Emacs and Org-mode to implement GTD]]
 
-/2020-02-15 10:15:16/
+<2020-02-15 10:15:16>
 
-orgmode 9.2 之后不再直接支持 =<s [Tab]= 的快捷方式插入代码块，而提供了统一的 =org-insert-structure-template= 函数，快捷键为 =C-c c-,= 。
+orgmode 9.2 之后不再直接支持 =<s [Tab]= 的快捷方式插入代码块，而提供了统一的 =org-insert-structure-template= 函数，快捷键为 =C-c C-,= 。
 如果想要提供以前的简洁方式，需要引入 =org-tempo= ，比如 =(require 'org-tempo)= 我使用的是 =(use-package org-tempo)= 。具体见：
 
 - [[https://emacs.stackexchange.com/questions/46988/why-do-easy-templates-e-g-s-tab-in-org-9-2-not-work][Why do easy templates, .e.g, “< s TAB” in org 9.2 not work?]]
 - [[https://orgmode.org/manual/Structure-Templates.html][org-mode 16.2 Structure Templates]]
+
+<2020-03-09 17:13:03 Mon>
+
+orgmode 中 =_= 和 =^= 会被输出成下标和上标语法，可以在 =+OPTIONS= 中设置 =^:nil= 来禁掉它。
+
+- https://emacs.stackexchange.com/questions/10549/org-mode-how-to-export-underscore-as-underscore-instead-of-highlight-in-html
 
 * FAQ
 ** Emacs 启动速度太慢怎么办？
@@ -385,40 +418,9 @@ pandoc -f markdown -t org -o test.org test.md
 
 ** 使用 GUI 版本还是 Terminal ?
 
-这个分歧很大，使用 GUI 可以让你很完备的使用 Emacs，不用担心快捷键冲突，具有更好的编辑效果，但是经常会有编码问题，如果使用终端的话，
-只要设置终端的编码就可以了；而且汉字的字体设置也很繁琐（我使用中英文等宽的 ~WenQuanYi Zen Hei Mono~ 解决了这个问题）。
+推荐 GUI 的人比 Terminal 的多很多，这个分歧很大，各有优劣势。
 
-使用终端的问题是快捷键很大概率冲突，因为 Emacs 几乎占了所有的快捷键。比如我会使用 ~M + 1/2/3/..~ 切换 Emacs 中的窗口，
-而这个往往是很多终端切换页签的快捷键（Ubuntu 和 Windows 下的 Xshell 都是如此）。要自己重新设置快捷键。
-
-不管是使用 GUI 还是 Terminal，全凭个人喜好。我之前一直用终端，最近（2019-06-04）切换到了 GUI。
-
-/2019-06-15 10:03:35/
-
-在尝试了两周的 GUI 之后，最终还是切换到了 Terminal。主要原因是：
-
-+ 大部分编码等宽字体都不是中英文等宽的，比如我最喜爱的 ~Source Code Pro~ ，你看到的终端等宽大多是因为终端帮你设置了字体的高度和宽度。
-  ~Ubuntu mono~ 和 ~M +1~ 是中英文等宽的，但不是等高的，编辑的时候跳跃让人很不爽。文泉驿是一个绝对的等宽和等高字体，
-  但是 Mac 下的字体实在太丑了～
-+ 以前我最大的快捷键冲突是切换页签的 ~M - 1/2/3/...~ ，最近发现了 [[https://github.com/abo-abo/ace-window][ace-window]] ，使用 ~M - o 1/2/3~ 切换页签，解决了这个问题。
-+ 最后一个问题是工作流，因为工作性质的原因，不管是做服务器开发还是前端开发，都是需要实时的跟终端交互，GUI 和 终端切换，
-  没有终端自身两个页签切换来的流畅。
-
-对 GUI 最大的怀念是可以无缝的跟系统的剪切板融合，比如在别的地方 ~Ctrl + c~ 复制的内容，可以在 Emacs 中 ~M-y~ 粘贴过来，反之亦然。
-
-/2019-06-24 10:29:43/
-
-Ubuntu 下文泉驿是 OK 的，还不错，MacOS 有点丑。习惯了之后还有点离不开 GUI（快捷键真舒服啊），准备用终端写代码，GUI 写文档（文章），
-准备适应一段时间。
-
-/2019-07-08 20:57:06/
-
-Ubuntu GUI 无法切换搜狗输入法，与默认的 Mark 快捷键冲突，解决办法是修改 locale， ~/etc/default/locale~ 中添加 ~LC_CTYPE=zh_CN.UTF-8~ ，
-然后重启即可（中文桌面情况下是没有这个问题的）。
-
-/2019-11-17 16:18:19/
-
-试了一下 [[https://github.com/whorusq/sublime-text-3/blob/master/fonts/Microsoft-Yahei-Mono.ttf][Microsoft YaHei Mono]]，发现效果要比文泉驿要好很多，中文还挺好看。决定终端和 GUI 都使用一段时间。
+对我来说，GUI 中英文等宽等高的问题无法解决，折腾了很多次，最终决定实用终端，不折腾了。
 
 ** 如何去掉空白字符
 
@@ -474,6 +476,17 @@ Emacs 的快捷键非常多，但是除了基本的编辑操作快捷键之外�
 1. ~M-x sort-lines~
 2. ~M-x reverse-region~
 
+** eshell git diff 高亮
+
+在 =.git/config= 文件中添加[fn:3]：
+
+#+begin_src
+[color]
+    ui = always
+#+end_src
+
+因为我用的是 eshell，ansi-term 默认就是一个 ansi color 的 term。但是用惯了 eshell 不想换了。
+
 * Troubleshooting
 ** 安装 lsp-mode 报错 spinner-1.7.3 is unavailable？
 
@@ -491,8 +504,11 @@ spinner 在 =gnu= 中，确保 =package-archives= 中包含 =https://elpa.gnu.or
 + [[https://planet.emacslife.com/][Planet Emacslife]]：Emacs 百科全书，大杂烩
 + [[https://emacsthemes.com/][Emacs Themes]]：主题集合
 + [[http://oremacs.com/][oremacs]]
-+ [[http://melpa.org/][melpa]] 插件集合
-+ [[https://www.youtube.com/watch?v=cod2ABxlrV8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=9][using emacs]]：youtube 视频
+
+** Media
+
+- [[https://cestlaz.github.io/stories/emacs/][Using Emacs Series]]：cestlaz 的使用 Emacs 系列，偏向于插件介绍。
+- [[https://www-users.cs.umn.edu/~kauffman/tooltime/][ToolTime]] 前两节是讲 Emacs 的，理论+实践，有视频还有配套的 PPT，一般的资料都是讲什么用，而这个课程讲了为什么是这样，由浅入深；非常推荐。
 
 ** Article
 
@@ -506,11 +522,33 @@ spinner 在 =gnu= 中，确保 =package-archives= 中包含 =https://elpa.gnu.or
 - [[https://github.com/redguardtoo/emacs.d][redguardtoo/emacs.d]]
 - [[https://github.com/hlissner/doom-emacs][hlissner/doom-emacs]]
 - [[https://protesilaos.com/dotemacs/][Emacs initialisation file (dotemacs)]]: wiki + 配置
+- [[http://www.emacs-bootstrap.com/][emacs-bootstrap]]: 动态生成 Emacs 配置
 
 ** org-mode theme
 
 - [[https://jessekelly881-imagine.surge.sh][Imagine]]: 范例 [[https://jessekelly.tk/][Jesse Kelly]]
 - [[https://jessekelly881-rethink.surge.sh][Rethink]]
+- [[https://github.com/gongzhitaao/orgcss][orgcss]]: 范例 [[https://gongzhitaao.org/orgcss/][CSS for Org-exported HTML]]
+- [[https://github.com/fniessen/org-html-themes][org-html-themes]]
+- 我自己网站的 CSS 文件：https://raw.githubusercontent.com/zhangjie2012/site/master/static/site.css
+
+** 知名的 Emacs 用户有哪些？
+
+[[http://ergoemacs.org/misc/famous_emacs_users.html][Famous Emacs Users]]
+
+- Donald Knuth: 计算机程序设计艺术的作者
+- Julian Assange: 维基解密 董事与发言人
+- 松本行弘: Ruby 之父，而且做过 How Emacs changed my life 的演讲，[[https://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][ppt]]
+- Rich Hickey: Clojure 之父
+- Joe Armstrong: Erlang 语言设计者和主架构师
+- Andrei Alexandrescu: D lang 创建者之一
+- [[https://zh.wikipedia.org/wiki/%E5%8F%B2%E8%92%82%E8%8A%AC%C2%B7%E6%B2%83%E7%88%BE%E5%A4%AB%E5%8B%92%E5%A7%86][Stephen Wolfram]]
+
+[[https://usesthis.com/interviews/graydon.hoare/][Graydon Hoare]] 也使用 Emacs，他是 Rust 编程语言项目的启动者。
+
+[[http://wenshanren.org/?p=418][Famous Emacs Users (that are not famous for using Emacs)]] 也列举了很多知名的和非知名的 Emacs 用户。
+
+[以上均来自 [[https://www.reddit.com/r/emacs/comments/fdxvuw/which_famous_devs_use_emacs/][reddit]] 的讨论帖。]
 
 * Footnotes
 
@@ -523,3 +561,5 @@ spinner 在 =gnu= 中，确保 =package-archives= 中包含 =https://elpa.gnu.or
 [fn:sorting-headings-in-an-org-file] https://emacs.stackexchange.com/questions/30547/sort-list-by-checked-unchecked-state
 
 [fn:2] https://github.com/hlissner/doom-emacs/issues/1225
+
+[fn:3] http://mbork.pl/2018-06-10_Git_diff_in_Eshell
