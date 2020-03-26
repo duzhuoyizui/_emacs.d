@@ -27,7 +27,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
 
-(electric-pair-mode 1)
+(electric-pair-mode nil)
 (electric-indent-mode 1)
 ;;(electric-quote-mode 1)
 
