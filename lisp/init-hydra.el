@@ -85,9 +85,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("9" hydra-nobinding "todo binding")
 	("0" delete-window "delete window")
 	("-" shrink-window-horizontally "shrink-window-h")
-    ("_" shrink-window "shrink-window-v" )
+	("_" shrink-window "shrink-window-v" )
 	("=" enlarge-window-horizontally "enlarge-window-h")
-    ("+" enlarge-window "enlarge-window-v")
+	("+" enlarge-window "enlarge-window-v")
 
 	;; keyboard line 2
 	("y" hydra-nobinding "todo binding")
