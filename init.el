@@ -9,7 +9,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'init-base)
-(require 'init-global-key)
 
 (require 'init-package)
 (require 'init-ui)
