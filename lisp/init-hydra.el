@@ -34,7 +34,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 									:hint nil
 									:exit t
 									)
-
+	"right hand start, left end !"
 	;; keyboard line 1
 	("1" delete-other-windows "delete other windows")
 	("2" split-window-below "split window below")
@@ -45,23 +45,23 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 	;; keyboard line 2
 	("q" hydra-nobinding "todo binding")
-	("w" save-buffer "[w]rite to disk")
-	("e" move-end-of-line "move [e]nd of line")
-	("r" ivy-resume "ivy [r]esume")
+	("w" save-buffer "write to disk")
+	("e" hydra-nobinding "todo binding")
+	("r" ivy-resume "ivy resume")
 	("t" hydra-nobinding "todo binding")
 
 	;; keyboard line 3
-	("a" move-beginning-of-line "move beginning of line")
-	("ss" swiper "[s]earch current session")
-	("sd" counsel-ag "[s]earch [d]irectory")
-	("dp" show-file-name "[d]isplay [p]ath")
+	("a" mark-whole-buffer "mark whole buffer")
+	("ss" swiper "search current session")
+	("sd" counsel-ag "search directory")
+	("dp" show-file-name "display path")
 	("f" hydra-nobinding "todo binding")
 	("g" hydra-nobinding "todo binding")
 
-	;; keyboard line 4
+	;; keyboard line 4nn
 	("z" hydra-nobinding "todo binding")
 	("x" eshell "open eshell")
-	("c" save-buffers-kill-terminal "[c]lose emacs")
+	("c" save-buffers-kill-terminal "close emacs")
 	("v" scroll-up-command "scroll up")
 	("b" ivy-switch-buffer "switch buffer")
 
@@ -91,8 +91,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 	;; keyboard line 2
 	("y" hydra-nobinding "todo binding")
-	("u" undo "[u]ndo")
-	("it" insert-current-date-time "insert [c]urrent date time")
+	("u" undo "undo")
+	("it" insert-current-date-time "insert current date time")
 	("o" counsel-find-file "open file")
 	("pi" projectile-invalidate-cache "projectile invalidate cache")
 	("pp" counsel-projectile-switch-project "projectile switch project")
@@ -104,7 +104,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("h" hydra-nobinding "todo binding")
 	("j" hydra-nobinding "todo binding")
 	("k" kill-buffer "kill buffer")
-	("l" display-line-numbers-mode "[l]ine number")
+	("l" display-line-numbers-mode "line number")
 	(";" hydra-nobinding "todo binding")
 	("'" hydra-nobinding "todo binding")
 
