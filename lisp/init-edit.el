@@ -142,4 +142,12 @@
   (which-key-mode)
   )
 
+
+(use-package keyfreq
+  :pin melpa-stable
+  :ensure t
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1)
+  )
 (provide 'init-edit)
