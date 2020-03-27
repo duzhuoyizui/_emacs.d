@@ -28,6 +28,8 @@
 (require 'init-plantuml)
 (require 'init-org)
 
+(require 'init-hydra)
+
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------------
