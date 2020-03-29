@@ -55,16 +55,15 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("ss" swiper "search current session")
 	("sd" counsel-ag "search directory")
 	("dp" show-file-name "display path")
-	("f" hydra-nobinding "todo binding")
+	("f" ivy-switch-buffer "switch buffer")
 	("g" hydra-nobinding "todo binding")
 
-	;; keyboard line 4nn
+	;; keyboard line 4
 	("z" hydra-nobinding "todo binding")
 	("x" eshell "open eshell")
 	("c" save-buffers-kill-terminal "close emacs")
 	("v" scroll-up-command "scroll up")
-	("b" ivy-switch-buffer "switch buffer")
-
+	("b" hydra-nobinding "todo binding")
 	("<f8>" nil "quit")
 	)
 
