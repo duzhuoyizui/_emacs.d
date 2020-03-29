@@ -5,6 +5,7 @@
 (use-package lsp-mode
   :pin melpa-stable
   :ensure t
+  :defer t
   :hook
   (emacs-lisp-mode . lsp)
   (python-mode . lsp)
@@ -28,6 +29,7 @@
 (use-package lsp-ui
   :pin melpa-stable
   :ensure t
+  :defer t
   :commands lsp-ui-mode
   :bind
   (:map lsp-mode-map

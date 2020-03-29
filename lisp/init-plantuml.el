@@ -1,6 +1,7 @@
 (use-package plantuml-mode
   :pin melpa
   :ensure t
+  :defer t
   :config
   (setq plantuml-jar-path "/usr/local/bin/plantuml.jar")
   (setq plantuml-default-exec-mode 'jar)
