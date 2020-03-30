@@ -1,3 +1,3 @@
-# Emacs config for Emacs 26.3
+* Emacs config for Emacs 26.3
 
-更多见 [[https://www.zhangjiee.com/topic/emacs/index.html][Emacs 专题]]。
+文档见 [[https://www.zhangjiee.com/topic/emacs/index.html][Emacs 专题]]。
