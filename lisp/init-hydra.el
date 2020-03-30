@@ -39,6 +39,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("t" insert-current-date-time "insert current date time")
 	("x" eshell "open eshell")
 
+	;; for org mode move
+	("w" org-metaup "org meta up")
+	("a" org-metaleft "org meta left")
+	("s" org-metadown "org meta down")
+	("d" org-metaright "org meta right")
+
 	("<f8>" nil "quit")
 	)
 
@@ -55,9 +61,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("+" enlarge-window "enlarge-window-v")
 	("-" shrink-window-horizontally "shrink-window-h")
 	("=" enlarge-window-horizontally "enlarge-window-h")
-	("_" shrink-window "shrink-window-v" )
+	("_" shrink-window "shrink-window-v")
 	("l" display-line-numbers-mode "line number")
 	("m" counsel-semantic-or-imenu "show imenu")
+	("ol" org-toggle-link-display "org mode toggle link display")
 	("p" show-file-name "display path")
 
 	("<f2>" nil "quit")
