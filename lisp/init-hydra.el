@@ -45,6 +45,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("s" org-metadown "org meta down")
 	("d" org-metaright "org meta right")
 
+	;; projectile
+	("b" counsel-projectile-switch-to-buffer "switch buffer in project")
+
 	("<f8>" nil "quit")
 	)
 
@@ -64,7 +67,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("_" shrink-window "shrink-window-v")
 	("l" display-line-numbers-mode "line number")
 	("m" counsel-semantic-or-imenu "show imenu")
-	("ol" org-toggle-link-display "org mode toggle link display")
+	("ol" org-toggle-link-display "org toggle link display")
+	("of" org-footnote-new "new org footnote")
 	("p" show-file-name "display path")
 
 	("<f2>" nil "quit")
