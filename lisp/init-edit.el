@@ -3,7 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 (use-package undo-tree
-  :pin melpa
+  :pin gnu
   :ensure t
   :config
   (global-undo-tree-mode)
