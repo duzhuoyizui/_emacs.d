@@ -18,10 +18,15 @@
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq
    lsp-prefer-flymake nil
+   lsp-enable-folding nil
    lsp-enable-snippet nil
    lsp-print-performance nil
    lsp-log-io nil
    lsp-enable-symbol-highlighting nil
+   lsp-enable-completion-at-point nil
+   lsp-enable-links nil
+   lsp-restart 'auto-restart
+   lsp-client-packages '(lsp-clients)
    )
   )
 
@@ -30,12 +35,10 @@
   :ensure t
   :defer t
   :commands lsp-ui-mode
-  :bind
-  (:map lsp-mode-map
-        ("M-." . lsp-ui-peek-find-definitions)
-        ("M-?" . lsp-ui-peek-find-references)
-        ("C-c f" . lsp-format-buffer)
-        )
+  :bind (:map lsp-mode-map
+			  ("M-." . lsp-ui-peek-find-definitions)
+			  ("M-?" . lsp-ui-peek-find-references)
+			  ("C-c f" . lsp-format-buffer))
   :init
   (setq lsp-ui-doc-enable nil
         lsp-ui-sideline-show-diagnostics nil
