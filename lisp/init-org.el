@@ -9,11 +9,11 @@
   :pin org
   :ensure org-plus-contrib
   :defer t
-  :config
-
+  :init
   (setq org-log-done t)
   (setq org-startup-with-inline-images t)
 
+  :config
   ;; GTD setting
   (require 'org-inlinetask)
   (setq org-todo-keywords
@@ -46,7 +46,7 @@
   (use-package org-superstar
     :pin melpa
     :ensure t
-    :config
+    :init
     (setq org-superstar-configure-like-org-bullets t)
     (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
     )
@@ -54,7 +54,7 @@
   (use-package toc-org
     :pin melpa
     :ensure t
-    :config
+    :init
     (add-hook 'org-mode-hook 'toc-org-mode)
     )
   )
@@ -63,7 +63,7 @@
 (use-package ox-publish
   :pin melpa
   :defer t
-  :config
+  :init
   (setq org-html-validation-link nil)
 
   ;; nil: do not checking and always publish all file

@@ -29,10 +29,12 @@
 (use-package doom-modeline
   :pin melpa
   :ensure t
-  :config
-  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
+  :defer 0.5
+  :init
   (setq doom-modeline-project-detection 'ffip)
   (setq doom-modeline-buffer-modification-icon nil)
+  :config
+  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
   (doom-modeline-mode 1)
   )
 
@@ -40,8 +42,9 @@
   :pin melpa
   :ensure t
   :defer 0.5
-  :config
+  :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  :config
   (rainbow-delimiters-mode 1)
   )
 
@@ -49,11 +52,12 @@
   :pin melpa
   :ensure t
   :defer 0.5
-  :config
+  :init
   (setq beacon-blink-delay '0.2)
   (setq beacon-blink-when-focused 't)
   (setq beacon-dont-blink-commands 'nil)
   (setq beacon-color "#40a9ff")
+  :config
   (beacon-mode 1)
   )
 

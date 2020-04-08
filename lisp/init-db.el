@@ -2,7 +2,7 @@
   :pin gnu
   :ensure t
   :defer t
-  :config
+  :init
   (add-hook 'sql-mode-hook 'sqlind-setup)
   )
 

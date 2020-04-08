@@ -2,7 +2,7 @@
   :pin melpa
   :ensure t
   :defer t
-  :config
+  :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
 

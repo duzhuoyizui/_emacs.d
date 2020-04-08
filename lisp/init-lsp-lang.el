@@ -14,8 +14,7 @@
   ;; integration which key
   ;; (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
-  :config
-
+  :init
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq
    lsp-prefer-flymake nil
@@ -37,7 +36,7 @@
         ("M-?" . lsp-ui-peek-find-references)
         ("C-c f" . lsp-format-buffer)
         )
-  :config
+  :init
   (setq lsp-ui-doc-enable nil
         lsp-ui-sideline-show-diagnostics nil
         lsp-ui-sideline-show-symbol nil
@@ -50,20 +49,21 @@
   :pin melpa-stable
   :ensure t
   :defer 0.5
-  :init (global-company-mode)
-  :config
+  :bind (:map company-active-map
+			  ("M-n" . nil)
+			  ("M-p" . nil)
+			  ("C-n" . company-select-next)
+			  ("C-p" . company-select-previous)
+			  )
+  :init
   ;; markdown-mode, eshell-mode ignore complete
   (setq company-global-modes '(not markdown-mode gfm-mode eshell-mode))
   (setq company-transformers '(company-sort-by-occurrence))
   (setq company-echo-delay 0)
   (setq company-idle-delay 0)
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-
-
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  :config
+  (global-company-mode)
   )
 
 (use-package company-lsp
@@ -81,7 +81,7 @@
   :pin melpa-stable
   :ensure t
   :defer t
-  :config
+  :init
   (defun lsp-go-install-save-hooks ()
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t))

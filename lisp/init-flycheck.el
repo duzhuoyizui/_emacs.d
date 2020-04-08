@@ -18,9 +18,8 @@
     ))
   (setq flycheck-python-flake8-executable "flake8")
 
+  :config
   (global-flycheck-mode)
-
-  ;;:config
   ;;(flycheck-add-mode 'javascript-eslint 'web-mode)
   )
 
