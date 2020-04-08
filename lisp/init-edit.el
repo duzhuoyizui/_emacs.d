@@ -1,6 +1,14 @@
 ;;----------------------------------------------------------------------------
 ;; edit 提升编辑效率
 ;;----------------------------------------------------------------------------
+
+(use-package undo-tree
+  :pin melpa
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  )
+
 (use-package multiple-cursors
   :pin melpa
   :ensure t
