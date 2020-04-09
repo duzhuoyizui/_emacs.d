@@ -21,8 +21,13 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(require 'use-package)
+
+(eval-when-compile
+  (require 'use-package))
 (setq use-package-verbose t)
 (setq use-package-always-pin t)
+
+(require 'diminish)
+(require 'bind-key)
 
 (provide 'init-package)
