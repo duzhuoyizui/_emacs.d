@@ -19,7 +19,6 @@
 	"2" 'split-window-below
 	"3" 'split-window-right
 	"b" 'switch-to-buffer
-	"c" 'save-buffers-kill-terminal
 	"e" 'find-file
 	"k" 'kill-buffer
 	"p b" 'counsel-projectile-switch-to-buffer
@@ -27,6 +26,7 @@
 	"p f" 'counsel-projectile-find-file
 	"p i" 'projectile-invalidate-cache
 	"p p" 'counsel-projectile-switch-project
+	"q" 'save-buffers-kill-terminal
 	"u t" 'undo-tree-visualize
 	"w" 'save-buffer
 	"x" 'eshell
