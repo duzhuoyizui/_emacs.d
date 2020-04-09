@@ -6,8 +6,7 @@
   :pin gnu
   :ensure t
   :diminish
-  :config
-  (global-undo-tree-mode)
+  :hook (prog-mode . undo-tree-mode)
   )
 
 (use-package multiple-cursors
@@ -57,7 +56,6 @@
 (use-package swiper
   :pin melpa
   :ensure t
-  :diminish
   :bind (("C-s" . swiper)
 		 ("M-s ." . swiper-isearch-thing-at-point))
   )
@@ -119,8 +117,6 @@
 (use-package git-gutter+
   :pin melpa
   :ensure t
-  :diminish
-  :defer t
   :bind (("C-x g" . git-gutter+-mode))
   :config (progn
             (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
@@ -131,7 +127,6 @@
 (use-package ace-window
   :pin melpa
   :ensure t
-  :diminish
   :custom
   (set-face-attribute
    'aw-mode-line-face nil
