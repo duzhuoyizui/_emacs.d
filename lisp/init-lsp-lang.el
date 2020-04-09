@@ -5,7 +5,6 @@
 (use-package lsp-mode
   :pin melpa-stable
   :ensure t
-  :defer t
   :hook
   (emacs-lisp-mode . lsp)
   (python-mode . lsp)
@@ -33,8 +32,8 @@
 (use-package lsp-ui
   :pin melpa-stable
   :ensure t
-  :defer t
   :commands lsp-ui-mode
+  :hook (lsp-mode . lsp-ui-mode)
   :bind (:map lsp-mode-map
 			  ("M-." . lsp-ui-peek-find-definitions)
 			  ("M-?" . lsp-ui-peek-find-references)
@@ -45,19 +44,16 @@
         lsp-ui-sideline-show-symbol nil
         lsp-ui-sideline-show-code-actions nil
         lsp-ui-sideline-show-hover nil)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   )
 
 (use-package company
   :pin melpa-stable
   :ensure t
-  :defer 0.5
   :diminish
+  :hook (prog-mode . company-mode)
   :bind (:map company-active-map
-			  ("M-n" . nil)
-			  ("M-p" . nil)
-			  ("C-n" . company-select-next)
-			  ("C-p" . company-select-previous)
+			  ("M-n" . company-select-next)
+			  ("M-p" . company-select-previous)
 			  )
   :init
   ;; markdown-mode, eshell-mode ignore complete
@@ -66,26 +62,30 @@
   (setq company-echo-delay 0)
   (setq company-idle-delay 0)
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-  :config
-  (global-company-mode)
   )
 
 (use-package company-lsp
   :pin melpa-stable
   :ensure t
-  :defer 0.5
   :diminish
   :commands company-lsp
   )
 
-(require 'python)
-(set-variable 'py-indent-offset 4)
-(set-variable 'python-indent-guess-indent-offset nil)
+(use-package python
+  :pin melpa
+  :ensure t
+  :mode "\\.py'"
+  :interpreter "python"
+  :init
+  (set-variable 'py-indent-offset 4)
+  (set-variable 'python-indent-guess-indent-offset nil)
+ )
 
 (use-package go-mode
   :pin melpa-stable
   :ensure t
-  :defer t
+  :mode "\\.go\\'"
+  :interpreter "go"
   :init
   (defun lsp-go-install-save-hooks ()
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
