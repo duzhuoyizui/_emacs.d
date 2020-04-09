@@ -1,7 +1,7 @@
 (use-package sql-indent
   :pin gnu
   :ensure t
-  :bind (sql-mode . sqlind-setup)
+  :hook (sql-mode . sqlind-minor-mode)
   )
 
 (provide 'init-db)
