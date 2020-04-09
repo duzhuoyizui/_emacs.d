@@ -41,10 +41,7 @@
 (use-package rainbow-delimiters
   :pin melpa
   :ensure t
-  :diminish
-  :hook (prog-mode-hook . rainbow-delimiters-mode)
-  :config
-  (rainbow-delimiters-mode 1)
+  :hook (prog-mode . rainbow-delimiters-mode)
   )
 
 (use-package beacon
