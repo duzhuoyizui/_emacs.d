@@ -13,7 +13,7 @@
   :pin melpa
   :ensure t
   :bind (("M-s ;" . mc/mark-all-symbols-like-this-in-defun)
-		 ("M-s >" . mc/mark-all-symbols-like-this-in-defun)
+		 ("M-s >" . mc/mark-next-like-this)
 		 ("M-s <" . mc/mark-previous-like-this)
 		 ("M-s C-a" . mc/mark-all-like-this)
 		 )
