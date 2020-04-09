@@ -45,9 +45,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 	("s" org-metadown "org meta down")
 	("d" org-metaright "org meta right")
 
-	;; projectile
-	("b" counsel-projectile-switch-to-buffer "switch buffer in project")
-
 	("<f8>" nil "quit")
 	)
 

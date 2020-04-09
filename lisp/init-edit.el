@@ -5,6 +5,7 @@
 (use-package undo-tree
   :pin gnu
   :ensure t
+  :diminish
   :config
   (global-undo-tree-mode)
   )
@@ -44,6 +45,7 @@
 (use-package ivy
   :pin melpa
   :ensure t
+  :diminish
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
@@ -55,6 +57,7 @@
 (use-package swiper
   :pin melpa
   :ensure t
+  :diminish
   :bind (("C-s" . swiper)
 		 ("M-s ." . swiper-isearch-thing-at-point))
   )
@@ -62,6 +65,7 @@
 (use-package counsel
   :pin melpa
   :ensure t
+  :diminish
   :bind (("M-x" . counsel-M-x)
 		 ("C-x C-f" . counsel-find-file)
 		 ("C-c g" . counsel-git)
@@ -73,6 +77,7 @@
 (use-package projectile
   :pin melpa
   :ensure t
+  :diminish
   :bind-keymap ("C-c p" . projectile-command-map)
   :init
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
@@ -95,6 +100,7 @@
   (use-package counsel-projectile
     :pin melpa
     :ensure t
+	:diminish
     :config
     (counsel-projectile-mode 1)
     )
@@ -113,6 +119,7 @@
 (use-package git-gutter+
   :pin melpa
   :ensure t
+  :diminish
   :defer t
   :bind (("C-x g" . git-gutter+-mode))
   :config (progn
@@ -124,6 +131,7 @@
 (use-package ace-window
   :pin melpa
   :ensure t
+  :diminish
   :custom
   (set-face-attribute
    'aw-mode-line-face nil

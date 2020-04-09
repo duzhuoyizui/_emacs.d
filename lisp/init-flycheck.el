@@ -2,6 +2,7 @@
   :pin melpa
   :ensure t
   :defer t
+  :diminish
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-disabled-checkers

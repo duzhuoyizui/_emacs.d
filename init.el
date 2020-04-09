@@ -28,6 +28,7 @@
 (require 'init-org)
 
 (require 'init-hydra)
+(require 'init-evil)
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface

@@ -52,6 +52,7 @@
   :pin melpa-stable
   :ensure t
   :defer 0.5
+  :diminish
   :bind (:map company-active-map
 			  ("M-n" . nil)
 			  ("M-p" . nil)
@@ -73,6 +74,7 @@
   :pin melpa-stable
   :ensure t
   :defer 0.5
+  :diminish
   :commands company-lsp
   )
 
