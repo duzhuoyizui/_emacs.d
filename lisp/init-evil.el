@@ -36,7 +36,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq evil-replace-state-cursor '("red" bar))
   (setq evil-operator-state-cursor '("red" hollow))
   :config
-  ;;(evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
   (define-key evil-normal-state-map [escape] 'keyboard-quit)
   (define-key evil-visual-state-map [escape] 'keyboard-quit)
   (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
@@ -57,14 +56,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
    evil-leader/in-all-states 1
    )
   (evil-leader/set-key
-	"+" 'enlarge-window
-	"-" 'shrink-window-horizontally
 	"0" 'delete-window
 	"1" 'delete-other-windows
 	"2" 'split-window-below
 	"3" 'split-window-right
-	"=" 'enlarge-window-horizontally
-	"_" 'shrink-window
+	"a" 'ace-window
 	"b" 'switch-to-buffer
 	"c f" 'counsel-find-file
 	"c g" 'counsel-git
@@ -92,6 +88,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"q" 'save-buffers-kill-terminal
 	"s ." 'swiper-isearch-thing-at-point
 	"s s" 'swiper
+	"s t" 'ace-swap-window
 	"u t" 'undo-tree-visualize
 	"w" 'save-buffer
 	"x" 'eshell

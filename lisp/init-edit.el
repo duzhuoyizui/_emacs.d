@@ -123,8 +123,6 @@
    'aw-mode-line-face nil
    :inherit 'mode-line-buffer-id
    :foreground "chartreuse")
-  :bind (("M-o" . ace-window)
-		 ("M-s t" . ace-swap-window))
   :init
   (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   :config
