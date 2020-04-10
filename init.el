@@ -27,7 +27,6 @@
 (require 'init-plantuml)
 (require 'init-org)
 
-(require 'init-hydra)
 (require 'init-evil)
 
 ;;----------------------------------------------------------------------------
