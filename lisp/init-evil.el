@@ -1,3 +1,49 @@
+(use-package evil-leader
+  :pin melpa
+  :ensure t
+  :init
+  (setq evil-leader/leader ",")
+  (evil-leader/set-key
+	"0" 'delete-window
+	"1" 'delete-other-windows
+	"2" 'split-window-below
+	"3" 'split-window-right
+	"a" 'ace-window
+	"b" 'switch-to-buffer
+	"c f" 'counsel-find-file
+	"c g" 'counsel-git
+	"c j" 'counsel-git-grep
+	"c k" 'counsel-ag
+	"c y" 'counsel-yank-pop
+	"e" 'find-file
+	"i p" 'show-file-name
+	"i t" 'insert-current-date-time
+	"k" 'kill-buffer
+	"l" 'display-line-numbers-mode
+	"m" 'counsel-semantic-or-imenu
+	"o a" 'org-metaleft
+	"o d" 'org-metaright
+	"o f" 'org-footnote-new
+	"o l" 'org-toggle-link-display
+	"o s" 'org-metadown
+	"o w" 'org-metaup
+	"p b" 'counsel-projectile-switch-to-buffer
+	"p d" 'counsel-projectile-find-dir
+	"p f" 'counsel-projectile-find-file
+	"p i" 'projectile-invalidate-cache
+	"p p" 'counsel-projectile-switch-project
+	"q" 'save-buffers-kill-terminal
+	"s ." 'swiper-isearch-thing-at-point
+	"s s" 'swiper
+	"s t" 'ace-swap-window
+	"u t" 'undo-tree-visualize
+	"w" 'save-buffer
+	"x" 'eshell
+	)
+  :config
+  (global-evil-leader-mode)
+  )
+
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S %a"
   "Format of date to insert with `insert-current-date-time' func
 See help of `format-time-string' for possible replacements")
@@ -45,56 +91,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
   (global-set-key [escape] 'evil-exit-emacs-state)
   (evil-mode 1)
-  )
-
-(use-package evil-leader
-  :pin melpa
-  :ensure t
-  :init
-  (setq
-   evil-leader/leader ","
-   evil-leader/in-all-states 1
-   )
-  (evil-leader/set-key
-	"0" 'delete-window
-	"1" 'delete-other-windows
-	"2" 'split-window-below
-	"3" 'split-window-right
-	"a" 'ace-window
-	"b" 'switch-to-buffer
-	"c f" 'counsel-find-file
-	"c g" 'counsel-git
-	"c j" 'counsel-git-grep
-	"c k" 'counsel-ag
-	"c x" 'counsel-M-x
-	"c y" 'counsel-yank-pop
-	"e" 'find-file
-	"i p" 'show-file-name
-	"i t" 'insert-current-date-time
-	"k" 'kill-buffer
-	"l" 'display-line-numbers-mode
-	"m" 'counsel-semantic-or-imenu
-	"o a" 'org-metaleft
-	"o d" 'org-metaright
-	"o f" 'org-footnote-new
-	"o l" 'org-toggle-link-display
-	"o s" 'org-metadown
-	"o w" 'org-metaup
-	"p b" 'counsel-projectile-switch-to-buffer
-	"p d" 'counsel-projectile-find-dir
-	"p f" 'counsel-projectile-find-file
-	"p i" 'projectile-invalidate-cache
-	"p p" 'counsel-projectile-switch-project
-	"q" 'save-buffers-kill-terminal
-	"s ." 'swiper-isearch-thing-at-point
-	"s s" 'swiper
-	"s t" 'ace-swap-window
-	"u t" 'undo-tree-visualize
-	"w" 'save-buffer
-	"x" 'eshell
-	)
-  :config
-  (global-evil-leader-mode)
   )
 
 (provide 'init-evil)

@@ -62,6 +62,7 @@
   :pin melpa
   :ensure t
   :diminish
+  :bind ("M-x" . counsel-M-x)
   )
 
 (use-package projectile
