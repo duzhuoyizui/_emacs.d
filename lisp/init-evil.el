@@ -19,6 +19,12 @@
 	"2" 'split-window-below
 	"3" 'split-window-right
 	"b" 'switch-to-buffer
+	"c f" 'counsel-find-file
+	"c g" 'counsel-git
+	"c j" 'counsel-git-grep
+	"c k" 'counsel-ag
+	"c x" 'counsel-M-x
+	"c y" 'counsel-yank-pop
 	"e" 'find-file
 	"k" 'kill-buffer
 	"p b" 'counsel-projectile-switch-to-buffer
@@ -27,6 +33,8 @@
 	"p i" 'projectile-invalidate-cache
 	"p p" 'counsel-projectile-switch-project
 	"q" 'save-buffers-kill-terminal
+	"s ." 'swiper-isearch-thing-at-point
+	"s s" 'swiper
 	"u t" 'undo-tree-visualize
 	"w" 'save-buffer
 	"x" 'eshell

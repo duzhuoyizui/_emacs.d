@@ -56,27 +56,18 @@
 (use-package swiper
   :pin melpa
   :ensure t
-  :bind (("C-s" . swiper)
-		 ("M-s ." . swiper-isearch-thing-at-point))
   )
 
 (use-package counsel
   :pin melpa
   :ensure t
   :diminish
-  :bind (("M-x" . counsel-M-x)
-		 ("C-x C-f" . counsel-find-file)
-		 ("C-c g" . counsel-git)
-		 ("C-c j" . counsel-git-grep)
-		 ("C-c k" . counsel-ag)
-		 ("M-y" . counsel-yank-pop))
   )
 
 (use-package projectile
   :pin melpa
   :ensure t
   :diminish
-  :bind-keymap ("C-c p" . projectile-command-map)
   :init
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
   ;; 你可以通过下面两个名称来清除缓存
