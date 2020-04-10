@@ -50,12 +50,15 @@
   (setq ivy-count-format "(%d-%d) ")
   (setq enable-recursive-minibuffers t)
   :config
+  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit)
   (ivy-mode 1)
   )
 
 (use-package swiper
   :pin melpa
   :ensure t
+  :config
+  (define-key swiper-map [escape] 'minibuffer-keyboard-quit)
   )
 
 (use-package counsel
