@@ -1,3 +1,7 @@
-* Emacs config for Emacs 26.3
+* 开箱即用的 Emacs 配置
+
+Emacs 版本：26.3
+
+系统：macOS/Ubuntu 18.04
 
 文档见 [[https://www.zhangjiee.com/topic/emacs/index.html][Emacs 专题]]。
