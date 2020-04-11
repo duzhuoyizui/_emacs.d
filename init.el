@@ -1,6 +1,6 @@
 (package-initialize)
 
-; Produce backtraces when errors occur => default close
+;; Produce backtraces when errors occur => default close
 ;; (setq debug-on-error t)
 
 ;;----------------------------------------------------------------------------
