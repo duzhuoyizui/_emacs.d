@@ -31,16 +31,4 @@
   :hook (prog-mode . rainbow-delimiters-mode)
   )
 
-(use-package beacon
-  :pin melpa
-  :ensure t
-  :diminish
-  :hook (prog-mode . beacon-mode)
-  :init
-  (setq beacon-blink-delay '0.2)
-  (setq beacon-blink-when-focused 't)
-  (setq beacon-dont-blink-commands 'nil)
-  (setq beacon-color "#40a9ff")
-  )
-
 (provide 'init-ui)
