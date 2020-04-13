@@ -5,7 +5,6 @@
 (use-package undo-tree
   :pin gnu
   :ensure t
-  :diminish
   :hook (prog-mode . undo-tree-mode)
   )
 
@@ -19,7 +18,6 @@
 		 )
   )
 
-;; https://github.com/magnars/expand-region.el
 (use-package expand-region
   :pin melpa
   :ensure t
@@ -44,34 +42,35 @@
 (use-package ivy
   :pin melpa
   :ensure t
-  :diminish
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
   (setq enable-recursive-minibuffers t)
-  :config
-  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit)
-  (ivy-mode 1)
+  ;; :config
+  ;; (ivy-mode 1)
   )
 
 (use-package swiper
   :pin melpa
   :ensure t
-  :config
-  (define-key swiper-map [escape] 'minibuffer-keyboard-quit)
+  :bind (("C-s" . swiper)
+		 ("M-s ." . swiper-isearch-thing-at-point))
   )
 
 (use-package counsel
   :pin melpa
   :ensure t
   :diminish
-  :bind ("M-x" . counsel-M-x)
+  :bind (("C-x C-f" . counsel-find-file)
+		 ("C-x b" . counsel-switch-buffer)
+		 ("M-x" . counsel-M-x)
+		 ("C-c k" . counsel-ag))
   )
 
 (use-package projectile
   :pin melpa
   :ensure t
-  :diminish
+  :bind-keymap ("C-c p" . projectile-command-map)
   :init
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
   ;; 你可以通过下面两个名称来清除缓存
@@ -89,11 +88,9 @@
   ;; 对结果进行排序(active buffer + recently opened)
   (setq projectile-sort-order 'recentf-active)
   :config
-  (projectile-mode +1)
   (use-package counsel-projectile
     :pin melpa
     :ensure t
-	:diminish
     :config
     (counsel-projectile-mode 1)
     )
@@ -127,10 +124,9 @@
    'aw-mode-line-face nil
    :inherit 'mode-line-buffer-id
    :foreground "chartreuse")
+  :bind ("M-o" . ace-window)
   :init
   (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
-  :config
-  (ace-window-display-mode)
   )
 
 (use-package which-key
@@ -141,14 +137,6 @@
   (which-key-setup-minibuffer)
   :config
   (which-key-mode)
-  )
-
-(use-package keyfreq
-  :pin melpa-stable
-  :ensure t
-  :config
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1)
   )
 
 (provide 'init-edit)

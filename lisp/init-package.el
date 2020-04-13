@@ -1,19 +1,14 @@
 (require 'package)
 
 (setq url-proxy-services
-      '(
-        ("http" . "127.0.0.1:1088")
-        ("https" . "127.0.0.1:1088")
-        ))
+      '(("http" . "127.0.0.1:1088")
+        ("https" . "127.0.0.1:1088")))
 
 (setq package-archives
-      '(
-        ("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")
-        ("org" . "https://orgmode.org/elpa/")
-        )
-      )
+	  '(("gnu" . "http://elpa.gnu.org/packages/")
+		("melpa" . "https://melpa.org/packages/")
+		("melpa-stable" . "http://stable.melpa.org/packages/")
+		("org" . "https://orgmode.org/elpa/")))
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -25,18 +20,5 @@
   (require 'use-package))
 (setq use-package-verbose t)
 (setq use-package-always-pin t)
-
-(use-package diminish
-  :pin melpa
-  :ensure t
-  :init
-  (diminish 'eldoc-mode)
-  (diminish 'rainbow-delimiters-mode)
-  (diminish 'eldoc-mode)
-  (diminish 'server-buffer-clients)
-  (diminish 'company-mode)
-  (diminish 'ivy-mode)
-  (diminish 'undo-tree-mode)
-  )
 
 (provide 'init-package)

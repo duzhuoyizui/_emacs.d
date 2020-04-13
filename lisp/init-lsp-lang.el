@@ -49,7 +49,6 @@
 (use-package company
   :pin melpa-stable
   :ensure t
-  :diminish
   :hook (prog-mode . company-mode)
   :bind (:map company-active-map
 			  ("M-n" . company-select-next)
@@ -67,7 +66,6 @@
 (use-package company-lsp
   :pin melpa-stable
   :ensure t
-  :diminish
   :commands company-lsp
   )
 
