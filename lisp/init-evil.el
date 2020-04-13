@@ -95,4 +95,43 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-mode 1)
   )
 
+;; via https://gist.github.com/penn201500/fd445603ea05faef4c9f5b2e102613ad
+;; In normal state auto switching to english input
+;; when entering insert/replace state switch back
+;; based on im-select(https://github.com/daipeihust/im-select)
+;; use /usr/local/bin/im-select check current input code
+(defvar default-im "com.apple.keylayout.US" "Default Mac ascii-only input method")
+
+(defvar prev-im (substring (shell-command-to-string "/usr/local/bin/im-select") 0 -1)
+  "IM that I use when starting Emacs and exiting insert mode")
+
+(defun im-use-english()
+  "switch to US input method"
+  (interactive)
+  (cond ((eq system-type 'darwin)
+		 (call-process-shell-command (concat "/usr/local/bin/im-select " default-im)))))
+
+(defun im-remember ()
+  "Remember the input method being used in insert mode,
+so we can switch to it in other modes."
+  (interactive)
+  (cond ((eq system-type 'darwin)
+         (setq prev-im (substring (shell-command-to-string "/usr/local/bin/im-select") 0 -1)))))
+
+(defun im-use-prev ()
+  "Use previous input method.
+If previous input method is not defined, use default method"
+  (interactive)
+  (cond ((eq system-type 'darwin)
+         (if prev-im
+             (call-process-shell-command (concat "/usr/local/bin/im-select " prev-im))
+           (call-process-shell-command (concat "/usr/local/bin/im-select " default-im))))))
+
+(add-hook 'evil-normal-state-entry-hook 'im-use-english)
+(add-hook 'evil-insert-state-entry-hook 'im-use-prev)
+(add-hook 'evil-insert-state-exit-hook 'im-remember)
+(add-hook 'evil-replace-state-entry-hook 'im-use-prev)
+(add-hook 'evil-replace-state-exit-hook 'im-remember)
+(add-hook 'evil-emacs-state-entry-hook 'im-use-english)
+
 (provide 'init-evil)
