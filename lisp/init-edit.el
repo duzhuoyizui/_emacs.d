@@ -42,13 +42,12 @@
 (use-package ivy
   :pin melpa
   :ensure t
-  :bind (("C-x b" . ivy-switch-buffer))
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
   (setq enable-recursive-minibuffers t)
-  ;; :config
-  ;; (ivy-mode 1)
+  :config
+  (ivy-mode 1)
   )
 
 (use-package swiper
