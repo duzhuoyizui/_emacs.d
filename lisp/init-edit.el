@@ -63,7 +63,8 @@
   :diminish
   :bind (("C-x C-f" . counsel-find-file)
 		 ("M-x" . counsel-M-x)
-		 ("C-c k" . counsel-ag))
+		 ("C-c k" . counsel-ag)
+		 ("M-y" . counsel-yank-pop))
   )
 
 (use-package projectile
