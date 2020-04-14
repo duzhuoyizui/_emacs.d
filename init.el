@@ -7,6 +7,7 @@
 
 (require 'init-package)
 (require 'init-base)
+(require 'init-keybinding)
 (require 'init-ui)
 (require 'init-edit)
 (require 'init-env)
@@ -20,7 +21,6 @@
 (require 'init-yaml)
 (require 'init-plantuml)
 (require 'init-org)
-(require 'init-keybinding)
 
 ;; variables configured via the interactive 'customize' interface
 (setq custom-file "~/.emacs.d/custom.el")

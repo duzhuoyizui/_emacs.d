@@ -42,6 +42,7 @@
 (use-package ivy
   :pin melpa
   :ensure t
+  :bind (("C-x b" . ivy-switch-buffer))
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
@@ -62,7 +63,6 @@
   :ensure t
   :diminish
   :bind (("C-x C-f" . counsel-find-file)
-		 ("C-x b" . counsel-switch-buffer)
 		 ("M-x" . counsel-M-x)
 		 ("C-c k" . counsel-ag))
   )
