@@ -35,5 +35,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f3>") 'eshell)
 (global-set-key (kbd "<f6>") 'show-file-name)
 (global-set-key (kbd "<f7>") 'insert-current-date-time)
+(global-set-key (kbd "<f12>") 'counsel-imenu)
 
 (provide 'init-keybinding)
