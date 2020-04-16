@@ -51,8 +51,10 @@
   :ensure t
   :hook (prog-mode . company-mode)
   :bind (:map company-active-map
-			  ("M-n" . company-select-next)
-			  ("M-p" . company-select-previous)
+			  ("M-n" . nil)
+			  ("M-p" . nil)
+			  ("C-n" . company-select-next)
+			  ("C-p" . company-select-previous)
 			  )
   :init
   ;; markdown-mode, eshell-mode ignore complete
@@ -60,7 +62,10 @@
   (setq company-transformers '(company-sort-by-occurrence))
   (setq company-echo-delay 0)
   (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
+  (setq company-selection-wrap-around t)
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+  (company-tng-configure-default)
   )
 
 (use-package company-lsp
