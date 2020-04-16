@@ -63,9 +63,7 @@
   (setq company-echo-delay 0)
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
-  (setq company-selection-wrap-around t)
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-  (company-tng-configure-default)
   )
 
 (use-package company-lsp
