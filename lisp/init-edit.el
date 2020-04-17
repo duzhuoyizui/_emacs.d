@@ -5,6 +5,9 @@
 (use-package undo-tree
   :pin gnu
   :ensure t
+  :init
+  (setq undo-tree-visualizer-timestamps t)
+  (setq undo-tree-visualizer-diff t)
   :hook (prog-mode . undo-tree-mode)
   )
 
@@ -135,8 +138,7 @@
   :defer 0.5
   :init
   (which-key-setup-minibuffer)
-  :config
-  (which-key-mode)
+  :hook (prog-mode . which-key-mode)
   )
 
 (provide 'init-edit)

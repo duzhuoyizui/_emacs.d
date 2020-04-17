@@ -1,6 +1,8 @@
 (use-package spinner
   :pin gnu
-  :ensure t)
+  :ensure t
+  :defer t
+  )
 
 (use-package lsp-mode
   :pin melpa-stable
