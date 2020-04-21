@@ -45,12 +45,22 @@
 (use-package ivy
   :pin melpa
   :ensure t
+  :defer 0.2
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
   (setq enable-recursive-minibuffers t)
   :config
   (ivy-mode 1)
+  )
+
+(use-package ivy-rich
+  :pin melpa
+  :ensure t
+  :defer 0.2
+  :config
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  (ivy-rich-mode 1)
   )
 
 (use-package swiper
