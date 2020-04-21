@@ -6,10 +6,27 @@
 (setq indicate-empty-lines t)
 (setq show-trailing-whitespace t)
 (show-paren-mode t)
-(tool-bar-mode nil)
+(tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 (menu-bar-mode -1)
 (column-number-mode t)
+(blink-cursor-mode -1)
+
+;; Set default font
+(cond
+ ((string-equal system-type "gnu/linux")
+  (set-face-attribute 'default nil
+                      :family "WenQuanYi Zen Hei Mono"
+                      :height 135
+                      :weight 'normal
+                      :width 'normal))
+ ((string-equal system-type "darwin")
+  (set-face-attribute 'default nil
+                      :family "WenQuanYi Zen Hei Mono"
+                      :height 160
+                      :weight 'normal
+                      :width 'normal))
+ )
 
 ;; disable bold
 (defadvice set-face-attribute
