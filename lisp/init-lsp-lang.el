@@ -15,6 +15,7 @@
   ;; integration which key
   ;; (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
+  :bind (("M-s r" . lsp-workspace-restart))
   :init
   ;; prefer using lsp-ui (flycheck) over flymake.
   (setq
