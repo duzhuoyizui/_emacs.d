@@ -1,5 +1,5 @@
 ;;------------------------------------------------------------------------------
-;; basic setting(non-package)
+;; basic setting (non-package setting)
 ;;------------------------------------------------------------------------------
 ;; encode
 (set-charset-priority 'unicode)
@@ -25,6 +25,7 @@
 
 (save-place-mode t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (global-auto-revert-mode t)
 
 (provide 'init-base)

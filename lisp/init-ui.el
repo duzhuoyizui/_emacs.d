@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; UI
+;; UI setting
 ;;----------------------------------------------------------------------------
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
@@ -38,11 +38,10 @@
 (use-package doom-modeline
   :pin melpa
   :ensure t
-  :init
-  (setq doom-modeline-project-detection 'ffip)
-  (setq doom-modeline-buffer-modification-icon nil)
   :config
   (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
+  (setq doom-modeline-project-detection 'ffip)
+  (setq doom-modeline-buffer-modification-icon nil)
   (doom-modeline-mode 1)
   )
 

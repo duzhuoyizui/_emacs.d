@@ -5,10 +5,7 @@
 (use-package undo-tree
   :pin gnu
   :ensure t
-  :init
-  (setq undo-tree-visualizer-timestamps t)
-  (setq undo-tree-visualizer-diff t)
-  :hook (prog-mode . undo-tree-mode)
+  :bind ("C-x u" . undo-tree-visualize)
   )
 
 (use-package multiple-cursors
@@ -53,15 +50,6 @@
   (ivy-mode 1)
   )
 
-;; (use-package ivy-rich
-;;   :pin melpa
-;;   :ensure t
-;;   :defer 0.2
-;;   :config
-;;   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-;;   (ivy-rich-mode 1)
-;;   )
-
 (use-package swiper
   :pin melpa
   :ensure t
@@ -82,7 +70,7 @@
   :pin melpa
   :ensure t
   :bind-keymap ("C-c p" . projectile-command-map)
-  :init
+  :config
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
   ;; 你可以通过下面两个名称来清除缓存
   ;; - projectile-purge-file-from-cache
@@ -98,7 +86,7 @@
   (setq projectile-require-project-root nil)
   ;; 对结果进行排序(active buffer + recently opened)
   (setq projectile-sort-order 'recentf-active)
-  :config
+
   (use-package counsel-projectile
     :pin melpa
     :ensure t
@@ -113,7 +101,7 @@
   :bind (("M-s i" . avy-goto-word-1)
          ("M-s j" . avy-goto-line)
          ("M-s k" . avy-copy-line))
-  :init
+  :config
   (setq avy-background t)
   )
 
@@ -140,10 +128,10 @@
   )
 
 (use-package which-key
-  :pin melpa-stable
+  :pin melpa
   :ensure t
   :hook (prog-mode . which-key-mode)
-  :config
+  :init
   (which-key-setup-minibuffer)
   )
 

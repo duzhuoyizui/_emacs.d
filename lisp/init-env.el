@@ -1,6 +1,5 @@
-;; exec-path-from-shell 很慢，所以延迟加载
+;; exec-path-from-shell very slow, so defer it.
 ;; https://github.com/purcell/exec-path-from-shell/issues/36
-
 (use-package exec-path-from-shell
   :pin melpa
   :ensure t

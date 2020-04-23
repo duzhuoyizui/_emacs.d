@@ -19,6 +19,9 @@
 (eval-when-compile
   (require 'use-package))
 (setq use-package-verbose t)
+;; all package must set pin addr
 (setq use-package-always-pin t)
+;; if you want show package load time, open this and =M-x use-package-report= show load package time
 (setq use-package-compute-statistics t)
+
 (provide 'init-package)
