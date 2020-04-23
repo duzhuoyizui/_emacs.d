@@ -1,7 +1,10 @@
-* 开箱即用的 Emacs 配置
+* Emacs config for me (simple, clean, fast)
 
-Emacs 版本：26.3
+Support:
 
-系统：macOS/Ubuntu 18.04
-
-文档见 [[https://www.zhangjiee.com/topic/emacs/index.html][Emacs 专题]]。
+- Emacs version: 26.3 /more version maybe support, but I don't test/
+- OS: macOS, Ubuntu 18.04/20.04
+- feature:
+  + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form. => lazy loading, faster (*start up < 1s*)
+  + Programming IDE: Web(ES2015+, JSX, React, CSS/LESS ..), Go, Python
+- Emacs tutorial: https://www.zhangjiee.com/topic/emacs/index.html
