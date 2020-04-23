@@ -20,5 +20,5 @@
   (require 'use-package))
 (setq use-package-verbose t)
 (setq use-package-always-pin t)
-
+(setq use-package-compute-statistics t)
 (provide 'init-package)

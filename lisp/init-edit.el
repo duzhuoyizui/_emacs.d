@@ -45,7 +45,6 @@
 (use-package ivy
   :pin melpa
   :ensure t
-  :defer 0.2
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
@@ -54,14 +53,14 @@
   (ivy-mode 1)
   )
 
-(use-package ivy-rich
-  :pin melpa
-  :ensure t
-  :defer 0.2
-  :config
-  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-  (ivy-rich-mode 1)
-  )
+;; (use-package ivy-rich
+;;   :pin melpa
+;;   :ensure t
+;;   :defer 0.2
+;;   :config
+;;   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+;;   (ivy-rich-mode 1)
+;;   )
 
 (use-package swiper
   :pin melpa
@@ -73,7 +72,6 @@
 (use-package counsel
   :pin melpa
   :ensure t
-  :diminish
   :bind (("C-x C-f" . counsel-find-file)
 		 ("M-x" . counsel-M-x)
 		 ("C-c k" . counsel-ag)
@@ -132,23 +130,21 @@
 (use-package ace-window
   :pin melpa
   :ensure t
-  :custom
+  :bind ("M-o" . ace-window)
+  :config
+  (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   (set-face-attribute
    'aw-mode-line-face nil
    :inherit 'mode-line-buffer-id
    :foreground "chartreuse")
-  :bind ("M-o" . ace-window)
-  :init
-  (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   )
 
 (use-package which-key
   :pin melpa-stable
   :ensure t
-  :defer 0.5
-  :init
-  (which-key-setup-minibuffer)
   :hook (prog-mode . which-key-mode)
+  :config
+  (which-key-setup-minibuffer)
   )
 
 (provide 'init-edit)
