@@ -53,4 +53,6 @@
 
 (load-theme 'leuven)
 
+(set-face-foreground 'line-number "darkgrey")
+
 (provide 'init-ui)
