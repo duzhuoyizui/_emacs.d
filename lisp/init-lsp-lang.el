@@ -97,4 +97,10 @@
   (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
   )
 
+(use-package protobuf-mode
+  :pin melpa
+  :ensure t
+  :mode "\\.proto\\'"
+  )
+
 (provide 'init-lsp-lang)
