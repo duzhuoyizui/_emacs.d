@@ -4,7 +4,7 @@
 #+NAME: screen.png
 [[./screen.png]]
 
-Support:
+*Support:*
 
 - Emacs version: 26.3 /more version maybe support, but I don't test/
 - OS: macOS, Ubuntu 18.04/20.04
