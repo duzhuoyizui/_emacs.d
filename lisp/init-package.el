@@ -1,14 +1,22 @@
 (require 'package)
 
-(setq url-proxy-services
-      '(("http" . "127.0.0.1:1088")
-        ("https" . "127.0.0.1:1088")))
-
 (setq package-archives
 	  '(("gnu" . "http://elpa.gnu.org/packages/")
 		("melpa" . "https://melpa.org/packages/")
 		("melpa-stable" . "http://stable.melpa.org/packages/")
 		("org" . "https://orgmode.org/elpa/")))
+
+;; use http proxy
+;; (setq url-proxy-services
+;;       '(("http" . "127.0.0.1:1088")
+;;         ("https" . "127.0.0.1:1088")))
+
+;; in china
+;; (setq package-archives
+;;       '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;; 		("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+;; 		("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+;; 		("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 (unless package-archive-contents
   (package-refresh-contents))

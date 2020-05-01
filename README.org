@@ -4,9 +4,9 @@
 #+NAME: screen.png
 [[./screen.png]]
 
-*Support:*
+** Support
 
-- Emacs version: 26.3 /more version maybe support, but I don't test/
+- Emacs version: 26.3
 - OS: macOS, Ubuntu 18.04/20.04
 - Feature:
   + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form => lazy loading, faster (*start up < 1s*)
@@ -19,6 +19,19 @@
 	- org, gtd, toc-org, publish(build web site)
 	- config file: sql, Dockerfile, yaml, nginx
 
-Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
-
 *Note:* No any /vi(m)/ extension(plugin or key binding), I'm not a Vim user, thinking by emacs way.
+
+** Install
+
+1. =git clone https://github.com/zhangjie2012/_emacs.d.git .emacs.d=
+2. open =emacs=, will auto install all package
+
+*for chinese user*, in =lisp/init-package.el= files:
+
+- set http proxy
+- use qinghua mirror
+
+
+** Tutorial
+
+Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
