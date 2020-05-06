@@ -28,7 +28,6 @@
    lsp-enable-completion-at-point nil
    lsp-enable-links nil
    lsp-restart 'auto-restart
-   lsp-client-packages '(lsp-clients)
    )
   )
 
