@@ -12,14 +12,11 @@
   (python-mode . lsp)
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode . lsp-deferred)
-  ;; integration which key
-  ;; (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
-  :bind (("M-s r" . lsp-workspace-restart))
+  :bind (("<f9> r" . lsp-workspace-restart))
   :init
-  ;; prefer using lsp-ui (flycheck) over flymake.
   (setq
-   lsp-prefer-flymake nil
+   lsp-prefer-flymake nil   ;; prefer using lsp-ui (flycheck) over flymake.
    lsp-enable-folding nil
    lsp-enable-snippet nil
    lsp-print-performance nil
