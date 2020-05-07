@@ -13,7 +13,9 @@
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode . lsp-deferred)
   :commands lsp
-  :bind (("<f9> r" . lsp-workspace-restart))
+  :bind (("<f9> s r" . lsp-workspace-restart)
+		 ("<f9> f r" . lsp-find-references)
+		 )
   :init
   (setq
    lsp-prefer-flymake nil   ;; prefer using lsp-ui (flycheck) over flymake.
