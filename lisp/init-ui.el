@@ -26,6 +26,12 @@
                       :height 160
                       :weight 'normal
                       :width 'normal))
+ ((string-equal system-type "windows-nt")
+  (set-face-attribute 'default nil
+                      :family "Microsoft Yahei Mono"
+                      :height 135
+                      :weight 'normal
+                      :width 'normal))
  )
 
 ;; disable bold

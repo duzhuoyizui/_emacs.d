@@ -60,10 +60,12 @@
 (use-package counsel
   :pin melpa
   :ensure t
-  :bind (("C-x C-f" . counsel-find-file)
-		 ("M-x" . counsel-M-x)
+  :bind (("<f9> s g" . counsel-git-grep)
+		 ("C-c g" . counsel-git)
 		 ("C-c k" . counsel-ag)
-		 ("M-y" . counsel-yank-pop))
+		 ("M-x" . counsel-M-x)
+		 ("M-y" . counsel-yank-pop)
+		 ("C-x C-f" . counsel-find-file))
   )
 
 (use-package projectile
