@@ -30,7 +30,9 @@
 1. =git clone https://github.com/zhangjie2012/_emacs.d.git .emacs.d=
 2. open =emacs=, will auto install all package
 
-*for chinese user*, in =lisp/init-package.el= files: _set http proxy_, or _use qinghua mirror_ 。
+*for chinese user*, in =lisp/init-package.el= files: _set http proxy_, or _use qinghua mirror_ .
+
+If appear package not found error message, try =M-x package-refresh-content= and reopen emacs.
 
 *** Dependencies
 
