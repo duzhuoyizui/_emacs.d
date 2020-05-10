@@ -7,7 +7,7 @@
 ** Support
 
 - Emacs version: 26.3
-- OS: macOS, Ubuntu 18.04/20.04
+- OS: macOS, Ubuntu 18.04/20.04, Windows 10 (small part, I just use org)
 - Feature:
   + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form => lazy loading, faster /start up < 1s/
   + Comfortable/Efficient key binding
@@ -23,7 +23,7 @@
 *Note:*
 
 - No any /vi(m)/ extension(plugin or key binding), I'm not a Vim user, thinking by emacs way.
-- I /don't/ use GUI, just terminal
+- I just use GUI for org, terminal for coding
 
 ** Install
 
