@@ -15,6 +15,7 @@
 		 ("M-s >" . mc/mark-next-like-this)
 		 ("M-s <" . mc/mark-previous-like-this)
 		 ("M-s C-a" . mc/mark-all-like-this)
+		 ("M-s C-w" . mc/mark-all-words-like-this)
 		 )
   )
 
