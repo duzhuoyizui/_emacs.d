@@ -16,7 +16,7 @@
 (cond
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
-                      :family "WenQuanYi Zen Hei Mono"
+                      :family "Sarasa Mono SC"
                       :height 135
                       :weight 'normal
                       :width 'normal))
