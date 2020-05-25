@@ -46,7 +46,7 @@
   :ensure t
   :config
   (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
-  (setq doom-modeline-project-detection 'ffip)
+  (setq doom-modeline-project-detection 'projectile)
   (setq doom-modeline-buffer-modification-icon nil)
   (doom-modeline-mode 1)
   )

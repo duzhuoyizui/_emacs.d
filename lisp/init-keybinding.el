@@ -31,8 +31,17 @@ Uses `current-date-time-format' for the formatting the date/time."
   (interactive)
   (message (buffer-file-name)))
 
+;; Align with spaces only
+;; https://stackoverflow.com/questions/915985/in-emacs-how-to-line-up-equals-signs-in-a-series-of-initialization-statements/8129994
+(defadvice align-regexp (around align-regexp-with-spaces)
+  "Never use tabs for alignment."
+  (let ((indent-tabs-mode nil))
+    ad-do-it))
+(ad-activate 'align-regexp)
+
 (global-set-key (kbd "<f2>") 'display-line-numbers-mode)
 (global-set-key (kbd "<f3>") 'eshell)
+(global-set-key (kbd "<f4>") 'align-regexp)
 (global-set-key (kbd "<f6>") 'show-file-name)
 (global-set-key (kbd "<f7>") 'insert-current-date-time)
 (global-set-key (kbd "<f12>") 'counsel-imenu)

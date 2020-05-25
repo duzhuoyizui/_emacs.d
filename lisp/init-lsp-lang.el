@@ -50,7 +50,8 @@
 (use-package company
   :pin melpa-stable
   :ensure t
-  :hook (prog-mode . company-mode)
+  :hook ((prog-mode . company-mode)
+		 (protobuf-mode . company-mode))
   :bind (:map company-active-map
 			  ("M-n" . nil)
 			  ("M-p" . nil)
