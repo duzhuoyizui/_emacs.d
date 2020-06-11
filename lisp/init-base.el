@@ -26,6 +26,9 @@
 (save-place-mode t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
+
 (global-auto-revert-mode t)
 
 (provide 'init-base)
