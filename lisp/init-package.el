@@ -7,9 +7,9 @@
 		("org" . "https://orgmode.org/elpa/")))
 
 ;; use http proxy
-;; (setq url-proxy-services
-;;       '(("http" . "127.0.0.1:1088")
-;;         ("https" . "127.0.0.1:1088")))
+(setq url-proxy-services
+      '(("http" . "127.0.0.1:1088")
+        ("https" . "127.0.0.1:1088")))
 
 ;; in china
 ;; (setq package-archives
