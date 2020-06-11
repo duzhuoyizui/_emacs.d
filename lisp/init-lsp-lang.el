@@ -5,7 +5,7 @@
   )
 
 (use-package lsp-mode
-  :pin melpa-stable
+  :pin melpa
   :ensure t
   :hook
   (emacs-lisp-mode . lsp)
@@ -15,6 +15,7 @@
   :commands lsp
   :bind (("<f9> s r" . lsp-workspace-restart)
 		 ("<f9> f r" . lsp-find-references)
+		 ("<f9> f d" . lsp-describe-thing-at-point)
 		 )
   :init
   (setq
@@ -24,14 +25,14 @@
    lsp-print-performance nil
    lsp-log-io nil
    lsp-enable-symbol-highlighting nil
-   lsp-enable-completion-at-point nil
+   lsp-enable-completion-at-point t
    lsp-enable-links nil
    lsp-restart 'auto-restart
    )
   )
 
 (use-package lsp-ui
-  :pin melpa-stable
+  :pin melpa
   :ensure t
   :commands lsp-ui-mode
   :hook (lsp-mode . lsp-ui-mode)
@@ -48,7 +49,7 @@
   )
 
 (use-package company
-  :pin melpa-stable
+  :pin melpa
   :ensure t
   :hook ((prog-mode . company-mode)
 		 (protobuf-mode . company-mode))
@@ -69,7 +70,7 @@
   )
 
 (use-package company-lsp
-  :pin melpa-stable
+  :pin melpa
   :ensure t
   :commands company-lsp
   )
@@ -85,7 +86,8 @@
  )
 
 (use-package go-mode
-  :pin melpa-stable
+  :after lsp-mode
+  :pin melpa
   :ensure t
   :mode "\\.go\\'"
   :interpreter "go"
