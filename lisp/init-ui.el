@@ -11,6 +11,7 @@
 (menu-bar-mode -1)
 (column-number-mode t)
 (blink-cursor-mode -1)
+(setq visible-cursor nil)
 
 ;; Set default font
 (cond
