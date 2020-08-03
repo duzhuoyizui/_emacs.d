@@ -104,4 +104,10 @@
   :mode "\\.proto\\'"
   )
 
+(use-package lua-mode
+  :pin melpa
+  :ensure t
+  :mode "\\.lua\\'"
+  )
+
 (provide 'init-lsp-lang)
