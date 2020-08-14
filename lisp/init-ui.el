@@ -7,7 +7,7 @@
 (setq show-trailing-whitespace t)
 (show-paren-mode t)
 (tool-bar-mode -1)
-;;(set-scroll-bar-mode nil)
+(set-scroll-bar-mode nil)
 (menu-bar-mode -1)
 (column-number-mode t)
 (blink-cursor-mode -1)
@@ -23,8 +23,8 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Sarasa Mono SC"
-                      :height 160
+                      :family "JetBrains Mono"
+                      :height 145
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "windows-nt")
