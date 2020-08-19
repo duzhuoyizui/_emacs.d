@@ -23,7 +23,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "JetBrains Mono"
+                      :family "Fira Code"
                       :height 145
                       :weight 'normal
                       :width 'normal))
