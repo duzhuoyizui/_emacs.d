@@ -32,6 +32,8 @@
    lsp-enable-links nil
    lsp-restart 'auto-restart
    )
+  :config
+  (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
   )
 
 (use-package lsp-ui
@@ -105,6 +107,12 @@
   :pin melpa
   :ensure t
   :mode "\\.proto\\'"
+  :init
+  (defconst my-protobuf-style
+    '((c-basic-offset . 2)
+      (indent-tabs-mode . nil)))
+  (add-hook 'protobuf-mode-hook
+			(lambda () (c-add-style "my-style" my-protobuf-style t)))
   )
 
 (use-package lua-mode
