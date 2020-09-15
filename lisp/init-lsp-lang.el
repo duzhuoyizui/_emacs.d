@@ -22,14 +22,14 @@
 		 )
   :init
   (setq
-   lsp-prefer-flymake nil   ;; prefer using lsp-ui (flycheck) over flymake.
-   lsp-enable-folding nil
-   lsp-enable-snippet nil
-   lsp-print-performance nil
-   lsp-log-io nil
-   lsp-enable-symbol-highlighting nil
    lsp-enable-completion-at-point t
+   lsp-enable-folding nil
    lsp-enable-links nil
+   lsp-enable-snippet nil
+   lsp-enable-symbol-highlighting nil
+   lsp-log-io nil
+   lsp-prefer-flymake nil   ;; prefer using lsp-ui (flycheck) over flymake.
+   lsp-print-performance nil
    lsp-restart 'auto-restart
    )
   :config
@@ -46,11 +46,13 @@
 			  ("M-?" . lsp-ui-peek-find-references)
 			  ("C-c f" . lsp-format-buffer))
   :init
-  (setq lsp-ui-doc-enable nil
-        lsp-ui-sideline-show-diagnostics nil
-        lsp-ui-sideline-show-symbol nil
-        lsp-ui-sideline-show-code-actions nil
-        lsp-ui-sideline-show-hover nil)
+  (setq
+   lsp-ui-doc-enable nil
+   lsp-ui-sideline-show-diagnostics nil
+   lsp-ui-sideline-show-symbol nil
+   lsp-ui-sideline-show-code-actions nil
+   lsp-ui-sideline-show-hover nil
+   )
   )
 
 (use-package company
