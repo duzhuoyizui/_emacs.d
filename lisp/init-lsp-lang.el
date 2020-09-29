@@ -8,8 +8,8 @@
   :pin melpa
   :ensure t
   :hook
-  (emacs-lisp-mode . lsp)
-  (python-mode . lsp)
+  (emacs-lisp-mode . lsp-deferred)
+  (python-mode . lsp-deferred)
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode . lsp-deferred)
   :commands lsp
@@ -22,7 +22,7 @@
 		 )
   :init
   (setq
-   lsp-enable-completion-at-point t
+   lsp-completion-enable t
    lsp-enable-folding nil
    lsp-enable-links nil
    lsp-enable-snippet nil
