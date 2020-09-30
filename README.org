@@ -6,8 +6,8 @@
 
 ** Support
 
-- Emacs version: 26.3
-- OS: macOS, Ubuntu 18.04/20.04, Windows 10 (small part, I just use org)
+- Emacs version: 27.1 [fn:1]
+- OS: macOS, Ubuntu 18.04/20.04
 - Feature:
   + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form => lazy loading, faster /start up < 1s/
   + Comfortable/Efficient key binding
@@ -30,7 +30,7 @@
 1. =git clone https://github.com/zhangjie2012/_emacs.d.git .emacs.d=
 2. open =emacs=, will auto install all package
 
-*for chinese user*, in =lisp/init-package.el= files: _set http proxy_, or _use qinghua mirror_ .
+*for chinese user*, open =init.el= _set http proxy_, or _use qinghua mirror_ .
 
 If appear package not found error message, try =M-x package-refresh-content= and reopen emacs.
 
@@ -44,3 +44,7 @@ If appear package not found error message, try =M-x package-refresh-content= and
 ** Tutorial
 
 Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
+
+* Footnotes
+
+[fn:1] Upgraded to 27 config, refer to https://gitlab.com/protesilaos/dotfiles/-/tree/master/emacs/.emacs.d
