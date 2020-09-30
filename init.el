@@ -5,6 +5,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+(setq gc-cons-threshold 100000000)
+
 (require 'init-package)
 (require 'init-base)
 (require 'init-keybinding)
