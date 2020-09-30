@@ -21,3 +21,4 @@ games
 .mc-lists.el
 .lsp-session-v1
 session*
+package-quickstart.el
