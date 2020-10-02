@@ -23,8 +23,8 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Fira Code"
-                      :height 145
+                      :family "Sarasa Mono SC"
+                      :height 140
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "windows-nt")
@@ -61,5 +61,14 @@
 (load-theme 'leuven)
 
 (set-face-foreground 'line-number "darkgrey")
+
+(use-package display-fill-column-indicator
+  :pin manual
+  :custom
+  (display-fill-column-indicator-column 120)
+  (display-fill-column-indicator-character ?\u2502)
+  :init
+  (global-display-fill-column-indicator-mode t)
+  )
 
 (provide 'init-ui)

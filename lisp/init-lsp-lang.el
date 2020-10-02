@@ -8,10 +8,10 @@
   :pin melpa
   :ensure t
   :hook
-  (emacs-lisp-mode . lsp-deferred)
-  (python-mode . lsp-deferred)
+  (emacs-lisp-mode . lsp)
+  (python-mode . lsp)
   ;; (rjsx-mode . lsp) ; so slow
-  (go-mode . lsp-deferred)
+  (go-mode . lsp)
   :commands lsp
   :bind (("<f9> s r" . lsp-workspace-restart)
 		 ("<f9> f r" . lsp-find-references)
