@@ -1,49 +1,49 @@
 * My Emacs config (simple, clean, fast)
 
-#+CAPTION: emacs screen(theme: "leuven")
-#+NAME: screen.png
-[[./screen.png]]
+  #+CAPTION: emacs screen(theme: "leuven")
+  #+NAME: screen.png
+  [[./screen.png]]
 
 ** Support
 
-- Emacs version: 27.1 [fn:1]
-- OS: macOS, Ubuntu 18.04/20.04
-- Feature:
-  + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form => lazy loading, faster /start up < 1s/
-  + Comfortable/Efficient key binding
-- Coding:
-  + Web (ES2015+, JSX, React, CSS/LESS ..)
-  + Go IDE
-  + Python IDE
-- Other:
-  + markdown
-  + org, gtd, toc-org, publish(build web site)
-  + config file: sql, Dockerfile, yaml, nginx
+   - Emacs version: 27.1 [fn:1]
+   - OS: macOS, Ubuntu 18.04/20.04
+   - Feature:
+	 + [[https://github.com/jwiegley/use-package][use-package]] all third party package use /use-package/ form => lazy loading, faster /start up < 1s/
+	 + Comfortable/Efficient key binding
+   - Coding:
+	 + Web (ES2015+, JSX, React, CSS/LESS ..)
+	 + Go IDE
+	 + Python IDE
+   - Other:
+	 + markdown
+	 + org, gtd, toc-org, publish(build web site)
+	 + config file: sql, Dockerfile, yaml, nginx
 
-*Note:*
+   *Note:*
 
-- No any /vi(m)/ extension(plugin or key binding), I'm not a Vim user, thinking by emacs way.
-- I just use GUI for org, terminal for coding
+   - No any /vi(m)/ extension(plugin or key binding), I'm not a Vim user, thinking by emacs way.
+   - I just use GUI for org, terminal for coding
 
 ** Install
 
-1. =git clone https://github.com/zhangjie2012/_emacs.d.git .emacs.d=
-2. open =emacs=, will auto install all package
+   1. =git clone https://github.com/zhangjie2012/_emacs.d.git .emacs.d=
+   2. open =emacs=, will auto install all package
 
-*for chinese user*, open =init.el= _set http proxy_, or _use qinghua mirror_ .
+   *for chinese user*, open =init.el= _set http proxy_, or _use qinghua mirror_ .
 
-If appear package not found error message, try =M-x package-refresh-content= and reopen emacs.
+   If appear package not found error message, try =M-x package-refresh-content= and reopen emacs.
 
 *** Dependencies
 
-- search use [[https://github.com/ggreer/the_silver_searcher][ag]], fast than grep
-- coding IDE need:
-  - language server (LSP), like gopls, more see [[https://emacs-lsp.github.io/lsp-mode/page/languages/][lsp-mode#Languages]]
-  - syntax checker, like pylint/eslint, more see [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][flycheck#Supported Languages]]
+	- search use [[https://github.com/ggreer/the_silver_searcher][ag]], fast than grep
+	- coding IDE need:
+	  - language server (LSP), like gopls, more see [[https://emacs-lsp.github.io/lsp-mode/page/languages/][lsp-mode#Languages]]
+	  - syntax checker, like pylint/eslint, more see [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][flycheck#Supported Languages]]
 
 ** Tutorial
 
-Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
+   Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
 
 * Footnotes
 
