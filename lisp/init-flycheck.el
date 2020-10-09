@@ -1,7 +1,7 @@
 (use-package flycheck
   :pin melpa
   :ensure t
-  :hook (prog-mode . flycheck-mode)
+  :hook (prog-mode-hook . flycheck-mode)
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-disabled-checkers

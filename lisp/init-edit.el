@@ -135,7 +135,7 @@
 (use-package which-key
   :pin melpa
   :ensure t
-  :hook (prog-mode . which-key-mode)
+  :hook (prog-mode-hook . which-key-mode)
   :init
   (which-key-setup-minibuffer)
   )

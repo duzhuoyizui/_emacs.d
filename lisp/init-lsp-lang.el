@@ -8,10 +8,10 @@
   :pin melpa
   :ensure t
   :hook
-  (emacs-lisp-mode . lsp)
-  (python-mode . lsp)
+  (emacs-lisp-mode-hook . lsp-deferred)
+  (python-mode-hook . lsp-deferred)
   ;; (rjsx-mode . lsp) ; so slow
-  (go-mode . lsp)
+  (go-mode-hook . lsp-deferred)
   :commands lsp
   :bind (("<f9> s r" . lsp-workspace-restart)
 		 ("<f9> f r" . lsp-find-references)
@@ -40,7 +40,7 @@
   :pin melpa
   :ensure t
   :commands lsp-ui-mode
-  :hook (lsp-mode . lsp-ui-mode)
+  :hook (lsp-mode-hook . lsp-ui-mode)
   :bind (:map lsp-mode-map
 			  ("M-." . lsp-ui-peek-find-definitions)
 			  ("M-?" . lsp-ui-peek-find-references)
@@ -58,8 +58,8 @@
 (use-package company
   :pin melpa
   :ensure t
-  :hook ((prog-mode . company-mode)
-		 (protobuf-mode . company-mode))
+  :hook ((prog-mode-hook . company-mode)
+		 (protobuf-mode-hook . company-mode))
   :bind (:map company-active-map
 			  ("M-n" . nil)
 			  ("M-p" . nil)

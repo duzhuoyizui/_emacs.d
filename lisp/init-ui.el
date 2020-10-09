@@ -24,7 +24,7 @@
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
                       :family "Sarasa Mono SC"
-                      :height 140
+                      :height 155
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "windows-nt")
@@ -55,7 +55,7 @@
 (use-package rainbow-delimiters
   :pin melpa
   :ensure t
-  :hook (prog-mode . rainbow-delimiters-mode)
+  :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
 (load-theme 'leuven)
