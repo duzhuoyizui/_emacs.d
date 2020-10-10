@@ -67,8 +67,8 @@
   :custom
   (display-fill-column-indicator-column 120)
   (display-fill-column-indicator-character ?\u2502)
-  :init
-  (global-display-fill-column-indicator-mode t)
+  ;; :init
+  ;; (global-display-fill-column-indicator-mode t)
   )
 
 (provide 'init-ui)
