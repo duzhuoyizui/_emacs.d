@@ -65,7 +65,7 @@
 (use-package display-fill-column-indicator
   :pin manual
   :custom
-  (display-fill-column-indicator-column 120)
+  (display-fill-column-indicator-column 100)
   (display-fill-column-indicator-character ?\u2502)
   ;; :init
   ;; (global-display-fill-column-indicator-mode t)
