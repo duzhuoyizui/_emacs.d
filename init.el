@@ -2,9 +2,9 @@
 
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-	("melpa" . "https://melpa.org/packages/")
-	("melpa-stable" . "http://stable.melpa.org/packages/")
-	("org" . "https://orgmode.org/elpa/")))
+		("melpa" . "https://melpa.org/packages/")
+		("melpa-stable" . "http://stable.melpa.org/packages/")
+		("org" . "https://orgmode.org/elpa/")))
 
 ;; use http proxy
 (setq url-proxy-services
@@ -64,4 +64,4 @@
 ;; variables configured via the interactive 'customize' interface
 (setq custom-file "~/.emacs.d/custom.el")
 (when (file-exists-p custom-file)
-(load custom-file))
+  (load custom-file))
