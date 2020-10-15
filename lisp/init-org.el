@@ -64,6 +64,9 @@
     :init
     (add-hook 'org-mode-hook 'toc-org-mode)
     )
+
+  (require 'valign)
+  (add-hook 'org-mode-hook #'valign-mode)
   )
 
 ;; blog
