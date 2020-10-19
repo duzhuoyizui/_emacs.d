@@ -112,7 +112,7 @@
 (use-package git-gutter+
   :pin melpa
   :ensure t
-  :bind (("C-x g" . git-gutter+-mode))
+  :bind (("<f9> g g" . git-gutter+-mode))
   :config (progn
             (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
             (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
