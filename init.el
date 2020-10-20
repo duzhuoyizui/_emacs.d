@@ -25,16 +25,8 @@
 
 (eval-and-compile
   (setq use-package-verbose t)
-  ;; all package must set pin addr
   (setq use-package-always-pin t)
-  ;; if you want show package load time, open this and =M-x use-package-report= show load package time
   (setq use-package-compute-statistics t)
-
-  ;; The following is VERY IMPORTANT.  Write hooks using their real name
-  ;; instead of a shorter version: after-init ==> `after-init-hook'.
-  ;;
-  ;; This is to empower help commands with their contextual awareness,
-  ;; such as `describe-symbol'.
   (setq use-package-hook-name-suffix nil)
   )
 
