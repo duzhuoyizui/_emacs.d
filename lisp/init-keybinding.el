@@ -1,6 +1,7 @@
 ;;------------------------------------------------------------------------------
 ;; global key binding
 ;;------------------------------------------------------------------------------
+
 ;; unset all function key
 (global-unset-key (kbd "<f1>"))
 (global-unset-key (kbd "<f2>"))
@@ -14,6 +15,7 @@
 (global-unset-key (kbd "<f10>"))
 (global-unset-key (kbd "<f11>"))
 (global-unset-key (kbd "<f12>"))
+(global-unset-key (kbd "C-\\")) ;; disable toggle input method
 
 (defvar current-date-time-format "%Y-%m-%d %H:%M:%S"
   "Format of date to insert with `insert-current-date-time' func
