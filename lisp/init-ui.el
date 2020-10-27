@@ -12,6 +12,7 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (setq visible-cursor nil)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Set default font
 (cond
