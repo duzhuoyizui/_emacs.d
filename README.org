@@ -4,6 +4,8 @@
   #+NAME: screen.png
   [[./screen.png]]
 
+  Master only support Emacs 27+, 26 version checkout =emacs-26= branch.
+
 ** Support
 
    - Emacs version: 27.1 [fn:1]
