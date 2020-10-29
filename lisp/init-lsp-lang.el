@@ -41,10 +41,11 @@
   :ensure t
   :commands lsp-ui-mode
   :hook (lsp-mode-hook . lsp-ui-mode)
-  :bind (:map lsp-mode-map
-			  ("M-." . lsp-ui-peek-find-definitions)
-			  ("M-?" . lsp-ui-peek-find-references)
-			  ("C-c f" . lsp-format-buffer))
+  :bind (("<f9> f c" . lsp-ui-flycheck-list)
+		 :map lsp-mode-map
+		 ("M-." . lsp-ui-peek-find-definitions)
+		 ("M-?" . lsp-ui-peek-find-references)
+		 ("C-c f" . lsp-format-buffer))
   :init
   (setq
    lsp-ui-doc-enable nil
