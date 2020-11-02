@@ -16,6 +16,7 @@
   :bind (("<f9> s r" . lsp-workspace-restart)
 		 ("<f9> f r" . lsp-find-references)
 		 ("<f9> f d" . lsp-describe-thing-at-point)
+		 ("<f9> f i" . lsp-find-implementation)
 		 :map lsp-signature-mode
 		 ("<f9> s p" . lsp-signature-previous)
 		 ("<f9> s n" . lsp-signature-next)
