@@ -48,8 +48,10 @@
   :ensure t
   :config
   (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
-  (setq doom-modeline-project-detection nil)
   (setq doom-modeline-buffer-modification-icon nil)
+  (setq doom-modeline-project-detection 'project)
+  (setq doom-modeline-buffer-file-name-style 'truncate-all)
+  (setq doom-modeline-enable-word-count t)
   (doom-modeline-mode 1)
   )
 
