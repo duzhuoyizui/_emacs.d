@@ -2,11 +2,8 @@
   :pin melpa
   :ensure t
   :hook (prog-mode-hook . flycheck-mode)
-  :bind (("<f9> c b" . flycheck-buffer)
-		 ("<f9> c l" . flycheck-list-errors)
-		 ("<f9> c n" . flycheck-next-error)
-		 ("<f9> c p" . flycheck-previous-error)
-		 )
+  :bind (("<f9> `" . flycheck-buffer)
+		 ("<f9> l" . flycheck-list-errors))
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-disabled-checkers

@@ -48,6 +48,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f7>") 'insert-current-date-time)
 (global-set-key (kbd "<f9> g r") 'rgrep) ;; search in current dir and sub-dir
 (global-set-key (kbd "<f9> g l") 'lgrep) ;; search in current dir
+(global-set-key (kbd "<f9> SPC") 'save-buffer)
 (global-set-key (kbd "<f10>") 'display-fill-column-indicator-mode)
 (global-set-key (kbd "<f12>") 'counsel-imenu)
 
