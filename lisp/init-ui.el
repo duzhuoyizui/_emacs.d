@@ -61,14 +61,7 @@
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
-;; (load-theme 'leuven)
-
-(use-package kaolin-themes
-  :pin melpa
-  :ensure t
-  :config
-  (load-theme 'kaolin-breeze t)
-  )
+(load-theme 'leuven)
 
 (set-face-foreground 'line-number "darkgrey")
 
