@@ -123,7 +123,7 @@
   :pin melpa
   :ensure t
   :bind (("M-o" . ace-window)
-		 ("<f9> w t" . ace-swap-window))
+		 ("<f9> t" . ace-swap-window))
   :config
   (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   (set-face-attribute
