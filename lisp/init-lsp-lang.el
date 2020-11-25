@@ -24,14 +24,18 @@
   :init
   (setq
    lsp-completion-enable t
+   lsp-completion-enable-additional-text-edit nil
    lsp-enable-folding nil
    lsp-enable-links nil
    lsp-enable-snippet nil
    lsp-enable-symbol-highlighting nil
+   lsp-semantic-highlighting t
    lsp-log-io nil
-   lsp-prefer-flymake nil   ;; prefer using lsp-ui (flycheck) over flymake.
+   lsp-diagnostics-provider :flycheck
    lsp-print-performance nil
    lsp-restart 'auto-restart
+   lsp-eldoc-render-all nil
+   lsp-signature-render-documentation nil
    )
   :config
   (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
