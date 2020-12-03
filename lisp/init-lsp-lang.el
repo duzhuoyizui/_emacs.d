@@ -13,10 +13,10 @@
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode-hook . lsp-deferred)
   :commands lsp
-  :bind (("<f9> s r" . lsp-workspace-restart)
-		 ("<f9> f r" . lsp-find-references)
-		 ("<f9> f d" . lsp-describe-thing-at-point)
-		 ("<f9> f i" . lsp-find-implementation)
+  :bind (("<f9> s s" . lsp-workspace-restart)
+		 ("<f9> s r" . lsp-find-references)
+		 ("<f9> s d" . lsp-describe-thing-at-point)
+		 ("<f9> s i" . lsp-find-implementation)
 		 :map lsp-signature-mode
 		 ("<f9> s p" . lsp-signature-previous)
 		 ("<f9> s n" . lsp-signature-next)
@@ -46,11 +46,11 @@
   :ensure t
   :commands lsp-ui-mode
   :hook (lsp-mode-hook . lsp-ui-mode)
-  :bind (("<f9> f c" . lsp-ui-flycheck-list)
+  :bind (("<f9> s c" . lsp-ui-flycheck-list)
 		 :map lsp-mode-map
 		 ("M-." . lsp-ui-peek-find-definitions)
 		 ("M-?" . lsp-ui-peek-find-references)
-		 ("C-c f" . lsp-format-buffer))
+		 ("<f9> s f" . lsp-format-buffer))
   :init
   (setq
    lsp-ui-doc-enable nil

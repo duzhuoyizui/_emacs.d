@@ -8,8 +8,8 @@
 (use-package org
   :pin org
   :ensure org-plus-contrib
-  :bind (("C-c l" . org-toggle-link-display)
-		 ("C-c f" . org-footnote-new))
+  :bind (("<f9> t l" . org-toggle-link-display)
+		 ("<f9> t f" . org-footnote-new))
   :init
   (setq org-log-done t)
   (setq org-startup-with-inline-images t)

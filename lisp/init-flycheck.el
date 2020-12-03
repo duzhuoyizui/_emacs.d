@@ -2,7 +2,7 @@
   :pin melpa
   :ensure t
   :hook (prog-mode-hook . flycheck-mode)
-  :bind (("<f9> SPC" . flycheck-buffer)
+  :bind (("<f9> <f9>" . flycheck-buffer)
 		 ("<f9> l" . flycheck-list-errors))
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))

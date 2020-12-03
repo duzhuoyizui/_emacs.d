@@ -43,6 +43,7 @@
 (use-package ivy
   :pin melpa
   :ensure t
+  :bind (("<f9> b" . ivy-switch-buffer))
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
@@ -54,26 +55,22 @@
 (use-package swiper
   :pin melpa
   :ensure t
-  :bind (("C-s" . swiper)
-		 ("M-s ." . swiper-isearch-thing-at-point))
-  )
+  :bind (("M-s ." . swiper-isearch-thing-at-point)))
 
 (use-package counsel
   :pin melpa
   :ensure t
-  :bind (("<f9> s g" . counsel-git-grep)
-		 ("C-c g" . counsel-git)
-		 ("C-c k" . counsel-ag)
-		 ("M-x" . counsel-M-x)
+  :bind (("M-s [" . counsel-ag)
+		 ("M-s ]" . counsel-git)
+		 ("<f9> x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
-		 ("C-x C-f" . counsel-find-file))
+		 ("<f9> f" . counsel-find-file))
   )
 
 (use-package projectile
   :pin melpa
   :ensure t
-  :bind-keymap (("C-c p" . projectile-command-map)
-				("<f8>" . projectile-command-map))
+  :bind-keymap (("<f8>" . projectile-command-map))
   :config
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
   ;; 你可以通过下面两个名称来清除缓存
@@ -123,7 +120,7 @@
   :pin melpa
   :ensure t
   :bind (("M-o" . ace-window)
-		 ("<f9> t" . ace-swap-window))
+		 ("M-s t" . ace-swap-window))
   :config
   (setq aw-keys '(?1 ?2 ?3 ?4 ?7 ?8 ?9 ?0))
   (set-face-attribute
@@ -140,4 +137,11 @@
   (which-key-setup-minibuffer)
   )
 
+(use-package keyfreq
+  :pin melpa
+  :ensure
+  :init
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1)
+  )
 (provide 'init-edit)

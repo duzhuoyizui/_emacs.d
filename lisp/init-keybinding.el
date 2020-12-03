@@ -41,15 +41,22 @@ Uses `current-date-time-format' for the formatting the date/time."
     ad-do-it))
 (ad-activate 'align-regexp)
 
-(global-set-key (kbd "<f2>") 'display-line-numbers-mode)
-(global-set-key (kbd "<f3>") 'eshell)
-(global-set-key (kbd "<f4>") 'align-regexp)
-(global-set-key (kbd "<f6>") 'show-file-name)
-(global-set-key (kbd "<f7>") 'insert-current-date-time)
-(global-set-key (kbd "<f9> g r") 'rgrep) ;; search in current dir and sub-dir
+(global-set-key (kbd "M-s l") 'display-line-numbers-mode)
+
+(global-set-key (kbd "<f9> 0") 'delete-window)
+(global-set-key (kbd "<f9> 1") 'delete-other-windows)
+(global-set-key (kbd "<f9> 2") 'split-window-below)
+(global-set-key (kbd "<f9> 3") 'split-window-horizontally)
+(global-set-key (kbd "<f9> a") 'backward-sentence)
+(global-set-key (kbd "<f9> c") 'eshell)
+(global-set-key (kbd "<f9> d") 'kill-whole-line)
+(global-set-key (kbd "<f9> e") 'forward-sentence)
+(global-set-key (kbd "<f9> g a") 'align-regexp)
+(global-set-key (kbd "<f9> g d") 'insert-current-date-time)
 (global-set-key (kbd "<f9> g l") 'lgrep) ;; search in current dir
+(global-set-key (kbd "<f9> g r") 'rgrep) ;; search in current dir and sub-dir
+(global-set-key (kbd "<f9> m") 'counsel-imenu)
+(global-set-key (kbd "<f9> n") 'display-fill-column-indicator-mode)
 (global-set-key (kbd "<f9> w") 'save-buffer)
-(global-set-key (kbd "<f10>") 'display-fill-column-indicator-mode)
-(global-set-key (kbd "<f12>") 'counsel-imenu)
 
 (provide 'init-keybinding)
