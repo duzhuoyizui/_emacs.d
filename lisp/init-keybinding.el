@@ -41,6 +41,14 @@ Uses `current-date-time-format' for the formatting the date/time."
     ad-do-it))
 (ad-activate 'align-regexp)
 
+(defun match-paren (arg)
+  "Go to the matching paren if on a paren; otherwise insert %."
+  (interactive "p")
+  (cond ((looking-at "\\s(") (forward-list 1) (backward-char 1))
+        ((looking-at "\\s)") (forward-char 1) (backward-list 1))
+        (t (self-insert-command (or arg 1)))))
+
+
 (global-set-key (kbd "M-s l") 'display-line-numbers-mode)
 
 (global-set-key (kbd "<f9> 0") 'delete-window)
@@ -58,5 +66,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f9> m") 'counsel-imenu)
 (global-set-key (kbd "<f9> n") 'display-fill-column-indicator-mode)
 (global-set-key (kbd "<f9> w") 'save-buffer)
+(global-set-key (kbd "M-*") 'match-paren)
 
 (provide 'init-keybinding)

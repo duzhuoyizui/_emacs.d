@@ -96,6 +96,10 @@ Master only support Emacs 27+, 26 version checkout =emacs-26= branch.
 
 	checkout projectile doc: https://docs.projectile.mx/projectile/usage.html#interactive-commands.
 
+*** Other
+
+	=M-\*= jump match paren
+
 ** Tutorial
 
    Emacs tutorial(just support chinese): https://www.zhangjiee.com/topic/emacs/index.html
