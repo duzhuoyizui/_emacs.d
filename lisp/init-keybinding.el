@@ -59,6 +59,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f9> c") 'eshell)
 (global-set-key (kbd "<f9> d") 'kill-whole-line)
 (global-set-key (kbd "<f9> e") 'forward-sentence)
+(global-set-key (kbd "<f9> r") 'query-replace)
 (global-set-key (kbd "<f9> g a") 'align-regexp)
 (global-set-key (kbd "<f9> g d") 'insert-current-date-time)
 (global-set-key (kbd "<f9> g l") 'lgrep) ;; search in current dir
