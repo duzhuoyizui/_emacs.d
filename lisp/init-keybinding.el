@@ -50,8 +50,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 
 (global-set-key (kbd "M-s l") 'display-line-numbers-mode)
+(global-set-key (kbd "M-s n") 'display-fill-column-indicator-mode)
+(global-set-key (kbd "M-*") 'match-paren)
 
-(global-set-key (kbd "<f9> 0") 'delete-window)
 (global-set-key (kbd "<f9> 1") 'delete-other-windows)
 (global-set-key (kbd "<f9> 2") 'split-window-below)
 (global-set-key (kbd "<f9> 3") 'split-window-horizontally)
@@ -65,8 +66,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f9> g l") 'lgrep) ;; search in current dir
 (global-set-key (kbd "<f9> g r") 'rgrep) ;; search in current dir and sub-dir
 (global-set-key (kbd "<f9> m") 'counsel-imenu)
-(global-set-key (kbd "<f9> n") 'display-fill-column-indicator-mode)
 (global-set-key (kbd "<f9> w") 'save-buffer)
-(global-set-key (kbd "M-*") 'match-paren)
 
 (provide 'init-keybinding)
