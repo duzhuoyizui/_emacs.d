@@ -17,6 +17,13 @@
       indent-tabs-mode     nil
       create-lockfiles     nil)
 
+
+(add-hook 'text-mode-hook
+          '(lambda ()
+             (setq indent-tabs-mode nil)
+             (setq tab-width 4)))
+(setq indent-line-function (quote insert-tab))
+
 (setq-default tab-width 4)
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-pair-mode nil)
