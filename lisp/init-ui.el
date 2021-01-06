@@ -18,14 +18,14 @@
 (cond
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
-                      :family "Fira Code"
+                      :family "Sarasa Mono SC"
                       :height 130
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Fira Code"
-                      :height 150
+                      :family "Sarasa Mono SC"
+                      :height 160
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "windows-nt")
