@@ -61,7 +61,21 @@
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
-(load-theme 'leuven)
+(use-package zenburn-theme
+  :pin melpa
+  :ensure t
+  :config
+  ;; use variable-pitch fonts for some headings and titles
+  (setq zenburn-use-variable-pitch t)
+  ;; scale headings in org-mode
+  (setq zenburn-scale-org-headlines t)
+  ;; scale headings in outline-mode
+  (setq zenburn-scale-outline-headlines t)
+  (load-theme 'zenburn t)
+  )
+
+;; (load-theme 'leuven)
+
 
 (set-face-foreground 'line-number "darkgrey")
 
