@@ -61,7 +61,7 @@
 		 ("M-y" . counsel-yank-pop)
 		 ("<f9> f" . counsel-find-file))
   :config
-  (setq counsel-ag-base-command "ag -i %s")
+  (setq counsel-ag-base-command "ag --vimgrep -i %s")
   )
 
 (use-package projectile
