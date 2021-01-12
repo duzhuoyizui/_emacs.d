@@ -60,6 +60,8 @@
 		 ("<f9> x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
 		 ("<f9> f" . counsel-find-file))
+  :config
+  (setq counsel-ag-base-command "ag -i %s")
   )
 
 (use-package projectile
