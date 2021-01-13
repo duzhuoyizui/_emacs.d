@@ -68,4 +68,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f9> m") 'counsel-imenu)
 (global-set-key (kbd "<f9> w") 'save-buffer)
 
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 (provide 'init-keybinding)
