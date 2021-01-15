@@ -87,4 +87,15 @@
   ;; (global-display-fill-column-indicator-mode t)
   )
 
+(use-package hl-todo
+  :pin melpa
+  :ensure t
+  :config
+  (setq hl-todo-keyword-faces
+		'(("TODO" . "#FF0000")
+          ("FIXME" . "#FF0000")))
+  :init
+  (global-hl-todo-mode t)
+  )
+
 (provide 'init-ui)
