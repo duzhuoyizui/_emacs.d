@@ -36,6 +36,7 @@
    lsp-restart 'auto-restart
    lsp-eldoc-render-all nil
    lsp-signature-render-documentation nil
+   lsp-headerline-breadcrumb-enable nil
    )
   :config
   (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
