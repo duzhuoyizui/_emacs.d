@@ -19,7 +19,7 @@
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
                       :family "Sarasa Mono SC"
-                      :height 130
+                      :height 135
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
