@@ -9,7 +9,9 @@
   :pin org
   :ensure org-plus-contrib
   :bind (("<f9> t l" . org-toggle-link-display)
-		 ("<f9> t f" . org-footnote-new))
+		 ("<f9> t f" . org-footnote-new)
+		 ("<f9> t i" . org-toggle-inline-images)
+		 )
   :init
   (setq org-log-done t)
   (setq org-startup-with-inline-images t)

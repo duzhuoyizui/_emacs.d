@@ -24,7 +24,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Sarasa Mono SC"
+                      :family "SF Mono"
                       :height 160
                       :weight 'normal
                       :width 'normal))
