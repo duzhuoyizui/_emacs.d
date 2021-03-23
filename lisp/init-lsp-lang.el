@@ -8,7 +8,7 @@
   :pin melpa
   :ensure t
   :hook
-  (emacs-lisp-mode-hook . lsp-deferred)
+  ;; (emacs-lisp-mode-hook . lsp-deferred)
   (python-mode-hook . lsp-deferred)
   ;; (rjsx-mode . lsp) ; so slow
   (go-mode-hook . lsp-deferred)
@@ -81,12 +81,6 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-  )
-
-(use-package company-lsp
-  :pin melpa
-  :ensure t
-  :commands company-lsp
   )
 
 (use-package python
