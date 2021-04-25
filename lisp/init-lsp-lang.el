@@ -17,6 +17,7 @@
 		 ("<f9> s r" . lsp-find-references)
 		 ("<f9> s d" . lsp-describe-thing-at-point)
 		 ("<f9> s i" . lsp-find-implementation)
+		 ("M-i" . lsp-smart-buffer)
 		 :map lsp-signature-mode
 		 ("<f9> s p" . lsp-signature-previous)
 		 ("<f9> s n" . lsp-signature-next)
@@ -38,6 +39,12 @@
    lsp-signature-render-documentation nil
    lsp-headerline-breadcrumb-enable nil
    )
+  (defun lsp-smart-buffer ()
+	"call lsp tool chains, smart make buffer"
+	(interactive)
+	(lsp-format-buffer)
+	(lsp-organize-imports)
+	)
   :config
   (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
   )
@@ -50,8 +57,7 @@
   :bind (("<f9> s c" . lsp-ui-flycheck-list)
 		 :map lsp-mode-map
 		 ("M-." . lsp-ui-peek-find-definitions)
-		 ("M-?" . lsp-ui-peek-find-references)
-		 ("<f9> s f" . lsp-format-buffer))
+		 ("M-?" . lsp-ui-peek-find-references))
   :init
   (setq
    lsp-ui-doc-enable nil
@@ -91,19 +97,18 @@
   :init
   (set-variable 'py-indent-offset 4)
   (set-variable 'python-indent-guess-indent-offset nil)
- )
+  )
 
 (use-package go-mode
-  :after lsp-mode
   :pin melpa
   :ensure t
   :mode "\\.go\\'"
   :interpreter "go"
-  :init
-  (defun lsp-go-install-save-hooks ()
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t))
-  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+  ;; :init
+  ;; (defun lsp-go-install-save-hooks ()
+  ;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  ;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+  ;; (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
   )
 
 (use-package protobuf-mode
