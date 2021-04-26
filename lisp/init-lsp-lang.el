@@ -42,6 +42,7 @@
   (defun lsp-smart-buffer ()
 	"call lsp tool chains, smart make buffer"
 	(interactive)
+	(flycheck-buffer)
 	(lsp-format-buffer)
 	(lsp-organize-imports)
 	)
