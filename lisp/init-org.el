@@ -15,6 +15,7 @@
   :init
   (setq org-log-done t)
   (setq org-startup-with-inline-images t)
+  (setq org-src-tab-acts-natively nil)
 
   :config
   ;; GTD setting
