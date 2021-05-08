@@ -100,11 +100,24 @@
   (set-variable 'python-indent-guess-indent-offset nil)
   )
 
+(use-package go-tag
+  :pin melpa
+  :ensure t
+  :mode "\\.go\\'"
+  :interpreter "go"
+  :init
+  (setq go-tag-args (list "-transform" "snakecase"))
+  )
+
 (use-package go-mode
   :pin melpa
   :ensure t
   :mode "\\.go\\'"
   :interpreter "go"
+  :bind (:map go-mode-map
+		 ("C-c t" . go-tag-add)
+		 ("C-c T" . go-tag-remove)
+		 )
   ;; :init
   ;; (defun lsp-go-install-save-hooks ()
   ;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
