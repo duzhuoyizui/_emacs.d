@@ -101,10 +101,8 @@
   )
 
 (use-package go-tag
-  :pin melpa
+  :pin melpa-stable
   :ensure t
-  :mode "\\.go\\'"
-  :interpreter "go"
   :init
   (setq go-tag-args (list "-transform" "snakecase"))
   )
@@ -118,7 +116,7 @@
 		 ("C-c t" . go-tag-add)
 		 ("C-c T" . go-tag-remove)
 		 )
-  ;; :init
+  :init
   ;; (defun lsp-go-install-save-hooks ()
   ;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   ;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
