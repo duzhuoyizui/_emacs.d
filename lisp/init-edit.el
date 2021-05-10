@@ -57,9 +57,12 @@
   :ensure t
   :bind (("M-s [" . counsel-ag)
 		 ("M-s ]" . counsel-git)
+		 ("M-x" . counsel-M-x)
 		 ("<f9> x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
-		 ("<f9> f" . counsel-find-file))
+		 ("<f9> f" . counsel-find-file)
+		 ("C-x C-f" . counsel-find-file)
+		 )
   :config
   (setq counsel-ag-base-command "ag --vimgrep -i %s")
   )
