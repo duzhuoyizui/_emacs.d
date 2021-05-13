@@ -32,6 +32,7 @@
   :defer t
   :init
   (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
+  (add-to-list 'auto-mode-alist '("\\.wxss\\'" . css-mode))
   :config
   (setq css-indent-offset 2)
   )
