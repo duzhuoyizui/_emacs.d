@@ -38,6 +38,8 @@
    lsp-eldoc-render-all nil
    lsp-signature-render-documentation nil
    lsp-headerline-breadcrumb-enable nil
+
+   lsp-pyls-server-command 'pyright
    )
   (defun lsp-smart-buffer ()
 	"call lsp tool chains, smart make buffer"
@@ -99,6 +101,13 @@
   (set-variable 'py-indent-offset 4)
   (set-variable 'python-indent-guess-indent-offset nil)
   )
+
+(use-package lsp-pyright
+  :pin melpa
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
 
 (use-package go-mode
   :pin melpa
