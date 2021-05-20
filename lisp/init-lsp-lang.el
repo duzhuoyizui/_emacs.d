@@ -100,23 +100,23 @@
   :init
   (set-variable 'py-indent-offset 4)
   (set-variable 'python-indent-guess-indent-offset nil)
+  :config
+  (use-package lsp-pyright
+	:pin melpa
+	:ensure t
+	:hook (python-mode . (lambda ()
+                           (require 'lsp-pyright)
+                           (lsp))))  ; or lsp-deferred
   )
-
-(use-package lsp-pyright
-  :pin melpa
-  :ensure t
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
 
 (use-package go-mode
   :pin melpa
   :ensure t
   :mode "\\.go\\'"
   :interpreter "go"
-  :init
+  :config
   (use-package go-tag
-	:pin melpa-stable
+	:pin melpa
 	:ensure t
 	:init
 	(setq go-tag-args (list "-transform" "snakecase"))
@@ -124,10 +124,6 @@
 	  (define-key go-mode-map (kbd "C-c t") #'go-tag-add)
 	  (define-key go-mode-map (kbd "C-c T") #'go-tag-remove))
 	)
-  ;; (defun lsp-go-install-save-hooks ()
-  ;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  ;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
-  ;; (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
   )
 
 (use-package protobuf-mode
