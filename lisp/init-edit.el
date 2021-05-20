@@ -55,7 +55,7 @@
 (use-package counsel
   :pin melpa
   :ensure t
-  :bind (("M-s [" . counsel-ag)
+  :bind (("M-s [" . counsel-rg)
 		 ("M-s ]" . counsel-git)
 		 ("M-x" . counsel-M-x)
 		 ("<f9> x" . counsel-M-x)
@@ -64,7 +64,7 @@
 		 ("C-x C-f" . counsel-find-file)
 		 )
   :config
-  (setq counsel-ag-base-command "ag --vimgrep -i %s")
+  (setq counsel-rg-base-command "rg -i --max-columns 240 --no-heading --with-filename --line-number %s")
   )
 
 (use-package projectile
