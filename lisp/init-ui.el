@@ -48,10 +48,15 @@
   :ensure t
   :config
   (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
+  (set-face-foreground 'doom-modeline-project-dir "yellow") ;; project name
   (setq doom-modeline-buffer-modification-icon nil)
-  (setq doom-modeline-project-detection 'project)
-  (setq doom-modeline-buffer-file-name-style 'truncate-all)
+  (setq doom-modeline-project-detection 'projectile)
+  (setq doom-modeline-buffer-file-name-style 'truncate-except-project)
+  (setq doom-modeline-lsp t)
   (setq doom-modeline-enable-word-count t)
+  (setq doom-modeline-modal-icon t)
+  (setq doom-modeline-env-version t)
+  (setq doom-modeline-window-width-limit fill-column)
   (doom-modeline-mode 1)
   )
 
