@@ -88,6 +88,8 @@
   ;; 对结果进行排序(active buffer + recently opened)
   (setq projectile-sort-order 'recentf-active)
 
+  (setq projectile-completion-system 'ivy)
+
   (use-package counsel-projectile
     :pin melpa
     :ensure t
