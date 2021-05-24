@@ -84,10 +84,10 @@
   ;; 注意: alien 会忽略 .projectile 文件
   (setq projectile-indexing-method 'alien)
   ;; 在每个目录下都可用(即使没有项目文件)
-  (setq projectile-require-project-root nil)
+  (setq projectile-require-project-root 'prompt)
   ;; 对结果进行排序(active buffer + recently opened)
   (setq projectile-sort-order 'recentf-active)
-
+  ;; use ivy as completion system
   (setq projectile-completion-system 'ivy)
 
   (use-package counsel-projectile

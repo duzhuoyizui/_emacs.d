@@ -51,12 +51,13 @@
   (set-face-foreground 'doom-modeline-project-dir "yellow") ;; project name
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
-  (setq doom-modeline-buffer-file-name-style 'truncate-except-project)
+  (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
   (setq doom-modeline-lsp t)
-  (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-modal-icon t)
   (setq doom-modeline-env-version t)
   (setq doom-modeline-window-width-limit fill-column)
+  (setq doom-modeline-minor-modes nil)
+  (setq doom-modeline-indent-info t)
   (doom-modeline-mode 1)
   )
 
@@ -65,19 +66,6 @@
   :ensure t
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
-
-;; (use-package zenburn-theme
-;;   :pin melpa
-;;   :ensure t
-;;   :config
-;;   ;; use variable-pitch fonts for some headings and titles
-;;   (setq zenburn-use-variable-pitch t)
-;;   ;; scale headings in org-mode
-;;   (setq zenburn-scale-org-headlines t)
-;;   ;; scale headings in outline-mode
-;;   (setq zenburn-scale-outline-headlines t)
-;;   (load-theme 'zenburn t)
-;;   )
 
 (load-theme 'leuven)
 
