@@ -71,6 +71,7 @@
   :pin melpa
   :ensure t
   :bind-keymap (("<f8>" . projectile-command-map))
+  :bind (("C-x b" . projectile-switch-to-buffer))
   :config
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢
   ;; 你可以通过下面两个名称来清除缓存
