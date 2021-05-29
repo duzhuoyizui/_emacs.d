@@ -50,7 +50,7 @@
 (use-package swiper
   :pin melpa
   :ensure t
-  :bind (("M-s ." . swiper-isearch-thing-at-point)))
+  :bind (("C-s" . swiper)))
 
 (use-package counsel
   :pin melpa
