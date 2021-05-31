@@ -74,6 +74,7 @@
   :bind (("C-x b" . projectile-switch-to-buffer)
 		 :map projectile-command-map
 		 ("F" . projectile-find-file-other-window)
+		 ("w" . projectile-find-file-in-known-projects)
 		 ("D" . projectile-dired-other-window)
 		 ("k" . projectile-kill-buffers)
 		 ("v" . projectile-vc)
