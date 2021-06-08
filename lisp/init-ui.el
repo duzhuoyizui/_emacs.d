@@ -47,8 +47,17 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "burlywood3")
-  (set-face-foreground 'doom-modeline-project-dir "burlywood3") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-modified "coral")
+
+  (set-face-foreground 'doom-modeline-buffer-major-mode "darkgreen")
+  (set-face-foreground 'doom-modeline-buffer-minor-mode "darkgreen")
+  (set-face-foreground 'doom-modeline-project-dir "darkgreen")
+  (set-face-foreground 'doom-modeline-project-root-dir "darkgreen")
+  (set-face-foreground 'doom-modeline-project-parent-dir "darkgreen")
+  (set-face-foreground 'doom-modeline-project-dir "darkgreen") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-file "darkgreen")
+  (set-face-foreground 'doom-modeline-highlight "darkgreen")
+
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
   (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
@@ -58,6 +67,7 @@
   (setq doom-modeline-window-width-limit fill-column)
   (setq doom-modeline-minor-modes nil)
   (setq doom-modeline-indent-info t)
+
   (doom-modeline-mode 1)
   )
 
@@ -90,9 +100,9 @@
   (load-theme 'kaolin-light t)
 
   (custom-set-faces
-   '(org-level-1 ((t (:height 2.0))))
-   '(org-level-2 ((t (:height 1.5))))
-   '(org-level-3 ((t (:height 1.2))))
+   '(org-level-1 ((t (:height 1.5))))
+   '(org-level-2 ((t (:height 1.2))))
+   '(org-level-3 ((t (:height 1.1))))
    '(org-level-4 ((t (:height 1.0))))
    '(org-level-5 ((t (:height 1.0)))))
   )
