@@ -88,6 +88,13 @@
 
   (setq kaolin-light-alt-bg t)
   (load-theme 'kaolin-light t)
+
+  (custom-set-faces
+   '(org-level-1 ((t (:height 2.0))))
+   '(org-level-2 ((t (:height 1.5))))
+   '(org-level-3 ((t (:height 1.2))))
+   '(org-level-4 ((t (:height 1.0))))
+   '(org-level-5 ((t (:height 1.0)))))
   )
 
 ;; (set-face-foreground 'line-number "darkgrey")
