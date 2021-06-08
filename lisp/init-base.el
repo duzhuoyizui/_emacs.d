@@ -38,4 +38,6 @@
 
 (global-auto-revert-mode t)
 
+;; (global-hl-line-mode t)
+
 (provide 'init-base)

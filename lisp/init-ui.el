@@ -47,8 +47,8 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
-  (set-face-foreground 'doom-modeline-project-dir "yellow") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-modified "burlywood3")
+  (set-face-foreground 'doom-modeline-project-dir "burlywood3") ;; project name
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
   (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
@@ -67,9 +67,30 @@
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
-(load-theme 'leuven)
+;; (load-theme 'leuven)
 
-(set-face-foreground 'line-number "darkgrey")
+(use-package kaolin-themes
+  :pin melpa
+  :ensure t
+  :config
+
+  (setq kaolin-themes-bold t
+		kaolin-themes-italic t
+		kaolin-themes-underline t)
+  (setq kaolin-themes-modeline-border nil)
+  (setq kaolin-themes-hl-line-colored t)
+  (setq kaolin-themes-distinct-fringe t)
+  (setq kaolin-themes-git-gutter-solid t)
+  (setq kaolin-themes-org-scale-headings nil)
+
+  ;; (setq kaolin-valley-light-alt-bg t)
+  ;; (load-theme 'kaolin-valley-light t)
+
+  (setq kaolin-light-alt-bg t)
+  (load-theme 'kaolin-light t)
+  )
+
+;; (set-face-foreground 'line-number "darkgrey")
 
 (use-package display-fill-column-indicator
   :pin manual
@@ -78,17 +99,6 @@
   (display-fill-column-indicator-character ?\u2502)
   ;; :init
   ;; (global-display-fill-column-indicator-mode t)
-  )
-
-(use-package hl-todo
-  :pin melpa
-  :ensure t
-  :config
-  (setq hl-todo-keyword-faces
-		'(("TODO" . "#FF0000")
-          ("FIXME" . "#FF0000")))
-  :init
-  (global-hl-todo-mode t)
   )
 
 (provide 'init-ui)
