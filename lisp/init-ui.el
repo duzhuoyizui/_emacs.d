@@ -43,20 +43,20 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
+(load-theme 'leuven)
+
 (use-package doom-modeline
   :pin melpa
   :ensure t
   :config
   (set-face-foreground 'doom-modeline-buffer-modified "coral")
-
-  (set-face-foreground 'doom-modeline-buffer-major-mode "darkgreen")
-  (set-face-foreground 'doom-modeline-buffer-minor-mode "darkgreen")
-  (set-face-foreground 'doom-modeline-project-dir "darkgreen")
-  (set-face-foreground 'doom-modeline-project-root-dir "darkgreen")
-  (set-face-foreground 'doom-modeline-project-parent-dir "darkgreen")
-  (set-face-foreground 'doom-modeline-project-dir "darkgreen") ;; project name
-  (set-face-foreground 'doom-modeline-buffer-file "darkgreen")
-  (set-face-foreground 'doom-modeline-highlight "darkgreen")
+  (set-face-foreground 'doom-modeline-buffer-major-mode "white")
+  (set-face-foreground 'doom-modeline-buffer-minor-mode "white")
+  (set-face-foreground 'doom-modeline-project-dir "white")
+  (set-face-foreground 'doom-modeline-project-root-dir "white")
+  (set-face-foreground 'doom-modeline-project-parent-dir "white")
+  (set-face-foreground 'doom-modeline-project-dir "white") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-file "white")
 
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
@@ -77,34 +77,7 @@
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
-(use-package kaolin-themes
-  :pin melpa
-  :ensure t
-  :config
-  (setq kaolin-themes-bold t
-		kaolin-themes-italic t
-		kaolin-themes-underline nil)
-  (setq kaolin-themes-modeline-border nil)
-  (setq kaolin-themes-hl-line-colored t)
-  (setq kaolin-themes-distinct-fringe t)
-  (setq kaolin-themes-git-gutter-solid t)
-  (setq kaolin-themes-org-scale-headings nil)
-
-  ;; (setq kaolin-valley-light-alt-bg t)
-  ;; (load-theme 'kaolin-valley-light t)
-
-  (setq kaolin-light-alt-bg t)
-  (load-theme 'kaolin-light t)
-
-  (custom-set-faces
-   '(org-level-1 ((t (:height 1.8))))
-   '(org-level-2 ((t (:height 1.5))))
-   '(org-level-3 ((t (:height 1.2))))
-   '(org-level-4 ((t (:height 1.0))))
-   '(org-level-5 ((t (:height 1.0)))))
-  )
-
-;; (set-face-foreground 'line-number "darkgrey")
+(set-face-foreground 'line-number "darkgrey")
 
 (use-package display-fill-column-indicator
   :pin manual
