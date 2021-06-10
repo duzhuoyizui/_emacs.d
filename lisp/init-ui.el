@@ -77,16 +77,13 @@
   :hook (prog-mode-hook . rainbow-delimiters-mode)
   )
 
-;; (load-theme 'leuven)
-
 (use-package kaolin-themes
   :pin melpa
   :ensure t
   :config
-
   (setq kaolin-themes-bold t
 		kaolin-themes-italic t
-		kaolin-themes-underline t)
+		kaolin-themes-underline nil)
   (setq kaolin-themes-modeline-border nil)
   (setq kaolin-themes-hl-line-colored t)
   (setq kaolin-themes-distinct-fringe t)
@@ -100,9 +97,9 @@
   (load-theme 'kaolin-light t)
 
   (custom-set-faces
-   '(org-level-1 ((t (:height 1.5))))
-   '(org-level-2 ((t (:height 1.2))))
-   '(org-level-3 ((t (:height 1.1))))
+   '(org-level-1 ((t (:height 1.8))))
+   '(org-level-2 ((t (:height 1.5))))
+   '(org-level-3 ((t (:height 1.2))))
    '(org-level-4 ((t (:height 1.0))))
    '(org-level-5 ((t (:height 1.0)))))
   )
