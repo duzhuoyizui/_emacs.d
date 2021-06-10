@@ -38,7 +38,8 @@
 (use-package ivy
   :pin melpa
   :ensure t
-  :bind (("<f9> b" . ivy-switch-buffer))
+  :bind (("C-x b" . ivy-switch-buffer)
+		 ("<f6>" . ivy-resume))
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d-%d) ")
@@ -71,13 +72,13 @@
   :pin melpa
   :ensure t
   :bind-keymap (("<f8>" . projectile-command-map))
-  :bind (("C-x b" . projectile-switch-to-buffer)
-		 :map projectile-command-map
+  :bind (:map projectile-command-map
 		 ("F" . projectile-find-file-other-window)
 		 ("w" . projectile-find-file-in-known-projects)
 		 ("D" . projectile-dired-other-window)
 		 ("k" . projectile-kill-buffers)
 		 ("v" . projectile-vc)
+		 ("b" . projectile-switch-to-buffer)
 		 )
   :config
   ;; 打开项目缓存, 否则大的项目每次构建会比较慢

@@ -1,7 +1,4 @@
-
 ;; http://martinowen.net/blog/2010/02/03/tips-for-emacs-ibuffer.html
-
-(global-set-key (kbd "C-x C-b") 'ibuffer) ;; Use Ibuffer for Buffer List
 
 (setq ibuffer-saved-filter-groups
       '(("home"
