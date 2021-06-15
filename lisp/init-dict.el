@@ -7,4 +7,4 @@
   (setq url-automatic-caching t)
   )
 
-(provide 'init-dictionary)
+(provide 'init-dict)
