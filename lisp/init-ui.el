@@ -88,4 +88,13 @@
   ;; (global-display-fill-column-indicator-mode t)
   )
 
+(use-package beacon
+  :pin melpa
+  :ensure t
+  :init
+  (setq beacon-color "bisque")
+  :config
+  (beacon-mode 1)
+  )
+
 (provide 'init-ui)
