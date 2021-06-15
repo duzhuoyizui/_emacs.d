@@ -124,6 +124,16 @@
 	  (define-key go-mode-map (kbd "C-c t") #'go-tag-add)
 	  (define-key go-mode-map (kbd "C-c T") #'go-tag-remove))
 	)
+  (use-package gotest
+	:pin melpa
+	:ensure t
+	:init
+	(setq go-test-verbose t)
+	:config
+	(define-key go-mode-map (kbd "<f9> t f") 'go-test-current-file)
+	(define-key go-mode-map (kbd "<f9> t t") 'go-test-current-test)
+	(define-key go-mode-map (kbd "<f9> t p") 'go-test-current-project)
+	)
   )
 
 (use-package protobuf-mode
