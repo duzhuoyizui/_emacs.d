@@ -39,6 +39,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'init-base)
+(require 'init-dict)
 (require 'init-keybinding)
 (require 'init-ui)
 (require 'init-edit)
