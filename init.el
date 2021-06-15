@@ -40,6 +40,7 @@
 
 (require 'init-base)
 (require 'init-dict)
+(require 'init-dired)
 (require 'init-keybinding)
 (require 'init-ui)
 (require 'init-edit)
