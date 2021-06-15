@@ -49,7 +49,7 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "coral")
+  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
   (set-face-foreground 'doom-modeline-buffer-major-mode "white")
   (set-face-foreground 'doom-modeline-buffer-minor-mode "white")
   (set-face-foreground 'doom-modeline-project-dir "white")
@@ -92,7 +92,7 @@
   :pin melpa
   :ensure t
   :init
-  (setq beacon-color "bisque")
+  (setq beacon-color "sandybrown")
   :config
   (beacon-mode 1)
   )
