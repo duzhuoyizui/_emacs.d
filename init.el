@@ -39,9 +39,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'init-base)
+(require 'init-keybinding) ;; must be top than other <f1>-><12> binding
 (require 'init-dict)
 (require 'init-dired)
-(require 'init-keybinding)
 (require 'init-ui)
 (require 'init-edit)
 (require 'init-env)
