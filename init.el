@@ -47,6 +47,7 @@
 (require 'init-env)
 (require 'init-flycheck)
 (require 'init-ibuffer)
+(require 'init-vc)
 (require 'init-lsp-lang)
 (require 'init-markdown)
 (require 'init-nginx)
