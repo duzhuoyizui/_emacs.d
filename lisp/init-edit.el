@@ -150,9 +150,18 @@
 
 (use-package keyfreq
   :pin melpa
-  :ensure
+  :ensure t
   :init
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1)
   )
+
+(use-package linum-relative
+  :pin melpa
+  :ensure t
+  :bind (("M-s r" . linum-relative-toggle))
+  :init
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  )
+
 (provide 'init-edit)
