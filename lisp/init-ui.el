@@ -43,16 +43,18 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-(use-package zenburn-theme
-  :pin melpa
-  :ensure t
-  :config
-  ;; scale headings in org-mode
-  (setq zenburn-scale-org-headlines t)
-  ;; scale headings in outline-mode
-  (setq zenburn-scale-outline-headlines t)
-  (load-theme 'zenburn t)
-  )
+(load-theme 'leuven)
+
+;; (use-package zenburn-theme
+;;   :pin melpa
+;;   :ensure t
+;;   :config
+;;   ;; scale headings in org-mode
+;;   (setq zenburn-scale-org-headlines t)
+;;   ;; scale headings in outline-mode
+;;   (setq zenburn-scale-outline-headlines t)
+;;   (load-theme 'zenburn t)
+;;   )
 
 (use-package doom-modeline
   :pin melpa
