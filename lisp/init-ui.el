@@ -43,7 +43,7 @@
         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
                 args)))
 
-(load-theme 'leuven)
+;; (load-theme 'leuven)
 
 ;; (use-package zenburn-theme
 ;;   :pin melpa
@@ -56,18 +56,35 @@
 ;;   (load-theme 'zenburn t)
 ;;   )
 
+(use-package modus-themes
+  :pin melpa
+  :ensure t
+  :init
+  (modus-themes-load-themes)
+  :config
+  (setq modus-themes-variable-pitch-ui nil
+		modus-themes-variable-pitch-headings nil
+		modus-themes-scale-headings t
+		modus-themes-scale-1 1.1
+		modus-themes-scale-2 1.2
+		modus-themes-scale-3 1.3
+		modus-themes-scale-4 1.6
+		modus-themes-scale-title 1.33)
+  (modus-themes-load-operandi)
+  )
+
 (use-package doom-modeline
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "sandybrown")
-  (set-face-foreground 'doom-modeline-buffer-major-mode "white")
-  (set-face-foreground 'doom-modeline-buffer-minor-mode "white")
-  (set-face-foreground 'doom-modeline-project-dir "white")
-  (set-face-foreground 'doom-modeline-project-root-dir "white")
-  (set-face-foreground 'doom-modeline-project-parent-dir "white")
-  (set-face-foreground 'doom-modeline-project-dir "white") ;; project name
-  (set-face-foreground 'doom-modeline-buffer-file "white")
+  (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColorz")
+  (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
+  (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-root-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-parent-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-file "systemBrownColor")
 
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
