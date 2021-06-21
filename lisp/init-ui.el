@@ -51,7 +51,7 @@
   :config
   (setq modus-themes-slanted-constructs t
         modus-themes-bold-constructs t
-        modus-themes-no-mixed-fonts nil
+        modus-themes-no-mixed-fonts t
         modus-themes-subtle-line-numbers nil
         modus-themes-success-deuteranopia t
         modus-themes-inhibit-reload nil
@@ -110,7 +110,7 @@
           (t . no-bold))
 
         modus-themes-variable-pitch-ui nil
-        modus-themes-variable-pitch-headings t
+        modus-themes-variable-pitch-headings nil
         modus-themes-scale-headings t
         modus-themes-scale-1 1.1
         modus-themes-scale-2 1.15
