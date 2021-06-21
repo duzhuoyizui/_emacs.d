@@ -26,10 +26,9 @@
   (setq
    lsp-completion-enable t
    lsp-completion-enable-additional-text-edit nil
-   lsp-enable-folding nil
-   lsp-enable-links nil
+   lsp-enable-folding t
+   lsp-enable-links t
    lsp-enable-snippet nil
-   lsp-enable-symbol-highlighting nil
    lsp-semantic-highlighting t
    lsp-log-io nil
    lsp-diagnostics-provider :flycheck
