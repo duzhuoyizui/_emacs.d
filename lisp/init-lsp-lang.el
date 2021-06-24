@@ -29,10 +29,9 @@
    lsp-enable-folding t
    lsp-enable-links t
    lsp-enable-snippet nil
-   lsp-semantic-highlighting t
    lsp-log-io nil
+   lsp-enable-symbol-highlighting nil
    lsp-diagnostics-provider :flycheck
-   lsp-print-performance nil
    lsp-restart 'auto-restart
    lsp-eldoc-render-all nil
    lsp-signature-render-documentation nil

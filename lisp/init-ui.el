@@ -57,7 +57,7 @@
         modus-themes-inhibit-reload nil
 
         ;; {nil,'subtle,'intense}
-        modus-themes-fringes 'subtle
+        modus-themes-fringes nil
 
         ;; Options for `modus-themes-lang-checkers': nil,
         ;; 'straight-underline, 'subtle-foreground,
@@ -87,7 +87,7 @@
         ;; Options for `modus-themes-links': nil, 'faint,
         ;; 'neutral-underline, 'faint-neutral-underline, 'no-underline,
         ;; 'underline-only, 'neutral-underline-only
-        modus-themes-links 'neutral-underline
+        modus-themes-links 'neutral-underline-only
 
 
         ;; Options for `modus-themes-prompts': nil, 'subtle-accented,
@@ -120,31 +120,31 @@
   (modus-themes-load-operandi)
   )
 
-;; (use-package doom-modeline
-;;   :pin melpa
-;;   :ensure t
-;;   :config
-;;   (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColorz")
-;;   (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
-;;   (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
-;;   (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
-;;   (set-face-foreground 'doom-modeline-project-root-dir "systemBrownColor")
-;;   (set-face-foreground 'doom-modeline-project-parent-dir "systemBrownColor")
-;;   (set-face-foreground 'doom-modeline-project-dir "systemBrownColor") ;; project name
-;;   (set-face-foreground 'doom-modeline-buffer-file "systemBrownColor")
+(use-package doom-modeline
+  :pin melpa
+  :ensure t
+  :config
+  (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColorz")
+  (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
+  (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-root-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-parent-dir "systemBrownColor")
+  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor") ;; project name
+  (set-face-foreground 'doom-modeline-buffer-file "systemBrownColor")
 
-;;   (setq doom-modeline-buffer-modification-icon nil)
-;;   (setq doom-modeline-project-detection 'projectile)
-;;   (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
-;;   (setq doom-modeline-lsp t)
-;;   (setq doom-modeline-modal-icon t)
-;;   (setq doom-modeline-env-version t)
-;;   (setq doom-modeline-window-width-limit fill-column)
-;;   (setq doom-modeline-minor-modes nil)
-;;   (setq doom-modeline-indent-info t)
+  (setq doom-modeline-buffer-modification-icon nil)
+  (setq doom-modeline-project-detection 'projectile)
+  (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
+  (setq doom-modeline-lsp t)
+  (setq doom-modeline-modal-icon t)
+  (setq doom-modeline-env-version t)
+  (setq doom-modeline-window-width-limit fill-column)
+  (setq doom-modeline-minor-modes nil)
+  (setq doom-modeline-indent-info t)
 
-;;   (doom-modeline-mode 1)
-;;   )
+  (doom-modeline-mode 1)
+  )
 
 (use-package rainbow-delimiters
   :pin melpa
