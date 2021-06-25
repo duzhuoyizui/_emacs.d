@@ -117,7 +117,7 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColorz")
+  (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColor")
   (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
   (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
   (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
