@@ -46,6 +46,7 @@
 (require 'init-edit)
 (require 'init-env)
 (require 'init-flycheck)
+(require 'init-feed)
 (require 'init-ibuffer)
 (require 'init-vc)
 (require 'init-lsp-lang)
