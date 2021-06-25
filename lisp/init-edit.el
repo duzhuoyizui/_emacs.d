@@ -68,45 +68,6 @@
   (setq counsel-rg-base-command "rg -i --max-columns 240 --no-heading --with-filename --line-number %s")
   )
 
-(use-package projectile
-  :pin melpa
-  :ensure t
-  :bind-keymap (("<f8>" . projectile-command-map))
-  :bind (:map projectile-command-map
-		 ("F" . projectile-find-file-other-window)
-		 ("w" . projectile-find-file-in-known-projects)
-		 ("D" . projectile-dired-other-window)
-		 ("k" . projectile-kill-buffers)
-		 ("v" . projectile-vc)
-		 ("b" . projectile-switch-to-buffer)
-		 )
-  :config
-  ;; 打开项目缓存, 否则大的项目每次构建会比较慢
-  ;; 你可以通过下面两个名称来清除缓存
-  ;; - projectile-purge-file-from-cache
-  ;; - projectile-purge-dir-from-cache
-  (setq projectile-enable-caching t)
-  ;; projectile 有三种构建索引的方式: native, hybird, alien
-  ;;   native 使用 Emacs lisp 实现, hybird/alien 使用外部命令类似 find, git 来实现
-  ;;   alien 优化了 hybird 的性能: 它不会对外部命令返回的结果做任何处理和排序, 以获得最好的性能
-  ;;   使用外部命令的话, 类似 .gitignore 会自动生效
-  ;; 注意: alien 会忽略 .projectile 文件
-  (setq projectile-indexing-method 'alien)
-  ;; 在每个目录下都可用(即使没有项目文件)
-  (setq projectile-require-project-root 'prompt)
-  ;; 对结果进行排序(active buffer + recently opened)
-  (setq projectile-sort-order 'recentf-active)
-  ;; use ivy as completion system
-  (setq projectile-completion-system 'ivy)
-
-  (use-package counsel-projectile
-    :pin melpa
-    :ensure t
-    :config
-    (counsel-projectile-mode 1)
-    )
-  )
-
 (use-package avy
   :pin melpa
   :ensure t

@@ -17,7 +17,7 @@
 		 ("<f9> s r" . lsp-find-references)
 		 ("<f9> s d" . lsp-describe-thing-at-point)
 		 ("<f9> s i" . lsp-find-implementation)
-		 ("M-i" . lsp-smart-buffer)
+		 ("M-i" . lsp-smart-buffer)o
 		 :map lsp-signature-mode
 		 ("<f9> s p" . lsp-signature-previous)
 		 ("<f9> s n" . lsp-signature-next)
@@ -69,27 +69,6 @@
    )
   )
 
-(use-package company
-  :pin melpa
-  :ensure t
-  :hook ((prog-mode-hook . company-mode)
-		 (protobuf-mode-hook . company-mode))
-  :bind (:map company-active-map
-			  ("M-n" . nil)
-			  ("M-p" . nil)
-			  ("C-n" . company-select-next)
-			  ("C-p" . company-select-previous)
-			  )
-  :init
-  ;; markdown-mode, eshell-mode ignore complete
-  (setq company-global-modes '(not markdown-mode gfm-mode eshell-mode))
-  (setq company-transformers '(company-sort-by-occurrence))
-  (setq company-echo-delay 0)
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 2)
-  (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
-  )
-
 (use-package python
   :pin melpa
   :ensure t
@@ -107,49 +86,5 @@
                            (lsp))))  ; or lsp-deferred
   )
 
-(use-package go-mode
-  :pin melpa
-  :ensure t
-  :mode "\\.go\\'"
-  :interpreter "go"
-  :config
-  (use-package go-tag
-	:pin melpa
-	:ensure t
-	:init
-	(setq go-tag-args (list "-transform" "snakecase"))
-	(with-eval-after-load 'go-mode
-	  (define-key go-mode-map (kbd "C-c t") #'go-tag-add)
-	  (define-key go-mode-map (kbd "C-c T") #'go-tag-remove))
-	)
-  (use-package gotest
-	:pin melpa
-	:ensure t
-	:init
-	(setq go-test-verbose t)
-	:config
-	(define-key go-mode-map (kbd "<f9> t f") 'go-test-current-file)
-	(define-key go-mode-map (kbd "<f9> t t") 'go-test-current-test)
-	(define-key go-mode-map (kbd "<f9> t p") 'go-test-current-project)
-	)
-  )
-
-(use-package protobuf-mode
-  :pin melpa
-  :ensure t
-  :mode "\\.proto\\'"
-  :init
-  (defconst my-protobuf-style
-    '((c-basic-offset . 2)
-      (indent-tabs-mode . nil)))
-  (add-hook 'protobuf-mode-hook
-			(lambda () (c-add-style "my-style" my-protobuf-style t)))
-  )
-
-(use-package lua-mode
-  :pin melpa
-  :ensure t
-  :mode "\\.lua\\'"
-  )
 
 (provide 'init-lsp-lang)

@@ -49,7 +49,7 @@
 (require 'init-feed)
 (require 'init-ibuffer)
 (require 'init-vc)
-(require 'init-lsp-lang)
+(require 'init-lang)
 (require 'init-markdown)
 (require 'init-nginx)
 (require 'init-db)
