@@ -14,6 +14,10 @@
 (setq visible-cursor nil)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+(setq display-time-default-load-average nil)
+(setq display-time-format "[%H:%M]")
+(display-time-mode t)
+
 ;; Set default font
 (cond
  ((string-equal system-type "gnu/linux")
