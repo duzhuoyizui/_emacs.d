@@ -121,19 +121,18 @@
   :pin melpa
   :ensure t
   :config
-  (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColor")
-  (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
-  (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
-  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
-  (set-face-foreground 'doom-modeline-project-root-dir "systemBrownColor")
-  (set-face-foreground 'doom-modeline-project-parent-dir "systemBrownColor")
-  (set-face-foreground 'doom-modeline-project-dir "systemBrownColor") ;; project name
-  (set-face-foreground 'doom-modeline-buffer-file "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-buffer-modified "systemOrangeColor")
+  ;; (set-face-foreground 'doom-modeline-buffer-major-mode "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-buffer-minor-mode "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-project-dir "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-project-root-dir "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-project-parent-dir "systemBrownColor")
+  ;; (set-face-foreground 'doom-modeline-project-dir "systemBrownColor") ;; project name
+  ;; (set-face-foreground 'doom-modeline-buffer-file "systemBrownColor")
 
   (setq doom-modeline-buffer-modification-icon nil)
   (setq doom-modeline-project-detection 'projectile)
   (setq doom-modeline-buffer-file-name-style 'truncate-upto-project)
-  (setq doom-modeline-lsp t)
   (setq doom-modeline-modal-icon t)
   (setq doom-modeline-env-version t)
   (setq doom-modeline-window-width-limit fill-column)

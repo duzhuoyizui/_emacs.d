@@ -69,22 +69,5 @@
    )
   )
 
-(use-package python
-  :pin melpa
-  :ensure t
-  :mode "\\.py'"
-  :interpreter "python"
-  :init
-  (set-variable 'py-indent-offset 4)
-  (set-variable 'python-indent-guess-indent-offset nil)
-  :config
-  (use-package lsp-pyright
-	:pin melpa
-	:ensure t
-	:hook (python-mode . (lambda ()
-                           (require 'lsp-pyright)
-                           (lsp))))  ; or lsp-deferred
-  )
-
 
 (provide 'init-lsp-lang)

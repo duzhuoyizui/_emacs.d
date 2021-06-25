@@ -94,6 +94,16 @@
 	)
   )
 
+(use-package python
+  :pin melpa
+  :ensure t
+  :mode "\\.py'"
+  :interpreter "python"
+  :init
+  (set-variable 'py-indent-offset 4)
+  (set-variable 'python-indent-guess-indent-offset nil)
+  )
+
 (use-package eglot
   :pin melpa
   :ensure t
