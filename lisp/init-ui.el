@@ -36,13 +36,6 @@
                       :width 'normal))
  )
 
-;; disable bold
-;; (defadvice set-face-attribute
-;;     (before no-bold (face frame &rest args) activate)
-;;   (setq args
-;;         (mapcar (lambda(x) (if (eq x 'bold) 'normal x))
-;;                 args)))
-
 (use-package modus-themes
   :pin melpa
   :ensure t
