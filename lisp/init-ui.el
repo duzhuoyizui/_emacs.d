@@ -50,7 +50,7 @@
         modus-themes-inhibit-reload nil
 
         ;; {nil,'subtle,'intense}
-        modus-themes-fringes nil
+        modus-themes-fringes 'subtle
 
         ;; Options for `modus-themes-lang-checkers': nil,
         ;; 'straight-underline, 'subtle-foreground,
@@ -60,7 +60,7 @@
 
         ;; modus-themes-mode-line '(3d accented)
         ;; modus-themes-mode-line '(accented borderless 3d)
-        modus-themes-mode-line '(borderless 3d accented)
+        ;; modus-themes-mode-line '(borderless 3d accented)
 
         ;; Options for `modus-themes-syntax': nil, 'faint,
         ;; 'yellow-comments, 'green-strings,
