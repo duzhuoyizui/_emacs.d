@@ -28,7 +28,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "SF Mono"
+                      :family "Hack"
                       :height 160
                       :weight 'normal
                       :width 'normal))
@@ -46,8 +46,8 @@
   :init
   (modus-themes-load-themes)
   :config
-  (setq modus-themes-slanted-constructs t
-        modus-themes-bold-constructs t
+  (setq modus-themes-slanted-constructs nil
+        modus-themes-bold-constructs nil
         modus-themes-no-mixed-fonts t
         modus-themes-subtle-line-numbers nil
         modus-themes-success-deuteranopia t
@@ -166,6 +166,21 @@
   (setq beacon-color "sandybrown")
   :config
   (beacon-mode 1)
+  )
+
+(use-package dashboard
+  :pin melpa
+  :ensure t
+  :init
+  (setq dashboard-banner-logo-title "为天地立心，为生民立命，为往圣继绝学，为万世开太平"
+		dashboard-center-content t
+		dashboard-show-shortcuts nil
+		dashboard-items '((projects . 10)
+						  (recents  . 10))
+		dashboard-startup-banner 'logo
+		dashboard-footer-messages '("https://github.com/zhangjie2012/_emacs.d")
+		dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
+  (dashboard-setup-startup-hook)
   )
 
 (provide 'init-ui)
