@@ -121,12 +121,6 @@
 		 (python-mode . eglot-ensure)
 		 )
   :init
-  (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
-  (setq-default eglot-workspace-configuration
-				'((:gopls .
-						  ((staticcheck . t)
-						   (matcher . "CaseSensitive")))))
-
   (defun eglot-format-buffer ()
 	"call tool chains, format buffer"
 	(interactive)
@@ -134,6 +128,12 @@
 	(flycheck-buffer)
 	(eglot-format-buffer)
 	)
+  :config
+  (setq eglot-ignored-server-capabilites '(:hoverProvider))
+  (setq-default eglot-workspace-configuration
+				'((:gopls .
+						  ((staticcheck . t)
+						   (matcher . "CaseSensitive")))))
   )
 
 (use-package protobuf-mode
