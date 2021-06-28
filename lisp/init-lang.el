@@ -67,6 +67,7 @@
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
   )
 
+
 (use-package go-mode
   :pin melpa
   :ensure t
@@ -104,38 +105,6 @@
   (set-variable 'python-indent-guess-indent-offset nil)
   )
 
-(use-package eglot
-  :pin melpa
-  :ensure t
-  :bind (("<f9> s i" . eglot)
-		 ("<f9> s s" . eglot-reconnect)
-		 ("<f9> s r" . eglot-rename)
-		 ("<f9> s f" . eglot-format)
-		 ("<f9> s d" . eldoc)
-		 ("M-." . xref-find-definitions)
-		 ("M-," . xref-pop-marker-stack)
-		 ("M-i" . eglot-format-buffer)
-		 )
-  :commands (eglot eglot-ensure)
-  :hook ((go-mode . eglot-ensure)
-		 (python-mode . eglot-ensure)
-		 )
-  :init
-  (defun eglot-format-buffer ()
-	"call tool chains, format buffer"
-	(interactive)
-	(eglot-code-action-organize-imports)
-	(flycheck-buffer)
-	(eglot-format-buffer)
-	)
-  :config
-  (setq eglot-ignored-server-capabilites '(:hoverProvider))
-  (setq-default eglot-workspace-configuration
-				'((:gopls .
-						  ((staticcheck . t)
-						   (matcher . "CaseSensitive")))))
-  )
-
 (use-package protobuf-mode
   :pin melpa
   :ensure t
@@ -153,5 +122,77 @@
   :ensure t
   :mode "\\.lua\\'"
   )
+
+(use-package spinner
+  :pin gnu
+  :ensure t
+  :defer t
+  )
+
+(use-package lsp-mode
+  :pin melpa
+  :ensure t
+  :hook
+  ;; (emacs-lisp-mode-hook . lsp-deferred)
+  (python-mode-hook . lsp-deferred)
+  ;; (rjsx-mode . lsp) ; so slow
+  (go-mode-hook . lsp-deferred)
+  :commands lsp
+  :bind (("<f9> s s" . lsp-workspace-restart)
+		 ("<f9> s r" . lsp-find-references)
+		 ("<f9> s d" . lsp-describe-thing-at-point)
+		 ("<f9> s i" . lsp-find-implementation)
+		 ("M-i" . lsp-smart-buffer)
+		 :map lsp-signature-mode
+		 ("<f9> s p" . lsp-signature-previous)
+		 ("<f9> s n" . lsp-signature-next)
+		 )
+  :init
+  (setq
+   lsp-completion-enable t
+   lsp-completion-enable-additional-text-edit nil
+   lsp-enable-folding t
+   lsp-enable-links t
+   lsp-enable-snippet nil
+   lsp-log-io nil
+   lsp-enable-symbol-highlighting nil
+   lsp-diagnostics-provider :flycheck
+   lsp-restart 'auto-restart
+   lsp-eldoc-render-all nil
+   lsp-signature-render-documentation nil
+   lsp-headerline-breadcrumb-enable nil
+
+   lsp-pyls-server-command 'pyright
+   )
+  (defun lsp-smart-buffer ()
+	"call lsp tool chains, smart make buffer"
+	(interactive)
+	(flycheck-buffer)
+	(lsp-format-buffer)
+	(lsp-organize-imports)
+	)
+  :config
+  (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
+  )
+
+(use-package lsp-ui
+  :pin melpa
+  :ensure t
+  :commands lsp-ui-mode
+  :hook (lsp-mode-hook . lsp-ui-mode)
+  :bind (("<f9> s c" . lsp-ui-flycheck-list)
+		 :map lsp-mode-map
+		 ("M-." . lsp-ui-peek-find-definitions)
+		 ("M-?" . lsp-ui-peek-find-references))
+  :init
+  (setq
+   lsp-ui-doc-enable nil
+   lsp-ui-sideline-show-diagnostics nil
+   lsp-ui-sideline-show-symbol nil
+   lsp-ui-sideline-show-code-actions nil
+   lsp-ui-sideline-show-hover nil
+   )
+  )
+
 
 (provide 'init-lang)
