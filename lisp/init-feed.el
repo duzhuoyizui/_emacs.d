@@ -17,6 +17,7 @@
   :config
   (setq elfeed-feeds
         '(("https://planet.emacslife.com/atom.xml" emacs)
+		  ("https://www.manueluberti.eu/feed.xml" emacs)
 		  ("https://blog.codingnow.com/atom.xml" blog_cn)
 		  ("https://cprss.s3.amazonaws.com/weekly.statuscode.com.xml" weekly)
 		  ("https://cprss.s3.amazonaws.com/golangweekly.com.xml" weekly)
