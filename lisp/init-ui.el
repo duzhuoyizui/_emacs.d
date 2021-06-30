@@ -28,7 +28,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Hack"
+                      :family "SF mono"
                       :height 160
                       :weight 'normal
                       :width 'normal))
@@ -53,52 +53,16 @@
         modus-themes-success-deuteranopia t
         modus-themes-inhibit-reload nil
 
-        ;; {nil,'subtle,'intense}
         modus-themes-fringes 'subtle
-
-        ;; Options for `modus-themes-lang-checkers': nil,
-        ;; 'straight-underline, 'subtle-foreground,
-        ;; 'subtle-foreground-straight-underline, 'intense-foreground,
-        ;; 'intense-foreground-straight-underline, 'colored-background
-        modus-themes-lang-checkers nil
-
-        ;; modus-themes-mode-line '(3d accented)
-        ;; modus-themes-mode-line '(accented borderless 3d)
-        ;; modus-themes-mode-line '(borderless 3d accented)
-
-        ;; Options for `modus-themes-syntax': nil, 'faint,
-        ;; 'yellow-comments, 'green-strings,
-        ;; 'yellow-comments-green-strings, 'alt-syntax,
-        ;; 'alt-syntax-yellow-comments, 'faint-yellow-comments
+        modus-themes-lang-checkers 'colored-background
         modus-themes-syntax nil
-
-        ;; Options for `modus-themes-hl-line': nil, 'intense-background,
-        ;; 'accented-background, 'underline-neutral,
-        ;; 'underline-accented, 'underline-only-neutral,
-        ;; 'underline-only-accented
         modus-themes-hl-line 'intense-background
-
-        ;; {nil,'subtle-bold,'intense,'intense-bold}
         modus-themes-paren-match 'subtle-bold
-
-        ;; Options for `modus-themes-links': nil, 'faint,
-        ;; 'neutral-underline, 'faint-neutral-underline, 'no-underline,
-        ;; 'underline-only, 'neutral-underline-only
         modus-themes-links 'neutral-underline-only
-
-
-        ;; Options for `modus-themes-prompts': nil, 'subtle-accented,
-        ;; 'intense-accented, 'subtle-gray, 'intense-gray
         modus-themes-prompts nil
-
         modus-themes-completions 'moderate ; {nil,'moderate,'opinionated}
-
-        ;; Options for `modus-themes-region': nil, 'no-extend, 'bg-only,
-        ;; 'bg-only-no-extend, 'accent, 'accent-no-extend
-        modus-themes-region 'bg-only
-
+        modus-themes-region 'bg-only-no-extend
         modus-themes-diffs 'fg-only-deuteranopia
-
         modus-themes-org-blocks 'gray-background ; {nil,'gray-background,'tinted-background}
 
         modus-themes-headings ; this is an alist: read the manual or its doc string
