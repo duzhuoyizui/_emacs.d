@@ -116,11 +116,5 @@
 (require 'valign)
 (add-hook 'org-mode-hook #'valign-mode)
 (add-hook 'markdown-mode-hook #'valign-mode)
-(add-hook 'org-mode-hook (lambda ()
-                           (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 160))
-                           (buffer-face-mode)))
-(add-hook 'markdown-mode-hook (lambda ()
-                           (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 160))
-                           (buffer-face-mode)))
 
 (provide 'init-org)

@@ -14,8 +14,8 @@
 (setq visible-cursor nil)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(setq display-time-default-load-average nil)
-(setq display-time-format "[%H:%M]")
+(setq display-time-default-load-average nil
+	  display-time-format "[%H:%M]")
 (display-time-mode t)
 
 ;; Set default font
@@ -28,7 +28,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "SF mono"
+                      :family "SF Mono"
                       :height 150
                       :weight 'normal
                       :width 'normal))
@@ -39,6 +39,13 @@
                       :weight 'normal
                       :width 'normal))
  )
+
+;; document(org/markdown) use different font
+(defun doc-buffer-face-mode-variable ()
+  (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 155))
+  (buffer-face-mode))
+(add-hook 'org-mode-hook 'doc-buffer-face-mode-variable)
+(add-hook 'markdown-mode-hook 'doc-buffer-face-mode-variable)
 
 (use-package modus-themes
   :pin melpa
