@@ -18,6 +18,7 @@
   (setq org-src-tab-acts-natively nil)
 
   :config
+  
   ;; GTD setting
   (require 'org-inlinetask)
   (setq org-todo-keywords
@@ -67,9 +68,6 @@
     :init
     (add-hook 'org-mode-hook 'toc-org-mode)
     )
-
-  (require 'valign)
-  (add-hook 'org-mode-hook #'valign-mode)
   )
 
 ;; blog
@@ -114,5 +112,15 @@
           ("site" :components ("site-orgs" "site-static"))
           ))
   )
+
+(require 'valign)
+(add-hook 'org-mode-hook #'valign-mode)
+(add-hook 'markdown-mode-hook #'valign-mode)
+(add-hook 'org-mode-hook (lambda ()
+                           (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 160))
+                           (buffer-face-mode)))
+(add-hook 'markdown-mode-hook (lambda ()
+                           (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 160))
+                           (buffer-face-mode)))
 
 (provide 'init-org)
