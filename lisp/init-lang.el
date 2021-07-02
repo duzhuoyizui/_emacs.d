@@ -74,6 +74,8 @@
   :mode "\\.go\\'"
   :interpreter "go"
   :config
+  (add-hook 'before-save-hook 'lsp-smart-buffer)
+
   (use-package go-tag
 	:pin melpa
 	:ensure t
