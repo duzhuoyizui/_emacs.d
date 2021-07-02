@@ -74,8 +74,6 @@
   :mode "\\.go\\'"
   :interpreter "go"
   :config
-  (add-hook 'before-save-hook 'lsp-smart-buffer)
-
   (use-package go-tag
 	:pin melpa
 	:ensure t
@@ -95,7 +93,7 @@
 	(define-key go-mode-map (kbd "<f9> t t") 'go-test-current-test)
 	(define-key go-mode-map (kbd "<f9> t p") 'go-test-current-project)
 	)
-  )
+)
 
 (use-package flycheck-golangci-lint
   :pin melpa
