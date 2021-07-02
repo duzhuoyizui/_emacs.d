@@ -29,7 +29,7 @@
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
                       :family "SF mono"
-                      :height 160
+                      :height 150
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "windows-nt")
@@ -54,13 +54,13 @@
         modus-themes-inhibit-reload nil
 
         modus-themes-fringes 'subtle
-        modus-themes-lang-checkers 'colored-background
+        modus-themes-lang-checkers 'intense-foreground
         modus-themes-syntax nil
         modus-themes-hl-line 'intense-background
         modus-themes-paren-match 'subtle-bold
         modus-themes-links 'neutral-underline-only
         modus-themes-prompts nil
-        modus-themes-completions 'moderate ; {nil,'moderate,'opinionated}
+        modus-themes-completions 'opinionated ; {nil,'moderate,'opinionated}
         modus-themes-region 'bg-only-no-extend
         modus-themes-diffs 'fg-only-deuteranopia
         modus-themes-org-blocks 'gray-background ; {nil,'gray-background,'tinted-background}
