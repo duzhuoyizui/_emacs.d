@@ -185,6 +185,7 @@
 	(flycheck-buffer)
 	(lsp-format-buffer)
 	(lsp-organize-imports)
+	(save-buffer)
 	)
   :config
   (push "[/\\\\]googleapis$" lsp-file-watch-ignored)
