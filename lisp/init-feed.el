@@ -23,6 +23,8 @@
 		  ("https://cprss.s3.amazonaws.com/golangweekly.com.xml" weekly)
 		  ("https://betterdev.link/rss.xml" weekly)
 		  ("https://github.blog/all.atom" github)
+		  ("https://www.cncf.io/feed/" cloudnative)
+		  ("https://willschenk.com/feed.xml" dev)
 		  ))
   )
 
