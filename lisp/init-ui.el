@@ -28,7 +28,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "SF Mono"
+                      :family "Hack"
                       :height 150
                       :weight 'normal
                       :width 'normal))
@@ -67,7 +67,7 @@
         modus-themes-paren-match 'subtle-bold
         modus-themes-links 'neutral-underline-only
         modus-themes-prompts nil
-        modus-themes-completions 'opinionated ; {nil,'moderate,'opinionated}
+        modus-themes-completions nil ; {nil,'moderate,'opinionated}
         modus-themes-region 'bg-only-no-extend
         modus-themes-diffs 'fg-only-deuteranopia
         modus-themes-org-blocks 'gray-background ; {nil,'gray-background,'tinted-background}
