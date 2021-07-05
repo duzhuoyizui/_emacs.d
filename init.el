@@ -33,8 +33,19 @@
 (eval-when-compile
   (require 'use-package))
 
-(setq gc-cons-threshold 100000000)
-(setq read-process-output-max (* 1024 1024))
+;; via: https://github.com/redguardtoo/emacs.d/blob/master/init.el
+(setq gc-cons-percentage 0.6)
+(setq gc-cons-threshold most-positive-fixnum)
+;; @see https://www.reddit.com/r/emacs/comments/55ork0/is_emacs_251_noticeably_slower_than_245_on_windows/
+;; Emacs 25 does gc too frequently
+;; (setq garbage-collection-messages t) ; for debug
+(defun my-cleanup-gc ()
+  "Clean up gc."
+  (setq gc-cons-threshold  67108864) ; 64M
+  (setq gc-cons-percentage 0.1) ; original value
+  (garbage-collect))
+
+(run-with-idle-timer 4 nil #'my-cleanup-gc)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
