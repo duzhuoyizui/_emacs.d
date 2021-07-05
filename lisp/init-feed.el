@@ -25,6 +25,8 @@
 		  ("https://github.blog/all.atom" github)
 		  ("https://www.cncf.io/feed/" cloudnative)
 		  ("https://willschenk.com/feed.xml" dev)
+		  ("https://www.reddit.com/r/emacs.rss" reddit emacs)
+		  ("https://distrowatch.com/news/dwd.xml" linux)
 		  ))
   )
 
