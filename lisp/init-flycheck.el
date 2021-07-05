@@ -18,7 +18,7 @@
     (setq flycheck-javascript-eslint-executable "eslint")
     ))
   (setq flycheck-python-flake8-executable "flake8")
-
+  (setq flycheck-indication-mode nil)
   :config
   ;; just mode enable check
   (setq flycheck-check-syntax-automatically '())
