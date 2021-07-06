@@ -15,7 +15,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq display-time-default-load-average nil
-	  display-time-format "[%H:%M]")
+	  display-time-format "[%m-%d %H:%M]")
 (display-time-mode t)
 
 ;; Set default font
@@ -61,7 +61,7 @@
         modus-themes-inhibit-reload nil
 
         modus-themes-fringes 'subtle
-        modus-themes-lang-checkers 'intense-foreground
+        modus-themes-lang-checkers 'straight-underline
         modus-themes-syntax nil
         modus-themes-hl-line 'intense-background
         modus-themes-paren-match 'subtle-bold
@@ -130,14 +130,14 @@
   ;; (global-display-fill-column-indicator-mode t)
   )
 
-(use-package beacon
-  :pin melpa
-  :ensure t
-  :init
-  (setq beacon-color "sandybrown")
-  :config
-  (beacon-mode 1)
-  )
+;; (use-package beacon
+;;   :pin melpa
+;;   :ensure t
+;;   :init
+;;   (setq beacon-color "sandybrown")
+;;   :config
+;;   (beacon-mode 1)
+;;   )
 
 (use-package dashboard
   :pin melpa
