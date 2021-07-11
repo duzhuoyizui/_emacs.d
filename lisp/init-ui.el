@@ -22,8 +22,8 @@
 (cond
  ((string-equal system-type "gnu/linux")
   (set-face-attribute 'default nil
-                      :family "Sarasa Mono SC"
-                      :height 135
+                      :family "Hack"
+                      :height 110
                       :weight 'normal
                       :width 'normal))
  ((string-equal system-type "darwin")
