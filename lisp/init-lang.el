@@ -170,7 +170,7 @@
    lsp-enable-links t
    lsp-enable-snippet nil
    lsp-log-io nil
-   lsp-enable-symbol-highlighting nil
+   lsp-enable-symbol-highlighting t
    lsp-diagnostics-provider :flycheck
    lsp-restart 'auto-restart
    lsp-eldoc-render-all nil
