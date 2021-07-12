@@ -69,6 +69,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "<f9> g r") 'rgrep) ;; search in current dir and sub-dir
 (global-set-key (kbd "<f9> m") 'counsel-imenu)
 (global-set-key (kbd "<f9> w") 'save-buffer)
+(global-set-key (kbd "<f10>") 'toggle-frame-fullscreen)
 
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
