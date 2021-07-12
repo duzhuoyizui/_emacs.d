@@ -157,6 +157,7 @@
 		 ("<f9> s r" . lsp-find-references)
 		 ("<f9> s d" . lsp-describe-thing-at-point)
 		 ("<f9> s i" . lsp-find-implementation)
+		 ("<f9> s h" . lsp-toggle-symbol-highlight)
 		 ("M-i" . lsp-smart-buffer)
 		 :map lsp-signature-mode
 		 ("<f9> s p" . lsp-signature-previous)
@@ -170,7 +171,7 @@
    lsp-enable-links t
    lsp-enable-snippet nil
    lsp-log-io nil
-   lsp-enable-symbol-highlighting t
+   lsp-enable-symbol-highlighting nil
    lsp-diagnostics-provider :flycheck
    lsp-restart 'auto-restart
    lsp-eldoc-render-all nil
