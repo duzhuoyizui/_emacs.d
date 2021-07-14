@@ -40,6 +40,9 @@
                       :width 'normal))
  )
 
+;; https://gitlab.com/protesilaos/modus-themes/-/issues/226
+(setq compilation-message-face nil)
+
 ;; document(org/markdown) use different font
 (defun doc-buffer-face-mode-variable ()
   (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 150))
