@@ -28,7 +28,7 @@
                       :width 'normal))
  ((string-equal system-type "darwin")
   (set-face-attribute 'default nil
-                      :family "Hack"
+                      :family "SF mono"
                       :height 150
                       :weight 'normal
                       :width 'normal))
@@ -42,7 +42,7 @@
 
 ;; document(org/markdown) use different font
 (defun doc-buffer-face-mode-variable ()
-  (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 120))
+  (setq buffer-face-mode-face '(:family "Sarasa Mono SC" :height 150))
   (buffer-face-mode))
 (add-hook 'org-mode-hook 'doc-buffer-face-mode-variable)
 (add-hook 'markdown-mode-hook 'doc-buffer-face-mode-variable)

@@ -67,6 +67,14 @@
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
   )
 
+(use-package yasnippet
+  :pin melpa
+  :ensure t
+  :config
+  (setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
+  (yas-global-mode 1)
+  )
 
 (use-package go-mode
   :pin melpa
@@ -210,6 +218,5 @@
    lsp-ui-sideline-show-hover nil
    )
   )
-
 
 (provide 'init-lang)
