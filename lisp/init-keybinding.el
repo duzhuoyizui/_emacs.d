@@ -74,4 +74,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+(global-set-key (kbd "C-2") 'set-mark-command) ;; actual is C-@
+
 (provide 'init-keybinding)
