@@ -149,8 +149,8 @@
   (setq dashboard-banner-logo-title "为天地立心，为生民立命，为往圣继绝学，为万世开太平"
 		dashboard-center-content t
 		dashboard-show-shortcuts nil
-		dashboard-items '((projects . 10)
-						  (recents  . 10))
+		dashboard-items '((projects . 20)
+						  (recents  . 20))
 		dashboard-startup-banner 'logo
 		dashboard-footer-messages '("https://github.com/zhangjie2012/_emacs.d")
 		dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
